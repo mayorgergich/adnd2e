@@ -162,8 +162,8 @@ EOF
 
 # Start containers
 echo "Starting containers..."
-docker-compose down
-docker-compose up -d
+docker compose down
+docker compose up -d
 
 # Wait for services to be ready
 echo "Waiting for services to start..."
