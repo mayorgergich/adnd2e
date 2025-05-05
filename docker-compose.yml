@@ -1,0 +1,32 @@
+---
+version: "3.8"
+services:
+  mediawiki:
+    image: mediawiki:latest
+    container_name: mediawiki
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+      - MEDIAWIKI_DB_HOST=mariadb
+      - MEDIAWIKI_DB_NAME=mediawiki
+      - MEDIAWIKI_DB_USER=wikiuser
+      - MEDIAWIKI_DB_PASSWORD=wikipass
+    networks:
+      - saltbox
+    volumes:
+      - /opt/mediawiki/config:/var/www/html/config
+      - /opt/mediawiki/images:/var/www/html/images
+      - /opt/mediawiki/extensions:/var/www/html/extensions
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.mediawiki.entrypoints=websecure
+      - traefik.http.routers.mediawiki.rule=Host(`adnd2e.mayorgergich.xyz`)
+      - traefik.http.routers.mediawiki.tls.certresolver=letsencrypt
+      - traefik.http.services.mediawiki.loadbalancer.server.port=80
+      - com.github.saltbox.saltbox_managed=true
+    restart: unless-stopped
+
+networks:
+  saltbox:
+    external: true
