@@ -1,0 +1,53 @@
+# Cache and logs
+/cache/*
+/logs/*
+*.log
+
+# Configuration files
+/LocalSettings.php
+/LocalSettings.php.*
+/AdminSettings.php
+/apache-config*.conf
+
+# Backup files and directories
+*_backup/
+*_backup_*/
+*.backup
+*.original
+*.old
+*.problematic
+*.sql
+*.tar.gz
+settings_backup/
+
+# Composer dependencies
+/vendor/
+composer.phar
+
+# Node modules
+/node_modules/
+
+# Upload directory
+/images/*
+!/images/.htaccess
+!/images/README
+
+# Docker
+/docker/*
+docker-compose.yml
+!docker-compose.yml.example
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
