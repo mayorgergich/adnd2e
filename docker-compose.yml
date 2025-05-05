@@ -1,5 +1,4 @@
 version: "3.8"
-
 services:
   adnd2e:
     image: mediawiki:latest
@@ -12,17 +11,17 @@ services:
       - MEDIAWIKI_DB_NAME=saltbox
       - MEDIAWIKI_DB_USER=pawneemayor
       - MEDIAWIKI_DB_PASSWORD=password321
-      # Auto-installation parameters
       - MEDIAWIKI_SITE_NAME=AD&D 2E Wiki
       - MEDIAWIKI_ADMIN_USER=admin
       - MEDIAWIKI_ADMIN_PASS=password
       - MEDIAWIKI_UPDATE=true
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
     volumes:
-      - /opt/mediawiki/config:/var/www/html/config
-      - /opt/mediawiki/images:/var/www/html/images
-      - /opt/mediawiki/extensions:/var/www/html/extensions
+      - /opt/mediawiki:/var/www/html
       - /etc/localtime:/etc/localtime:ro
-      - /opt/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
+      - /opt/mediawiki/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
     depends_on:
       - mariadb
     networks:
@@ -41,7 +40,7 @@ services:
       traefik.http.routers.adnd2e.tls.certresolver: cfdns
       traefik.http.routers.adnd2e.tls.options: securetls@file
       traefik.http.services.adnd2e.loadbalancer.server.port: 80
-
+      
   mariadb:
     image: mariadb:10.6
     container_name: adnd2e-db
@@ -59,7 +58,6 @@ services:
 networks:
   saltbox:
     external: true
-
+    
 volumes:
   mariadb_data:
-  mediawiki_data:
