@@ -21,8 +21,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "adnd2e";
-$wgMetaNamespace = "Adnd2e";
+$wgSitename = "ADND2e";
+$wgMetaNamespace = "AD&D2e";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -59,12 +59,12 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "mariadb";
-$wgDBname = "saltbox";
+$wgDBname = "mediawiki_fresh";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # MySQL specific settings
-$wgDBprefix = "mw_";
+$wgDBprefix = "adnd2e";
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update
@@ -103,14 +103,14 @@ $wgLocaltimezone = "UTC";
 ## be publicly accessible from the web.
 #$wgCacheDirectory = "$IP/cache";
 
-$wgSecretKey = "ea67727d115d17f023f89221d74f8d557f7d72489256ea073aa6dee70d0ccc8a";
+$wgSecretKey = "2bb341eaf6836414e801e978a37eb6db4ec92b531fec7d7758ee27fe15424f6e";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "01daf1862bd2c7d9";
+$wgUpgradeKey = "65ad112463df7681";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
