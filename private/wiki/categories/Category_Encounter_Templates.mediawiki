@@ -1,0 +1,5 @@
+= Encounter Templates =
+
+Templates for encounter-related content and management.
+
+[[Category:Templates]]

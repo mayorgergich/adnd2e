@@ -126,7 +126,7 @@ $wgDefaultSkin = "monobook";
 
 # Enabled skins.
 # Comment out skins that aren't installed
-wfLoadSkin( 'Vector' );
+#wfLoadSkin( 'Vector' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Citizen' );
 

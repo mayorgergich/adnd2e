@@ -1,0 +1,5 @@
+= Magic-User Spells =
+
+Spells available to magic-users.
+
+[[Category:Spells]]

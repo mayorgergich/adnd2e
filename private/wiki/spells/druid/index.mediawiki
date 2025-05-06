@@ -1,0 +1,11 @@
+= Druid Spells =
+
+== Available Spells ==
+
+* [[Spells:druid:call_lightning|call lightning]]
+* [[Spells:druid:calm_animals|calm animals]]
+* [[Spells:druid:good_berry|good berry]]
+* [[Spells:druid:snake_charm|snake charm]]
+
+[[Category:Druid Spells]]
+[[Category:Spells]]

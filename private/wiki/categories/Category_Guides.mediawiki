@@ -1,0 +1,5 @@
+= Guides =
+
+Main category for all guides content.
+
+[[Category:AD&D 2E]]

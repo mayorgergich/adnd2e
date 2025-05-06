@@ -1,0 +1,5 @@
+= Spells =
+
+Main category for all spells content.
+
+[[Category:AD&D 2E]]

@@ -1,0 +1,5 @@
+= Activity Templates =
+
+Templates for activity-related content and management.
+
+[[Category:Templates]]

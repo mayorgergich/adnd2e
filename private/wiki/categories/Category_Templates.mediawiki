@@ -1,0 +1,5 @@
+= Templates =
+
+Main category for all templates content.
+
+[[Category:AD&D 2E]]

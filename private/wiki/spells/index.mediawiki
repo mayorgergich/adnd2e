@@ -1,0 +1,9 @@
+= Spell Compendium =
+
+== Spell Categories ==
+* [[Spells:cleric:index|Cleric Spells]]
+* [[Spells:magic-user:index|Magic-User Spells]]
+* [[Spells:druid:index|Druid Spells]]
+
+[[Category:Spells]]
+[[Category:AD&D 2E]]

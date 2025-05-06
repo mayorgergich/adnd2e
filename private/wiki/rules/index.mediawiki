@@ -1,0 +1,9 @@
+= Campaign Rules =
+
+== Core Rules ==
+* [[Rules:cleric-spells|Cleric Spells Rules]]
+* [[Rules:monastic-combat|Monastic Combat Rules]]
+* [[Rules:updated-character-sheet|Updated Character Sheet Rules]]
+
+[[Category:Rules]]
+[[Category:AD&D 2E]]

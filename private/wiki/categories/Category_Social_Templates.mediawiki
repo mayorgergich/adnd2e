@@ -1,0 +1,5 @@
+= Social Templates =
+
+Templates for social-related content and management.
+
+[[Category:Templates]]

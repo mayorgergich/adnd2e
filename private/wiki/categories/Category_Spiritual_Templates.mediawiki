@@ -1,0 +1,5 @@
+= Spiritual Templates =
+
+Templates for spiritual-related content and management.
+
+[[Category:Templates]]

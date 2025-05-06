@@ -1,0 +1,5 @@
+= Quest Templates =
+
+Templates for quest-related content and management.
+
+[[Category:Templates]]

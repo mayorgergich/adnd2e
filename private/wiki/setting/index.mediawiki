@@ -1,0 +1,8 @@
+= Campaign Setting =
+
+== Setting Information ==
+* [[Setting:sebaldus-connection|Sebaldus Connection]]
+* [[Setting:setting-integration|Setting Integration]]
+
+[[Category:Setting]]
+[[Category:AD&D 2E]]

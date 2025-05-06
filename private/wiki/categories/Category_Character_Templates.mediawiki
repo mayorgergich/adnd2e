@@ -1,0 +1,5 @@
+= Character Templates =
+
+Templates for character-related content and management.
+
+[[Category:Templates]]

@@ -1,0 +1,8 @@
+= Campaign Guides =
+
+== Available Guides ==
+* [[Guides:tactical-guide|Tactical Guide]]
+* [[Guides:cleric_spellbook_index|Cleric Spellbook Guide]]
+
+[[Category:Guides]]
+[[Category:AD&D 2E]]

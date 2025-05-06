@@ -1,0 +1,5 @@
+= Combat Templates =
+
+Templates for combat-related content and management.
+
+[[Category:Templates]]

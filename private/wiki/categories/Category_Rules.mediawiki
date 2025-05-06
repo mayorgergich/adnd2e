@@ -1,0 +1,5 @@
+= Rules =
+
+Main category for all rules content.
+
+[[Category:AD&D 2E]]

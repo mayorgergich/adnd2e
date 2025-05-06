@@ -1,0 +1,5 @@
+= Druid Spells =
+
+Spells available to druids.
+
+[[Category:Spells]]

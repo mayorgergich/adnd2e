@@ -1,0 +1,5 @@
+= Cleric Spells =
+
+Spells available to clerics.
+
+[[Category:Spells]]

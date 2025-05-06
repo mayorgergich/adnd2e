@@ -1,0 +1,11 @@
+= Magic-User Spells =
+
+== Available Spells ==
+
+* [[Spells:magic-user:abjure|abjure]]
+* [[Spells:magic-user:anti-vermin_barrier|anti-vermin barrier]]
+* [[Spells:magic-user:charm_person_or_mammal|charm person or mammal]]
+* [[Spells:magic-user:hold_animal|hold animal]]
+
+[[Category:Magic-User Spells]]
+[[Category:Spells]]
