@@ -125,10 +125,20 @@ $wgDefaultSkin = "monobook";
 
 # Enabled skins.
 # Comment out skins that aren't installed
-#wfLoadSkin( 'Vector' );
-#wfLoadSkin( 'MinervaNeue' );
+wfLoadSkin( 'Vector' );
 wfLoadSkin( 'MonoBook' );
-#wfLoadSkin( 'Timeless' );
+wfLoadSkin( 'Citizen' );
+
+# Set Citizen as the default skin
+$wgDefaultSkin = "citizen";
+
+# Citizen skin configuration
+$wgCitizenThemeDefault = 'dark'; // or 'light' if you prefer
+$wgCitizenEnableCollapsibleSections = true;
+$wgCitizenShowPageTools = true;
+$wgCitizenEnableDrawerSiteStats = true;
+$wgCitizenEnableSearch = true;
+$wgCitizenSearchModule = 'core';
 
 # Performance settings
 $wgParserCacheType = CACHE_ACCEL;
