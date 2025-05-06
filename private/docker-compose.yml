@@ -1,6 +1,6 @@
 services:
   adnd2e-private:
-    image: mediawiki:1.35
+    image: mediawiki:latest
     container_name: adnd2e-private
     hostname: adnd2e-private
     restart: unless-stopped
