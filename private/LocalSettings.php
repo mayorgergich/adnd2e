@@ -107,7 +107,6 @@ $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "2911a24ff883c44812149c0415848c64";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -141,10 +140,21 @@ ini_set('memory_limit', '256M');
 ini_set('max_execution_time', 120);
 
 # Debug settings - only enable when needed
-$wgShowExceptionDetails = true;
-$wgShowDBErrorBacktrace = true;
-$wgShowSQLErrors = true;
-$wgDebugDumpSql = true;
+$wgShowExceptionDetails = false;
+$wgShowDBErrorBacktrace = false;
+$wgShowSQLErrors = false;
+$wgDebugDumpSql = false;
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+# Additional file upload settings
+$wgFileExtensions = array(
+    'png', 'gif', 'jpg', 'jpeg', 'webp',
+    'pdf', 'svg', 'xcf', 'tiff', 'tif', 'bmp'
+);
+$wgMaxUploadSize = 1024 * 1024 * 50; # 50MB upload limit
+$wgVerifyMimeType = true;
+$wgMimeTypeBlacklist = array();
+$wgUploadPath = "$wgScriptPath/images";
+$wgUploadDirectory = "$IP/images";
