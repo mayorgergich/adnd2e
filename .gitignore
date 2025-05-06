@@ -1,19 +1,27 @@
-# Ignore everything
-*
+# MediaWiki specific directories
+/cache/
+/config/
+/extensions/
+/images/
+/wiki/
+/backups/
 
-# Except the backups folder
-!backups/
-!backups/*
+# Skins
+/MonoBook/
+/skins/MonoBook/
+/skins/Vector/
 
-# Except LocalSettings.php
-!LocalSettings.php
+# Configuration files
+LocalSettings.php*
+apache-tuning.conf
+wiki-optimizations.php
+mariadb-compose.yml
 
-# Ignore other copies of LocalSettings.php
-LocalSettings-*.php
-LocalSettings*.bak
+# System and build files
+.DS_Store
+*~
+*.swp
 
-# Ignore shell commands
-*.sh
-
-# Ignore .env files
-.env
+# IDE directories
+.idea/
+.vscode/
