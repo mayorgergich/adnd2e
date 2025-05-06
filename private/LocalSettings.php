@@ -15,11 +15,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
+
+
+
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "ADND2e-Private";
-$wgMetaNamespace = "AD&D2e-Private";
+$wgSitename = "ADND2e";
+$wgMetaNamespace = "AD&D2e";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -29,7 +32,7 @@ $wgMetaNamespace = "AD&D2e-Private";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://adnd2e-private.mayorgergich.xyz";
+$wgServer = "https://adnd2e.mayorgergich.xyz";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -55,13 +58,13 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "database";
-$wgDBname = "mediawiki_private";
+$wgDBserver = "mariadb";
+$wgDBname = "mediawiki_fresh";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # MySQL specific settings
-$wgDBprefix = "";
+$wgDBprefix = "adnd2e";
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update
@@ -77,7 +80,7 @@ $wgMemCachedServers = [];
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
-$wgEnableUploads = true;
+$wgEnableUploads = false;
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
@@ -100,14 +103,14 @@ $wgLocaltimezone = "UTC";
 ## be publicly accessible from the web.
 #$wgCacheDirectory = "$IP/cache";
 
-$wgSecretKey = "7e6cb22121b0b449feef4cd37f702b7e37abafc8dd6c9d42da5688b0d67d63b2";
+$wgSecretKey = "2bb341eaf6836414e801e978a37eb6db4ec92b531fec7d7758ee27fe15424f6e";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "2911a24ff883c44812149c0415848c64";
+$wgUpgradeKey = "65ad112463df7681";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -126,16 +129,12 @@ $wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
 # The following skins were automatically enabled:
-#wfLoadSkin( 'MinervaNeue' );
+wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
 
-# Debug settings
-$wgShowExceptionDetails = true;
-$wgShowDBErrorBacktrace = true;
-$wgShowSQLErrors = true;
-$wgDebugDumpSql = true;
 
 # End of automatically generated settings.
 # Add more configuration options below.
+

@@ -1,0 +1,41 @@
+services:
+  adnd2e-private:
+    image: mediawiki:1.35
+    container_name: adnd2e-private
+    hostname: adnd2e-private
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - MEDIAWIKI_DB_TYPE=mysql
+      - MEDIAWIKI_DB_HOST=mariadb
+      - MEDIAWIKI_DB_NAME=mediawiki_private
+      - MEDIAWIKI_DB_USER=pawneemayor
+      - MEDIAWIKI_DB_PASSWORD=password321
+      - MEDIAWIKI_SITE_NAME=AD&D 2E Private Wiki
+    volumes:
+      - /opt/mediawiki/private/images:/var/www/html/images
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
+    networks:
+      - saltbox
+    labels:
+      com.github.saltbox.saltbox_managed: true
+      traefik.enable: true
+      traefik.http.routers.adnd2e-private-http.entrypoints: web
+      traefik.http.routers.adnd2e-private-http.middlewares: globalHeaders@file,redirect-to-https@docker,robotHeaders@file,cloudflarewarp@docker
+      traefik.http.routers.adnd2e-private-http.rule: Host(`adnd2e-private.mayorgergich.xyz`)
+      traefik.http.routers.adnd2e-private-http.service: adnd2e-private
+      traefik.http.routers.adnd2e-private.entrypoints: websecure
+      traefik.http.routers.adnd2e-private.middlewares: globalHeaders@file,secureHeaders@file,robotHeaders@file,cloudflarewarp@docker
+      traefik.http.routers.adnd2e-private.rule: Host(`adnd2e-private.mayorgergich.xyz`)
+      traefik.http.routers.adnd2e-private.service: adnd2e-private
+      traefik.http.routers.adnd2e-private.tls.certresolver: cfdns
+      traefik.http.routers.adnd2e-private.tls.options: securetls@file
+      traefik.http.services.adnd2e-private.loadbalancer.server.port: 80
+
+networks:
+  saltbox:
+    external: true
+
