@@ -1,0 +1,87 @@
+{
+	"name": "WPtouch",
+	"namemsg": "skinname-wptouch",
+	"version": "1.2",
+	"author": [
+		"Dale Mugford",
+		"Duane Storey",
+		"Dan Flores",
+		"Jack Phoenix"
+	],
+	"requires": {
+		"MediaWiki": ">= 1.40.0"
+	},
+	"url": "https://www.mediawiki.org/wiki/Skin:WPtouch",
+	"license-name": "GPL-2.0-or-later",
+	"descriptionmsg": "wptouch-desc",
+	"type": "skin",
+	"ValidSkinNames": {
+		"wptouch": {
+			"class": "SkinTemplate",
+			"args": [
+				{
+					"name": "wptouch",
+					"bodyClasses": [ "skated-wptouch-bg" ],
+					"bodyOnly": true,
+					"responsive": true,
+					"template": "WPtouchTemplate",
+					"styles": [
+						"skins.wptouch"
+					],
+					"scripts": [
+						"skins.wptouch.js"
+					]
+				}
+			]
+		}
+	},
+	"MessagesDirs": {
+		"SkinWPtouch": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"WPtouchTemplate": "WPtouchTemplate.php"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "WPtouch"
+	},
+	"ResourceModules": {
+		"skins.wptouch": {
+			"class": "MediaWiki\\ResourceLoader\\SkinModule",
+			"features": {
+				"content-links": true,
+				"content-links-external": true,
+				"content-media": true,
+				"interface-message-box": true,
+				"interface-category": true,
+				"content-tables": true,
+				"i18n-ordered-lists": true,
+				"i18n-all-lists-margins": true,
+				"i18n-headings": true,
+				"elements": true,
+				"interface": true,
+				"logo": true
+			},
+			"styles": {
+				"resources/css/main.css": {
+					"media": "screen"
+				},
+				"resources/css/print.css": {
+					"media": "print"
+				},
+				"resources/css/really-small.css": {
+					"media": "all and (max-width: 350px)"
+				}
+			}
+		},
+		"skins.wptouch.js": {
+			"scripts": [
+				"resources/javascript/core.js",
+				"resources/javascript/url-bar.js"
+			]
+		}
+	},
+	"manifest_version": 1
+}
