@@ -15,6 +15,9 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
+
+
+
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
@@ -61,7 +64,7 @@ $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # MySQL specific settings
-$wgDBprefix = "adnd2e_"; # Added prefix for separation
+$wgDBprefix = "";
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update
@@ -72,7 +75,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgSharedTables[] = "actor";
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_ACCEL;
+$wgMainCacheType = CACHE_NONE;
 $wgMemCachedServers = [];
 
 ## To enable image uploads, make sure the 'images' directory
@@ -98,7 +101,7 @@ $wgLocaltimezone = "UTC";
 ## Set $wgCacheDirectory to a writable directory on the web server
 ## to make your wiki go slightly faster. The directory should not
 ## be publicly accessible from the web.
-$wgCacheDirectory = "$IP/cache";
+#$wgCacheDirectory = "$IP/cache";
 
 $wgSecretKey = "2bb341eaf6836414e801e978a37eb6db4ec92b531fec7d7758ee27fe15424f6e";
 
@@ -131,19 +134,11 @@ wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
 
+
 # End of automatically generated settings.
 # Add more configuration options below.
 
-# Performance settings
-$wgParserCacheType = CACHE_ACCEL;
-$wgMessageCacheType = CACHE_ACCEL;
-$wgResourceLoaderMaxage['versioned'] = 60 * 60 * 24 * 30;
-$wgResourceLoaderMaxage['unversioned'] = 60 * 60 * 24;
-$wgUseGzip = true;
-ini_set('memory_limit', '256M');
-ini_set('max_execution_time', 120);
-
-# Debug settings - only enable when needed
+# Debug settings
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
 $wgShowSQLErrors = true;

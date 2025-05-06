@@ -17,10 +17,6 @@ services:
       - MEDIAWIKI_SITE_NAME=AD&D 2E Private Wiki
     volumes:
       - /opt/mediawiki/private/resources:/var/www/html/images
-      - /opt/mediawiki/private/cache:/var/www/html/cache
-      - /opt/mediawiki/private/extensions:/var/www/html/extensions
-      - /opt/mediawiki/private/skins:/var/www/html/skins
-      - /opt/mediawiki/private/config:/var/www/html/config
       - /etc/localtime:/etc/localtime:ro
       - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
     networks:

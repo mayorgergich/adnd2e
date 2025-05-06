@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - TZ=UTC
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - saltbox
+    command: mysqld --innodb_buffer_pool_size=256M --max_connections=100 --thread_cache_size=128
+
+networks:
+  saltbox:
+    external: true
+
+volumes:
+  mariadb_data:

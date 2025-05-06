@@ -23,10 +23,21 @@ docker compose down
 echo "Creating mediawiki_fresh database..."
 docker exec mariadb mysql -u pawneemayor -p"password321" -e "CREATE DATABASE IF NOT EXISTS mediawiki_fresh;"
 
-# Create image directory structure
-echo "Creating image directory structure..."
+# Create directory structure for both wikis
+echo "Creating directory structure..."
+# Main wiki directories
 mkdir -p /opt/mediawiki/images/resources/sources
+mkdir -p /opt/mediawiki/cache
+mkdir -p /opt/mediawiki/extensions
+mkdir -p /opt/mediawiki/skins
+mkdir -p /opt/mediawiki/config
+
+# Private wiki directories
 mkdir -p /opt/mediawiki/private/resources/resources
+mkdir -p /opt/mediawiki/private/cache
+mkdir -p /opt/mediawiki/private/extensions
+mkdir -p /opt/mediawiki/private/skins
+mkdir -p /opt/mediawiki/private/config
 
 # Update docker-compose.yml for main wiki
 echo "Updating docker-compose.yml for main wiki..."
@@ -50,6 +61,10 @@ services:
       - MEDIAWIKI_SITE_NAME=AD&D 2E Wiki
     volumes:
       - /opt/mediawiki/images:/var/www/html/images
+      - /opt/mediawiki/cache:/var/www/html/cache
+      - /opt/mediawiki/extensions:/var/www/html/extensions
+      - /opt/mediawiki/skins:/var/www/html/skins
+      - /opt/mediawiki/config:/var/www/html/config
       - /etc/localtime:/etc/localtime:ro
       - /opt/mediawiki/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
     networks:
@@ -250,6 +265,10 @@ services:
       - MEDIAWIKI_SITE_NAME=AD&D 2E Private Wiki
     volumes:
       - /opt/mediawiki/private/resources:/var/www/html/images
+      - /opt/mediawiki/private/cache:/var/www/html/cache
+      - /opt/mediawiki/private/extensions:/var/www/html/extensions
+      - /opt/mediawiki/private/skins:/var/www/html/skins
+      - /opt/mediawiki/private/config:/var/www/html/config
       - /etc/localtime:/etc/localtime:ro
       - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
     networks:
@@ -438,8 +457,7 @@ EOI
 
 # Create a simple placeholder favicon
 cat > /opt/mediawiki/images/resources/sources/favicon.ico << 'EOF'
-AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuYO8ALmPxAC5h8B4uYfCLLmHw0S5h8NMuYfCPLmHwIi5j8QAuYO8AAAAAAAAAAAAAAAAAAAAAACZw/wAnbv0AJ279BCdu/WYnbv3fJ279/ydu/f8nbv3/J279/ydu/eEnbv1qJ279BCdu/QAmbP8AAAAAAAAAAAAncP4AJ3D+ACdw/loncP7wJ3D+/ydw/v8ncP7/J3D+/ydw/v8ncP7/J3D+/ydw/vIncP5cJ3D+ACdw/gAAAAAAKXP/ACl0/wApdP9WKXT//yl0//8pdP//KXT//yl0//8pdP//KXT//yl0//8pdP//KXT//yl0/1opdP8AKXP/ACp2/wAqdv8LKnb/vip2//8qdv//Knb//yp2//8qdv//Knb//yp2//8qdv//Knb//yp2//8qdv//Knb/wip2/w0qdv8AK3n/ACt5/zAref/yK3n//yt5//8ref//K3n//yt5//8ref//K3n//yt5//8ref//K3n//yt5//8ref/0K3n/NCt5/wAsfP8ALHz/XCx8//8sfP//LHz//yx8//8sfP//LHz//yx8//8sfP//LHz//yx8//8sfP//LHz//yx8//8sfP9gLHz/AC5+/wAufv9cLn7//y5+//8ufv//Ln7//y5+//8ufv//Ln7//y5+//8ufv//Ln7//y5+//8ufv//Ln7//y5+/2Aufv8AMID/ADCA/14wgP//MID//zCA//8wgP//MID//zCA//8wgP//MID//zCA//8wgP//MID//zCA//8wgP//MID/YjCA/wAxg/8AMYP/ITGD/+8xg///MYP//zGD//8xg///MYP//zGD//8xg///MYP//zGD//8xg///MYP//zGD//Mxg/8oMYP/ADOF/wAzhf8AM4X/nTOF//8zhf//M4X//zOF//8zhf//M4X//zOF//8zhf//M4X//zOF//8zhf//M4X/pDOF/wAzhf8ANYf/ADWH/wA1h/83NYf/7jWH//81h///NYf//zWH//81h///NYf//zWH//81h///NYf/8DWH/z01h/8ANYf/ADWH/wA2iv8ANor/ADaK/wY2iv9+Nor/8jaK//82iv//Nor//zaK//82iv/0Nor/gjaK/wc2iv8ANor/ADaK/wAAAAAAAAAAAAAAAAA4jP8AOIz/ADiM/xc4jP9uOIz/wTiM/8M4jP9yOIz/GDiM/wA4jP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAA=
-EOF
+AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuYO8ALmPxAC5h8B4uYfCLLmHw0S5h8NMuYfCPLmHwIi5j8QAuYO8AAAAAAAAAAAAAAAAAAAAAACZw/wAnbv0AJ279BCdu/WYnbv3fJ279/ydu/f8nbv3/J279/ydu/eEnbv1qJ279BCdu/QAmbP8AAAAAAAAAAAAncP4AJ3D+ACdw/loncP7wJ3D+/ydw/v8ncP7/J3D+/ydw/v8ncP7/J3D+/ydw/vIncP5cJ3D+ACdw/gAAAAAAKXP/ACl0/wApdP9WKXT//yl0//8pdP//KXT//yl0//
 
 # Copy logo and favicon to private wiki resources
 cp /opt/mediawiki/images/resources/sources/logo.png /opt/mediawiki/private/resources/resources/
@@ -466,17 +484,23 @@ docker cp /opt/mediawiki/private/LocalSettings.php adnd2e-private:/var/www/html/
 docker exec adnd2e-private chmod 644 /var/www/html/LocalSettings.php
 docker exec adnd2e-private chown www-data:www-data /var/www/html/LocalSettings.php
 
-# Create cache directories
-echo "Creating cache directories..."
+# Ensure proper permissions for all directories
+echo "Setting permissions for all directories..."
+# Main wiki permissions
 docker exec adnd2e bash -c "mkdir -p /var/www/html/cache && chown -R www-data:www-data /var/www/html/cache"
-docker exec adnd2e-private bash -c "mkdir -p /var/www/html/cache && chown -R www-data:www-data /var/www/html/cache"
-
-# Ensure proper permissions for image directories
-echo "Setting permissions for image directories..."
 docker exec adnd2e chown -R www-data:www-data /var/www/html/images
 docker exec adnd2e chmod -R 755 /var/www/html/images
+docker exec adnd2e bash -c "chmod -R 755 /var/www/html/extensions"
+docker exec adnd2e bash -c "chmod -R 755 /var/www/html/skins"
+docker exec adnd2e bash -c "chmod -R 755 /var/www/html/config"
+
+# Private wiki permissions
+docker exec adnd2e-private bash -c "mkdir -p /var/www/html/cache && chown -R www-data:www-data /var/www/html/cache"
 docker exec adnd2e-private chown -R www-data:www-data /var/www/html/images
 docker exec adnd2e-private chmod -R 755 /var/www/html/images
+docker exec adnd2e-private bash -c "chmod -R 755 /var/www/html/extensions"
+docker exec adnd2e-private bash -c "chmod -R 755 /var/www/html/skins"
+docker exec adnd2e-private bash -c "chmod -R 755 /var/www/html/config"
 
 # Run update script to ensure database structure is current
 echo "Running update script for both wikis..."
@@ -494,6 +518,17 @@ echo "  * https://adnd2e.mayorgergich.xyz"
 echo "  * https://adnd2e-private.mayorgergich.xyz"
 echo ""
 echo "Both wikis are now using the shared MariaDB container."
+echo ""
+echo "IMPORTANT: Remember that LocalSettings.php must be manually copied"
+echo "into the containers after any changes:"
+echo ""
+echo "  docker cp /opt/mediawiki/LocalSettings.php adnd2e:/var/www/html/"
+echo "  docker exec adnd2e chmod 644 /var/www/html/LocalSettings.php"
+echo "  docker exec adnd2e chown www-data:www-data /var/www/html/LocalSettings.php"
+echo ""
+echo "  docker cp /opt/mediawiki/private/LocalSettings.php adnd2e-private:/var/www/html/"
+echo "  docker exec adnd2e-private chmod 644 /var/www/html/LocalSettings.php"
+echo "  docker exec adnd2e-private chown www-data:www-data /var/www/html/LocalSettings.php"
 EOF
 
 chmod +x /opt/mediawiki/update-setup.sh
