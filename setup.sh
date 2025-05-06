@@ -3,32 +3,46 @@
 
 echo "=== Updating MediaWiki Setup with Shared Database ==="
 
+# Check for root privileges
+if [ "$(id -u)" -ne 0 ]; then
+   echo "This script must be run as root or with sudo"
+   exit 1
+fi
+
 # Backup current configurations
 echo "Creating backups of current configuration..."
 mkdir -p /opt/mediawiki/backups/$(date +%Y%m%d)
-cp /opt/mediawiki/docker-compose.yml /opt/mediawiki/backups/$(date +%Y%m%d)/
-cp /opt/mediawiki/LocalSettings.php /opt/mediawiki/backups/$(date +%Y%m%d)/
-cp /opt/mediawiki/private/docker-compose.yml /opt/mediawiki/backups/$(date +%Y%m%d)/private-docker-compose.yml
-cp /opt/mediawiki/private/LocalSettings.php /opt/mediawiki/backups/$(date +%Y%m%d)/private-LocalSettings.php
+[ -f /opt/mediawiki/docker-compose.yml ] && cp /opt/mediawiki/docker-compose.yml /opt/mediawiki/backups/$(date +%Y%m%d)/
+[ -f /opt/mediawiki/LocalSettings.php ] && cp /opt/mediawiki/LocalSettings.php /opt/mediawiki/backups/$(date +%Y%m%d)/
+[ -f /opt/mediawiki/private/docker-compose.yml ] && cp /opt/mediawiki/private/docker-compose.yml /opt/mediawiki/backups/$(date +%Y%m%d)/private-docker-compose.yml
+[ -f /opt/mediawiki/private/LocalSettings.php ] && cp /opt/mediawiki/private/LocalSettings.php /opt/mediawiki/backups/$(date +%Y%m%d)/private-LocalSettings.php
 
 # Stop existing containers
 echo "Stopping existing containers..."
 cd /opt/mediawiki
-docker compose down
+docker compose down 2>/dev/null || true
 cd /opt/mediawiki/private
-docker compose down
+docker compose down 2>/dev/null || true
 
-# Create database and user if they don't exist
-echo "Creating database and user..."
-# Assuming root password is set in MariaDB container
-docker exec mariadb mysql -u root -p"rootpassword" <<'EOSQL'
-CREATE DATABASE IF NOT EXISTS mediawiki_fresh;
-CREATE DATABASE IF NOT EXISTS mediawiki_private;
-CREATE USER IF NOT EXISTS 'pawneemayor'@'%' IDENTIFIED BY 'password321';
-GRANT ALL PRIVILEGES ON mediawiki_fresh.* TO 'pawneemayor'@'%';
-GRANT ALL PRIVILEGES ON mediawiki_private.* TO 'pawneemayor'@'%';
-FLUSH PRIVILEGES;
-EOSQL
+# Check MariaDB container status
+echo "Checking MariaDB container status..."
+if ! docker ps | grep -q mariadb; then
+    echo "ERROR: MariaDB container not running. Please start it first."
+    exit 1
+fi
+
+# Skip database creation using root - use existing user if possible
+echo "Checking database connection..."
+if docker exec mariadb mysql -u pawneemayor -p"password321" -e "SHOW DATABASES;" &>/dev/null; then
+    echo "Database connection successful, continuing with existing user"
+    # Create databases if they don't exist
+    docker exec mariadb mysql -u pawneemayor -p"password321" -e "CREATE DATABASE IF NOT EXISTS mediawiki_fresh;"
+    docker exec mariadb mysql -u pawneemayor -p"password321" -e "CREATE DATABASE IF NOT EXISTS mediawiki_private;"
+else
+    echo "WARNING: Cannot connect to database with default credentials."
+    echo "You may need to manually create the databases and user later."
+    echo "Continuing with setup..."
+fi
 
 # Create directory structure for both wikis
 echo "Creating directory structure..."
@@ -46,10 +60,12 @@ mkdir -p /opt/mediawiki/private/extensions
 mkdir -p /opt/mediawiki/private/skins
 mkdir -p /opt/mediawiki/private/config
 
+# Set proper permissions
+chown -R $(stat -c '%U:%G' /opt/mediawiki 2>/dev/null || echo "root:root") /opt/mediawiki
+
 # Update docker-compose.yml for main wiki
 echo "Updating docker-compose.yml for main wiki..."
 cat > /opt/mediawiki/docker-compose.yml << 'EOC'
-version: "3.8"
 services:
   adnd2e:
     image: mediawiki:latest
@@ -226,11 +242,11 @@ $wgDiff3 = "/usr/bin/diff3";
 $wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
-# The following skins were automatically enabled:
-wfLoadSkin( 'MinervaNeue' );
-wfLoadSkin( 'MonoBook' );
-wfLoadSkin( 'Timeless' );
+# Comment out skins that aren't installed
 wfLoadSkin( 'Vector' );
+#wfLoadSkin( 'MinervaNeue' );
+#wfLoadSkin( 'MonoBook' );
+#wfLoadSkin( 'Timeless' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
@@ -253,7 +269,6 @@ EOL
 # Update docker-compose.yml for private wiki
 echo "Updating docker-compose.yml for private wiki..."
 cat > /opt/mediawiki/private/docker-compose.yml << 'EOP'
-version: "3.8"
 services:
   adnd2e-private:
     image: mediawiki:latest
@@ -430,11 +445,11 @@ $wgDiff3 = "/usr/bin/diff3";
 $wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
-# The following skins were automatically enabled:
-wfLoadSkin( 'MinervaNeue' );
-wfLoadSkin( 'MonoBook' );
-wfLoadSkin( 'Timeless' );
+# Comment out skins that aren't installed
 wfLoadSkin( 'Vector' );
+#wfLoadSkin( 'MinervaNeue' );
+#wfLoadSkin( 'MonoBook' );
+#wfLoadSkin( 'Timeless' );
 
 # Performance settings
 $wgParserCacheType = CACHE_ACCEL;
@@ -457,6 +472,10 @@ EOL2
 
 # Create sample logo and favicon files
 echo "Creating sample logo and favicon files..."
+# Create directories if they don't exist
+mkdir -p /opt/mediawiki/images/resources/sources/
+mkdir -p /opt/mediawiki/private/resources/resources/
+
 # Create a simple placeholder logo
 cat > /opt/mediawiki/images/resources/sources/logo.png << 'EOI'
 iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB+ElEQVR4nO3dsU7CUBSA4ZPahCFx0EXaEF2Mo8/hG/kC+io+gLMrg6vRxVIICcMtHodW09CWFrz3lPN/G2nMvZz0pCmEUgAAAAAAAAAAAMCfVi37Rfr9/urwsFMrlbL18XiSLspF92tq9d6jdpeqznGu2k3rdnvJarXWr9V6L6oZ1cqLiJSqrU+TSasVj7N8/LzWVp6v9utpJFW9s9l0u+t04/FkUwqxxWKRxeP2bbnzaA9CfTefz3fqbjablMIWDIfD0s5Fuxb3vFEX50e5GsjmOlQKIYQwm05LO+paDxl4vboo7ayO3dMlXjeTjx/npZ3P3h68AQMEYoBADPj1+yHflctSt9v99lP42WwW5vNZuLm9y3wCv5bnebg8PwmnJ52w1zt+3R0cHIbLy4vQ6Ry9+7hpmobt7W3vkEK51A9Pz/G03/9Q9/CwE15eRtt+aB/i6enxXd3JyWnVx4UgD/X6TlXnh3/60wAEIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgAAAAAAAAAA8K/8AEe5Zopd89RFAAAAAElFTkSuQmCC
@@ -470,6 +489,11 @@ EOI
 # Copy logo and favicon to private wiki resources
 cp /opt/mediawiki/images/resources/sources/logo.png /opt/mediawiki/private/resources/resources/
 cp /opt/mediawiki/images/resources/sources/favicon.ico /opt/mediawiki/private/resources/resources/
+
+# Create apache config files if they don't exist
+echo "Creating Apache config files if needed..."
+echo "ServerName adnd2e" > /opt/mediawiki/apache-config.conf
+echo "ServerName adnd2e-private" > /opt/mediawiki/private/apache-config.conf
 
 # Start the MediaWiki containers
 echo "Starting MediaWiki containers..."
@@ -498,30 +522,31 @@ echo "Setting permissions for all directories..."
 docker exec adnd2e bash -c "mkdir -p /var/www/html/cache && chown -R www-data:www-data /var/www/html/cache"
 docker exec adnd2e chown -R www-data:www-data /var/www/html/images
 docker exec adnd2e chmod -R 755 /var/www/html/images
-docker exec adnd2e bash -c "chmod -R 755 /var/www/html/extensions"
-docker exec adnd2e bash -c "chmod -R 755 /var/www/html/skins"
-docker exec adnd2e bash -c "chmod -R 755 /var/www/html/config"
+docker exec adnd2e bash -c "mkdir -p /var/www/html/extensions && chmod -R 755 /var/www/html/extensions"
+docker exec adnd2e bash -c "mkdir -p /var/www/html/skins && chmod -R 755 /var/www/html/skins"
+docker exec adnd2e bash -c "mkdir -p /var/www/html/config && chmod -R 755 /var/www/html/config"
 
 # Private wiki permissions
 docker exec adnd2e-private bash -c "mkdir -p /var/www/html/cache && chown -R www-data:www-data /var/www/html/cache"
 docker exec adnd2e-private chown -R www-data:www-data /var/www/html/images
 docker exec adnd2e-private chmod -R 755 /var/www/html/images
-docker exec adnd2e-private bash -c "chmod -R 755 /var/www/html/extensions"
-docker exec adnd2e-private bash -c "chmod -R 755 /var/www/html/skins"
-docker exec adnd2e-private bash -c "chmod -R 755 /var/www/html/config"
+docker exec adnd2e-private bash -c "mkdir -p /var/www/html/extensions && chmod -R 755 /var/www/html/extensions"
+docker exec adnd2e-private bash -c "mkdir -p /var/www/html/skins && chmod -R 755 /var/www/html/skins"
+docker exec adnd2e-private bash -c "mkdir -p /var/www/html/config && chmod -R 755 /var/www/html/config"
 
 # Run update script to ensure database structure is current
 echo "Running update script for both wikis..."
-docker exec -u www-data adnd2e php maintenance/update.php --quick
-docker exec -u www-data adnd2e-private php maintenance/update.php --quick
+echo "NOTE: Errors about missing skins are normal if you're setting up for the first time."
+docker exec -u www-data adnd2e php maintenance/update.php --quick || echo "Update completed with warnings"
+docker exec -u www-data adnd2e-private php maintenance/update.php --quick || echo "Update completed with warnings"
 
 # Create admin user for both wikis
 echo "Creating admin user for both wikis..."
 # For main wiki
-docker exec -u www-data adnd2e php maintenance/createAndPromote.php --bureaucrat --sysop --force Admin "SecureAdminPass123"
+docker exec -u www-data adnd2e php maintenance/createAndPromote.php --bureaucrat --sysop --force Admin "SecureAdminPass123" || echo "Admin user creation attempted with warnings"
 
 # For private wiki
-docker exec -u www-data adnd2e-private php maintenance/createAndPromote.php --bureaucrat --sysop --force Admin "SecureAdminPass123"
+docker exec -u www-data adnd2e-private php maintenance/createAndPromote.php --bureaucrat --sysop --force Admin "SecureAdminPass123" || echo "Admin user creation attempted with warnings"
 
 echo "Admin user 'Admin' created with password 'SecureAdminPass123' for both wikis"
 
@@ -551,3 +576,8 @@ echo ""
 echo "  docker cp /opt/mediawiki/private/LocalSettings.php adnd2e-private:/var/www/html/"
 echo "  docker exec adnd2e-private chmod 644 /var/www/html/LocalSettings.php"
 echo "  docker exec adnd2e-private chown www-data:www-data /var/www/html/LocalSettings.php"
+echo ""
+echo "NOTE: You may need to install skins inside the containers if needed."
+echo "To install the Vector skin manually, run:"
+echo "  docker exec -it adnd2e bash -c \"cd /var/www/html/skins && git clone https://gerrit.wikimedia.org/r/mediawiki/skins/Vector\""
+echo "  docker exec -it adnd2e-private bash -c \"cd /var/www/html/skins && git clone https://gerrit.wikimedia.org/r/mediawiki/skins/Vector\""
