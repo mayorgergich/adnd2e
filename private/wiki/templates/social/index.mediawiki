@@ -1,0 +1,89 @@
+# Social Interaction
+
+This section contains templates and tools for managing social interactions, relationships, and identity.
+
+## Available Templates
+
+### Identity Management
+* [[Social Identity Tracker|social_identity_tracker]]
+  * Identity profiles
+  * Cover stories
+  * Social connections
+  * Identity maintenance
+  * Development goals
+
+### Relationship Management
+* [[Social Relationship Tracker|social_relationship_tracker]]
+  * NPC relationships
+  * Faction standings
+  * Social networks
+  * Reputation tracking
+  * Alliance management
+
+## Related Templates
+
+### Encounter Templates
+* [[Social Encounter Template|../encounters/social_encounter_template]]
+  * Conversation goals
+  * NPC motivations
+  * Social dynamics
+  * Potential outcomes
+
+### Activity Templates
+* [[Downtime Template|../activities/downtime_template]]
+  * Social activities
+  * Relationship building
+  * Network expansion
+  * Reputation management
+
+## Using These Templates
+
+1. Set up Social Identity Tracker for character personas
+2. Maintain Relationship Tracker for connections
+3. Use Social Encounter Template for interactions
+4. Update relationships after significant events
+
+## Tips for Social Management
+
+### Identity Management
+* Maintain consistent personas
+* Track identity knowledge
+* Update cover stories
+* Monitor social exposure
+* Plan identity development
+
+### Relationship Building
+* Track faction relationships
+* Monitor reputation changes
+* Record significant interactions
+* Note alliance opportunities
+* Document social debts
+
+### Social Navigation
+* Prepare conversation goals
+* Consider NPC motivations
+* Track information shared
+* Note social consequences
+* Plan future interactions
+
+## Social Development
+
+### Identity Growth
+* Develop new personas
+* Expand social networks
+* Build reputation
+* Create alliances
+* Manage relationships
+
+### Reputation Management
+* Track faction standings
+* Monitor public opinion
+* Manage social influence
+* Build social capital
+* Address conflicts
+
+## Navigation
+* [[Back to Main Index|../../index]]
+* [[Character Management|../character/index]]
+* [[Encounter Management|../encounters/index]]
+* [[Activity Management|../activities/index]] 

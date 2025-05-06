@@ -1,0 +1,17 @@
+= Remove Paralysis =
+'''Sphere:''' Special  
+'''Level:''' 6  
+'''Range:''' 60 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 6 rounds  
+'''Area of Effect:''' 30-ft radius  
+'''Saving Throw:''' None  
+
+== Description ==
+Frees up to four creatures from paralysis (magical or mundane). Targets must be afflicted within 24 hours and be physically intact.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

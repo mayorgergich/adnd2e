@@ -1,0 +1,19 @@
+= Anti-vermin Barrier =
+'''Sphere:''' Special  
+'''Level:''' (Special Ability)  
+'''Range:''' 30 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' Varies  
+'''Area of Effect:''' Varies  
+'''Saving Throw:''' None  
+
+== Description ==
+Creates a 10-ft-radius invisible barrier that repels insects and vermin. Lasts 1 hour/level.
+
+''This ability can be used once per week, per priest level progression.''
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

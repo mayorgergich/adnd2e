@@ -1,0 +1,74 @@
+# Activity Management
+
+This section contains templates for managing various long-term activities in your campaign.
+
+## Available Templates
+
+### Research Activities
+* [[Research Template|research_template]]
+  * Research goals
+  * Resource requirements
+  * Progress tracking
+  * Discoveries and insights
+  * Reference materials
+
+### Downtime Activities
+* [[Downtime Template|downtime_template]]
+  * Character development
+  * Skill training
+  * Crafting projects
+  * Social activities
+  * Resource management
+
+### Travel Activities
+* [[Travel Template|travel_template]]
+  * Journey planning
+  * Resource tracking
+  * Encounters
+  * Discoveries
+  * Weather effects
+
+## Related Templates
+
+### Character Templates
+* [[Character Sheet|../character/character_sheet]]
+* [[Social Identity Tracker|../social/social_identity_tracker]]
+
+### Quest Templates
+* [[Quest Tracker|../quests/quest_tracker_template]]
+
+## Using These Templates
+
+1. Choose appropriate templates based on activity type
+2. Plan resources and time requirements
+3. Track progress regularly
+4. Update related templates as needed
+
+## Tips for Activity Management
+
+### Research Activities
+* Define clear research goals
+* List available resources
+* Track time spent
+* Note breakthrough moments
+* Document sources
+
+### Downtime Activities
+* Balance multiple activities
+* Set realistic goals
+* Track resource usage
+* Note skill improvements
+* Document social connections
+
+### Travel Activities
+* Plan routes carefully
+* Track supplies
+* Note interesting locations
+* Document encounters
+* Monitor weather effects
+
+## Navigation
+* [[Back to Main Index|../../index]]
+* [[Character Management|../character/index]]
+* [[Quest Management|../quests/index]]
+* [[Social Interaction|../social/index]] 

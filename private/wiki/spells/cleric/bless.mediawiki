@@ -1,0 +1,17 @@
+= Bless =
+'''Sphere:''' Special  
+'''Level:''' 1  
+'''Range:''' 60 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 6 turns  
+'''Casting Time:''' 1 turn  
+'''Area of Effect:''' 50-ft radius  
+'''Saving Throw:''' None  
+
+== Description ==
+Confers a +1 bonus to morale and attack rolls to allies in a 50-ft radius. Must be cast before combat begins.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

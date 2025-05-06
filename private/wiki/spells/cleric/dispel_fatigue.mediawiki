@@ -1,0 +1,19 @@
+= Dispel Fatigue =
+'''Sphere:''' Special  
+'''Level:''' (Special Ability)  
+'''Range:''' 30 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' Varies  
+'''Area of Effect:''' Varies  
+'''Saving Throw:''' None  
+
+== Description ==
+Removes physical fatigue from up to 7 creatures. Restores energy equivalent to 6 hours of sleep.
+
+''This ability can be used once per week, per priest level progression.''
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

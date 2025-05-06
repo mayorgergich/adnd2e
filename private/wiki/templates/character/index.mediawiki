@@ -1,0 +1,60 @@
+# Character Management
+
+This section contains templates and tools for managing character information, combat statistics, and character development.
+
+## Available Templates
+
+### Core Character Templates
+* [[Character Sheet|character_sheet]]
+  * Primary character information
+  * Abilities and skills
+  * Background and personality
+  * Equipment and resources
+
+* [[Combat Character Sheet|combat_character_sheet]]
+  * Combat statistics
+  * Combat resources
+  * Quick reference information
+  * Round-by-round tracking
+
+## Related Templates
+
+### Combat
+* [[Combat Technique Tracker|../combat/combat_technique_tracker]]
+  * Special abilities and techniques
+  * Combat stances and combinations
+  * Resource management
+
+### Social
+* [[Social Identity Tracker|../social/social_identity_tracker]]
+  * Identity management
+  * Social connections
+  * Cover stories
+
+### Spiritual
+* [[Spiritual Practice Tracker|../spiritual/spiritual_practice_tracker]]
+  * Spiritual development
+  * Religious practices
+  * Divine connections
+
+## Using These Templates
+
+1. Start with the Character Sheet template for new characters
+2. Add the Combat Character Sheet for combat-focused characters
+3. Choose additional templates based on character focus:
+   * Combat-focused: Add Combat Technique Tracker
+   * Social-focused: Add Social Identity Tracker
+   * Spiritual-focused: Add Spiritual Practice Tracker
+
+## Tips for Character Management
+
+* Keep all templates updated after each session
+* Use the quick reference sections during gameplay
+* Track character development over time
+* Note significant character events and achievements
+
+## Navigation
+* [[Back to Main Index|../../index]]
+* [[Combat System|../combat/index]]
+* [[Social Interaction|../social/index]]
+* [[Spiritual Practices|../spiritual/index]] 

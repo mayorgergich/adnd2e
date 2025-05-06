@@ -1,0 +1,178 @@
+title: "Cleric Spells &amp; Divine Abilities"
+sidebar_label: "Spells &amp; Abilities"
+
+== description: "Spells and divine abilities available to Augustus 'X' Groß, focusing on those that complement monastic combat" ==
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { SpellLink } from '@site/src/components/SpellLink';
+
+= Cleric Spells &amp; Divine Abilities =
+
+This document outlines the spells and divine abilities available to Augustus "X" Groß, with special emphasis on how they complement the character's monastic combat training.
+
+== Current Spell Slots ==
+
+| Level | Slots Per Day |
+| :---: | :-----------: |
+|   1   |       1       |
+
+
+
+== Level 1 Spells Analysis ==
+
+These are the 1st-level spells available to you as a Cleric of St. Sebaldus. Each spell is analyzed for its tactical application in combination with your monastic abilities.
+
+
+
+
+=== Combat Enhancement Spells ===
+
+Spells that directly enhance your combat effectiveness:
+
+| Spell Name                                          | Range  | Duration    | Tactical Application                                                                      |
+| --------------------------------------------------- | :----: | :---------: | ----------------------------------------------------------------------------------------- |
+|             | 60 yds | 6 rounds    | '''+1 to hit''' for all allies; excellent for opening rounds of significant combat         |
+|  | Touch  | 1 turn/lvl  | '''+1 to hit, +1 damage''' for recipient; ideal self-buff before engaging in melee combat |
+
+'''Tactical Considerations:'''
+- '''Bless''' affects multiple allies and stacks with any monastic combat bonuses
+- '''Strength of Stone''' turns your unarmed strikes into more formidable weapons
+- Both spells can be active simultaneously for greater combat effectiveness
+
+
+
+
+
+=== Protective Magic ===
+
+Spells that enhance your defenses:
+
+| Spell Name                                             | Range  | Duration   | Tactical Application                                                                     |
+| ------------------------------------------------------ | :----: | :--------: | ---------------------------------------------------------------------------------------- |
+|  | Touch  | 1 rd/level | '''+2 AC''' vs. evil creatures; blocks possession; pairs well with monastic AC bonuses    |
+|           | Touch  | 1 rd/level | Removes existing fear; grants '''+4 save''' vs. fear; enables confident aggressive tactics |
+
+'''Tactical Considerations:'''
+- '''Protection from Evil''' stacks with your '''Meditative Stance''' and '''Saint's Echo''' abilities
+- '''Remove Fear''' ensures you can maintain combat focus even against intimidating supernatural threats
+- Consider casting protection spells before entering dangerous areas
+
+
+
+
+
+=== Utility Magic ===
+
+Spells with broader application:
+
+| Spell Name                                           | Range  | Duration   | Tactical Application                                                                    |
+| ---------------------------------------------------- | :----: | :--------: | --------------------------------------------------------------------------------------- |
+|  | Touch  | 1 hr/level | Creates light source; useful for night operations without occupying hands during combat |
+
+'''Tactical Considerations:'''
+- '''Log of Everburning''' provides light without requiring you to hold a torch, keeping both hands free for combat
+- Can be cast on your quarterstaff or on a small object carried by an ally
+
+
+
+
+
+
+== Daily Divine Abilities ==
+
+These abilities are granted directly by St. Sebaldus and do not count against your daily spell slots. Each can be used once per day.
+
+| Ability                                                 | Effect                                                             | Tactical Application                                                            |
+| ------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+|                 | +1 morale, +1 to hit for allies                                    | Use at the beginning of significant combats                                     |
+|  | +2 AC vs. evil; blocks possession                                  | Cast before entering suspected evil areas or confronting supernatural creatures |
+|           | Removes existing fear; +4 save vs. fear                            | Use when facing intimidating foes or fear-inducing supernatural effects         |
+
+
+
+== Spell Selection Strategy ==
+
+=== Level 1 ===
+
+'''Recommended Memorization Priority:'''
+1. '''Bless''' - Most versatile combat enhancer, affects entire party
+2. '''Strength of Stone''' - Excellent self-buff for unexpected combat
+3. '''Log of Everburning''' - Utility that frees hands for combat
+
+=== Future Levels ===
+
+As you advance, consider these spells that synergize well with monastic combat:
+
+Level 2
+
+
+* '''Aid''' - Grants +1 to hit, +1 morale, and 1d8 temporary HP
+* '''Draw Upon Holy Might''' - Temporarily increases STR, DEX, or CON by 1-4 points
+* '''Resist Cold/Fire''' - Important protection when facing elemental threats
+
+
+Level 3
+
+
+* '''Prayer''' - Broader version of Bless that also penalizes enemies
+* '''Magical Vestment''' - Improves AC of worn armor
+* '''Remove Curse''' - Essential utility for a monastic warrior facing supernatural foes
+
+
+
+
+== Integrating Divine and Monastic Abilities ==
+
+=== Complementary Abilities ===
+
+Your monastic training provides abilities that work harmoniously with your divine powers:
+
+| Monastic Ability       | Divine Complement                                 | Combined Effect                                                       |
+| ---------------------- | ------------------------------------------------- | --------------------------------------------------------------------- |
+| '''Icicle Palm'''        | '''Strength of Stone'''                             | Enhanced damage penetration with superior damage bonus                |
+| '''Saint's Echo'''       | '''Protection from Evil'''                          | Stacking AC bonuses for superior defense                              |
+| '''Meditative Stance'''  | '''Bless'''                                         | Defensive improvement paired with offensive bonus                     |
+| '''Eastern Reflexes'''   | '''Remove Fear'''                                   | Improved initiative and resistance to fear effects                    |
+
+=== Roleplaying Integration ===
+
+Your unique background allows you to portray your divine abilities as manifestations of St. Sebaldus working through eastern techniques:
+
+
+* Describe '''Bless''' as settling into a stance that inspires allies
+* Portray '''Protection from Evil''' as a defensive posture channeling divine energy
+* Frame '''Remove Fear''' as a meditative breathing technique that channels courage
+
+
+This approach allows you to use your monastic abilities openly while maintaining the secret of your formal eastern training.
+
+
+
+== Prayer and Preparation ==
+
+As a cleric with eastern monastic influences, your daily spell preparation can be portrayed as a unique blend of traditional prayer and meditative practices:
+
+
+# '''Dawn Prayer Cycle''' - Traditional prayers to St. Sebaldus
+# '''Meditative Postures''' - Eastern techniques for mental clarity
+# '''Physical Forms''' - Martial stances that channel divine energy
+# '''Breath Control''' - Techniques for focusing spiritual energy
+
+
+This combination allows you to maintain your clerical identity while incorporating your eastern training in a way that appears to be a personal devotional style rather than formal monastic training.
+
+
+
+== Secret Techniques ==
+
+These abilities should be used carefully if maintaining the secret of your eastern training:
+
+| Ability                | Public Use                               | Private Use                                   |
+| ---------------------- | ---------------------------------------- | --------------------------------------------- |
+| '''Unarmed Combat'''     | Last resort self-defense                 | Primary fighting style when alone or trusted  |
+| '''Meditative Stance'''  | Prayer posture                           | Combat stance                                 |
+| '''Icicle Palm'''        | "Miracle" of St. Sebaldus               | Eastern chi technique                         |
+| '''Defensive Flow'''     | "Divine protection"                      | Trained defensive movement                    |
+
+By framing these abilities in the context of divine miracles or natural talent, you can use them without revealing their true origin.

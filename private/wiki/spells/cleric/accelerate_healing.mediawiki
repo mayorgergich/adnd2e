@@ -1,0 +1,17 @@
+= Accelerate Healing =
+'''Sphere:''' Special  
+'''Level:''' 3  
+'''Range:''' 60 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 3 rounds  
+'''Area of Effect:''' Varies  
+'''Saving Throw:''' None  
+
+== Description ==
+Doubles the recipient’s natural healing for 24 hours. Useful during downtime or rest.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

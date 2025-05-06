@@ -1,0 +1,17 @@
+= Thief's Lament =
+'''Sphere:''' Special  
+'''Level:''' 4  
+'''Range:''' 60 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 4 rounds  
+'''Area of Effect:''' Varies  
+'''Saving Throw:''' Negates  
+
+== Description ==
+Curses an area or object so that any thief attempting to steal or tamper suffers -4 to all checks and saves. May cause disorientation.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

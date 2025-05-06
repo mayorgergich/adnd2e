@@ -1,0 +1,115 @@
+# Quick Reference Guide
+
+## Common Templates
+
+### Character Management
+* [[Character Sheet|templates/character/character_sheet]] - Core character information
+* [[Combat Sheet|templates/character/combat_character_sheet]] - Combat statistics and abilities
+* [[Combat Technique Tracker|templates/combat/combat_technique_tracker]] - Special abilities and combat styles
+
+### Encounter Templates
+* [[Combat Encounter|templates/encounters/combat_encounter_template]] - Battle management
+* [[Social Encounter|templates/encounters/social_encounter_template]] - NPC interactions
+* [[Dungeon Encounter|templates/encounters/dungeon_encounter_template]] - Location-based encounters
+
+### Activity Tracking
+* [[Travel Template|templates/activities/travel_template]] - Journey management
+* [[Downtime Template|templates/activities/downtime_template]] - Between-adventure activities
+* [[Research Template|templates/activities/research_template]] - Information gathering
+
+## Quick Actions
+
+### Starting a Session
+1. Update [[Character Sheet|templates/character/character_sheet]]
+2. Review active [[Quest Tracker|templates/quests/quest_tracker_template]]
+3. Check [[Social Relationship Tracker|templates/social/social_relationship_tracker]]
+4. Prepare relevant encounter templates
+
+### During Combat
+1. Use [[Combat Encounter|templates/encounters/combat_encounter_template]]
+   * Initiative order
+   * Enemy stats
+   * Environmental factors
+2. Track resources on [[Combat Sheet|templates/character/combat_character_sheet]]
+3. Monitor special abilities via [[Combat Technique Tracker|templates/combat/combat_technique_tracker]]
+
+### Social Interactions
+1. Reference [[Social Identity Tracker|templates/social/social_identity_tracker]]
+2. Use [[Social Encounter Template|templates/encounters/social_encounter_template]]
+3. Update [[Social Relationship Tracker|templates/social/social_relationship_tracker]]
+
+### Spiritual Practice
+1. Daily [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker]]
+   * Morning rituals
+   * Evening practices
+   * Energy management
+
+## Common Tables
+
+### Combat Reference
+| Action | Template | Key Information |
+|--------|----------|-----------------|
+| Basic Attack | Combat Sheet | THAC0, Damage |
+| Special Technique | Technique Tracker | Energy Cost, Effect |
+| Combat Stance | Technique Tracker | Duration, Bonus |
+| Resource Use | Combat Sheet | Current/Max Values |
+
+### Social Reference
+| Action | Template | Key Information |
+|--------|----------|-----------------|
+| NPC Interaction | Social Encounter | Goals, Motivations |
+| Identity Check | Identity Tracker | Cover Story, Known By |
+| Faction Update | Relationship Tracker | Standing, Recent Changes |
+
+### Resource Tracking
+| Resource | Template | Update Frequency |
+|----------|----------|------------------|
+| HP/Energy | Combat Sheet | Per combat |
+| Reputation | Relationship Tracker | Per session |
+| Supplies | Travel Template | Per day |
+| Spiritual Energy | Practice Tracker | Per practice |
+
+## Template Categories
+
+### Character Development
+* [[Character Management|templates/character/index]]
+* [[Combat System|templates/combat/index]]
+* [[Spiritual Practices|templates/spiritual/index]]
+
+### World Interaction
+* [[Social Interaction|templates/social/index]]
+* [[Encounter Management|templates/encounters/index]]
+* [[Quest Management|templates/quests/index]]
+
+### Activities
+* [[Activity Management|templates/activities/index]]
+  * Research
+  * Travel
+  * Downtime
+
+## Common Workflows
+
+### New Character Setup
+1. Create base [[Character Sheet|templates/character/character_sheet]]
+2. Add [[Combat Sheet|templates/character/combat_character_sheet]]
+3. Set up relevant specialty trackers:
+   * Combat: [[Combat Technique Tracker|templates/combat/combat_technique_tracker]]
+   * Social: [[Social Identity Tracker|templates/social/social_identity_tracker]]
+   * Spiritual: [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker]]
+
+### Quest Management
+1. Create quest in [[Quest Tracker|templates/quests/quest_tracker_template]]
+2. Link relevant NPCs in [[Social Relationship Tracker|templates/social/social_relationship_tracker]]
+3. Prepare needed encounter templates
+4. Track progress and updates
+
+### Travel Planning
+1. Fill [[Travel Template|templates/activities/travel_template]]
+2. Prepare potential encounters
+3. Track resources and supplies
+4. Note discoveries and events
+
+## Navigation
+* [[Main Index|index]]
+* [[Markdown Guide|markdown_to_mediawiki_guide]]
+* [[Template Categories|templates/]] 

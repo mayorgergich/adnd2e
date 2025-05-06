@@ -1,0 +1,17 @@
+= Aid =
+'''Sphere:''' Special  
+'''Level:''' 2  
+'''Range:''' 30 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 2 rounds  
+'''Area of Effect:''' 1 creature or area  
+'''Saving Throw:''' None  
+
+== Description ==
+Boosts one creature’s attack rolls and saves vs. fear by +1. Also grants 1d8 temporary HP. Not cumulative with Bless.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

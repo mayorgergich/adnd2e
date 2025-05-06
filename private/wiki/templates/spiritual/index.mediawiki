@@ -1,0 +1,86 @@
+# Spiritual Practices
+
+This section contains templates and tools for managing spiritual development, religious practices, and divine connections.
+
+## Available Templates
+
+### Spiritual Development
+* [[Spiritual Practice Tracker|spiritual_practice_tracker]]
+  * Daily practices
+  * Spiritual resources
+  * Development tracking
+  * Divine connections
+  * Integration methods
+
+## Related Templates
+
+### Character Templates
+* [[Character Sheet|../character/character_sheet]]
+  * Religious background
+  * Divine abilities
+  * Spiritual traits
+
+### Combat Templates
+* [[Combat Technique Tracker|../combat/combat_technique_tracker]]
+  * Divine combat techniques
+  * Spiritual stances
+  * Energy integration
+
+## Using These Templates
+
+1. Set up Spiritual Practice Tracker for daily practices
+2. Integrate with character development
+3. Track spiritual growth and insights
+4. Record divine manifestations
+
+## Tips for Spiritual Management
+
+### Daily Practices
+* Maintain regular routines
+* Balance different traditions
+* Record spiritual insights
+* Track energy development
+* Note divine interactions
+
+### Spiritual Development
+* Set development goals
+* Track practice progress
+* Record breakthroughs
+* Note spiritual challenges
+* Document growth areas
+
+### Resource Management
+* Track sacred items
+* Maintain sacred spaces
+* Monitor energy levels
+* Record divine favors
+* Manage spiritual resources
+
+## Spiritual Integration
+
+### Eastern Practices
+* Energy cultivation
+* Meditation techniques
+* Physical disciplines
+* Mental training
+* Spiritual alignment
+
+### Western Practices
+* Religious rituals
+* Divine communion
+* Sacred ceremonies
+* Faith practices
+* Religious studies
+
+### Combined Approach
+* Integrate traditions
+* Balance practices
+* Harmonize techniques
+* Develop unique methods
+* Track synergies
+
+## Navigation
+* [[Back to Main Index|../../index]]
+* [[Character Management|../character/index]]
+* [[Combat System|../combat/index]]
+* [[Social Interaction|../social/index]] 

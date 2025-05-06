@@ -1,0 +1,17 @@
+= Augury =
+'''Sphere:''' Special  
+'''Level:''' 2  
+'''Range:''' 30 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 2 rounds  
+'''Area of Effect:''' 1 creature or area  
+'''Saving Throw:''' None  
+
+== Description ==
+Reveals whether a planned action will result in weal or woe within 30 minutes. Accuracy: 70% +1% per caster level (max 90%).
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

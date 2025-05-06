@@ -1,0 +1,72 @@
+# Encounter Management
+
+This section contains templates for managing different types of encounters in your campaign.
+
+## Available Templates
+
+### Combat Encounters
+* [[Combat Encounter Template|combat_encounter_template]]
+  * Initiative tracking
+  * Combat resources
+  * Environmental factors
+  * Enemy statistics
+  * Treasure and rewards
+
+### Social Encounters
+* [[Social Encounter Template|social_encounter_template]]
+  * NPC information
+  * Conversation goals
+  * Social dynamics
+  * Potential outcomes
+  * Relationship impacts
+
+### Dungeon Encounters
+* [[Dungeon Encounter Template|dungeon_encounter_template]]
+  * Room descriptions
+  * Traps and hazards
+  * Monster placement
+  * Treasure placement
+  * Environmental details
+
+## Related Templates
+
+### Character Templates
+* [[Combat Character Sheet|../character/combat_character_sheet]]
+* [[Combat Technique Tracker|../combat/combat_technique_tracker]]
+
+### Social Templates
+* [[Social Identity Tracker|../social/social_identity_tracker]]
+* [[Social Relationship Tracker|../social/social_relationship_tracker]]
+
+## Using These Templates
+
+1. Choose the appropriate template based on encounter type
+2. Fill in all relevant sections before the session
+3. Use quick reference sections during gameplay
+4. Update related templates after the encounter
+
+## Tips for Encounter Management
+
+### Combat Encounters
+* Pre-roll initiative for NPCs/monsters
+* Have stat blocks ready
+* Track resource usage
+* Note environmental factors
+
+### Social Encounters
+* Prepare NPC motivations
+* List possible conversation paths
+* Note important information to reveal
+* Track relationship changes
+
+### Dungeon Encounters
+* Map out areas in advance
+* Place monsters strategically
+* Consider escape routes
+* Plan treasure placement
+
+## Navigation
+* [[Back to Main Index|../../index]]
+* [[Character Management|../character/index]]
+* [[Combat System|../combat/index]]
+* [[Social Interaction|../social/index]] 

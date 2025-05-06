@@ -1,0 +1,17 @@
+= Draw Upon Holy Might =
+'''Sphere:''' Special  
+'''Level:''' 2  
+'''Range:''' 30 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 2 rounds  
+'''Area of Effect:''' 1 creature or area  
+'''Saving Throw:''' None  
+
+== Description ==
+Caster temporarily increases STR, DEX, and CON by 1 point for every 2 levels (max +6). Duration: 1 round/level.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

@@ -1,0 +1,91 @@
+# Quest Management
+
+This section contains templates and tools for managing quests, missions, and long-term objectives.
+
+## Available Templates
+
+### Quest Tracking
+* [[Quest Tracker Template|quest_tracker_template]]
+  * Quest objectives
+  * Progress tracking
+  * Rewards and consequences
+  * Related NPCs
+  * Resource requirements
+
+## Related Templates
+
+### Activity Templates
+* [[Research Template|../activities/research_template]]
+  * Quest research
+  * Information gathering
+  * Resource discovery
+
+* [[Travel Template|../activities/travel_template]]
+  * Journey planning
+  * Quest locations
+  * Travel encounters
+
+### Social Templates
+* [[Social Relationship Tracker|../social/social_relationship_tracker]]
+  * Quest givers
+  * Key NPCs
+  * Faction relationships
+
+## Using These Templates
+
+1. Create new quest entries as they arise
+2. Track progress and developments
+3. Update related templates
+4. Document completion and consequences
+
+## Tips for Quest Management
+
+### Quest Planning
+* Define clear objectives
+* Identify key NPCs
+* List required resources
+* Plan travel routes
+* Note potential challenges
+
+### Progress Tracking
+* Update regularly
+* Note key developments
+* Track side objectives
+* Record discoveries
+* Document changes
+
+### Resource Management
+* Track quest items
+* Monitor expenses
+* Note required tools
+* List available aids
+* Plan resource acquisition
+
+## Quest Categories
+
+### Main Quests
+* Track primary objectives
+* Note story implications
+* Record major decisions
+* Document consequences
+* Plan key encounters
+
+### Side Quests
+* List optional objectives
+* Track minor goals
+* Note potential benefits
+* Record time limits
+* Document relationships
+
+### Long-term Goals
+* Track character development
+* Note faction progress
+* Record major achievements
+* Plan future objectives
+* Document milestones
+
+## Navigation
+* [[Back to Main Index|../../index]]
+* [[Character Management|../character/index]]
+* [[Social Interaction|../social/index]]
+* [[Activity Management|../activities/index]] 

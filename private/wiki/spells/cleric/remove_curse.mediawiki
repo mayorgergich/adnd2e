@@ -1,0 +1,17 @@
+= Remove Curse =
+'''Sphere:''' Special  
+'''Level:''' 3  
+'''Range:''' 60 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 3 rounds  
+'''Area of Effect:''' Varies  
+'''Saving Throw:''' None  
+
+== Description ==
+Lifts curses from people or objects. Success is permanent. Does not work on artifacts or major relics.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

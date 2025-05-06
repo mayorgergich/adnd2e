@@ -1,0 +1,17 @@
+= Prayer =
+'''Sphere:''' Special  
+'''Level:''' 5  
+'''Range:''' 60 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 5 rounds  
+'''Area of Effect:''' 30-ft radius  
+'''Saving Throw:''' None  
+
+== Description ==
+Allies gain +1 bonus to attack, damage, and saving throws. Enemies take -1 penalties. Effects only apply while the priest prays.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.

@@ -1,0 +1,76 @@
+# Combat System
+
+This section contains templates and tools for managing combat mechanics, techniques, and encounters.
+
+## Available Templates
+
+### Combat Techniques
+* [[Combat Technique Tracker|combat_technique_tracker]]
+  * Special abilities and maneuvers
+  * Combat stances
+  * Energy management
+  * Technique combinations
+  * Combat resources
+
+## Related Templates
+
+### Character Combat
+* [[Combat Character Sheet|../character/combat_character_sheet]]
+  * Combat statistics
+  * Quick reference
+  * Resource tracking
+  * Combat abilities
+
+### Encounter Templates
+* [[Combat Encounter Template|../encounters/combat_encounter_template]]
+  * Initiative tracking
+  * Enemy statistics
+  * Environmental factors
+  * Combat resolution
+
+## Using These Templates
+
+1. Start with the Combat Character Sheet for basic combat stats
+2. Add Combat Technique Tracker for specialized fighting styles
+3. Use Combat Encounter Template for battle management
+4. Track resource usage and technique development
+
+## Tips for Combat Management
+
+### Before Combat
+* Review available techniques
+* Check resource levels
+* Prepare combat stances
+* Position tactical advantages
+
+### During Combat
+* Track initiative order
+* Monitor resource usage
+* Note technique effectiveness
+* Record environmental effects
+
+### After Combat
+* Update resource levels
+* Note successful combinations
+* Track technique development
+* Record combat insights
+
+## Combat Development
+
+### Technique Progression
+* Start with basic techniques
+* Practice combinations
+* Develop new stances
+* Master resource management
+
+### Resource Management
+* Track energy points
+* Monitor special abilities
+* Manage combat items
+* Balance resource usage
+
+## Navigation
+* [[Back to Main Index|../../index]]
+* [[Character Management|../character/index]]
+* [[Encounter Management|../encounters/index]]
+* [[Spiritual Practices|../spiritual/index]] 

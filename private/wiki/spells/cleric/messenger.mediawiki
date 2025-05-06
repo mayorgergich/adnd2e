@@ -1,0 +1,17 @@
+= Messenger =
+'''Sphere:''' Special  
+'''Level:''' 3  
+'''Range:''' 60 yds  
+'''Components:''' V, S, M (cross or holy water)  
+'''Duration:''' 1 turn  
+'''Casting Time:''' 3 rounds  
+'''Area of Effect:''' Varies  
+'''Saving Throw:''' None  
+
+== Description ==
+Sends a tiny magical animal to deliver a spoken message (25 words or fewer) up to 1 mile per level.
+
+== Special Notes ==
+* Treated as a [[Prayer]] in this campaign.
+* All casting times and durations are increased by an order of magnitude (round → turn, turn → hour, etc).
+* Requires cross and/or holy water.
