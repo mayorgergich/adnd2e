@@ -125,11 +125,11 @@ $wgDiff3 = "/usr/bin/diff3";
 $wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
-# The following skins were automatically enabled:
-wfLoadSkin( 'MinervaNeue' );
-wfLoadSkin( 'MonoBook' );
-wfLoadSkin( 'Timeless' );
+# Comment out skins that aren't installed
 wfLoadSkin( 'Vector' );
+#wfLoadSkin( 'MinervaNeue' );
+#wfLoadSkin( 'MonoBook' );
+#wfLoadSkin( 'Timeless' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
