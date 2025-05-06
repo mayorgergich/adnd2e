@@ -56,12 +56,12 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "mariadb";
-$wgDBname = "mediawiki_fresh";
+$wgDBname = "adnd2e_db";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # MySQL specific settings
-$wgDBprefix = "adnd2e_"; # Added prefix for separation
+$wgDBprefix = ""; # Added prefix for separation
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update
@@ -122,13 +122,13 @@ $wgDiff3 = "/usr/bin/diff3";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "vector-2022";
+$wgDefaultSkin = "monobook";
 
 # Enabled skins.
 # Comment out skins that aren't installed
-wfLoadSkin( 'Vector' );
+#wfLoadSkin( 'Vector' );
 #wfLoadSkin( 'MinervaNeue' );
-#wfLoadSkin( 'MonoBook' );
+wfLoadSkin( 'MonoBook' );
 #wfLoadSkin( 'Timeless' );
 
 # End of automatically generated settings.
