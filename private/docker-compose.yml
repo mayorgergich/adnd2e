@@ -19,7 +19,7 @@ services:
       - /opt/mediawiki/private/images:/var/www/html/images
       - /etc/localtime:/etc/localtime:ro
       - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
-      # Don't mount LocalSettings.php directly
+      # LocalSettings.php will be generated during installation
     entrypoint: >
       sh -c "if [ -f /opt/config/LocalSettings.php ]; then cp /opt/config/LocalSettings.php /var/www/html/; fi && 
              docker-php-entrypoint apache2-foreground"
@@ -40,25 +40,8 @@ services:
       traefik.http.routers.adnd2e-private.tls.options: securetls@file
       traefik.http.services.adnd2e-private.loadbalancer.server.port: 80
     depends_on:
-      - adnd2e-private-db
-
-  adnd2e-private-db:
-    image: mariadb:10.6
-    container_name: adnd2e-private-db
-    restart: unless-stopped
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_DATABASE=mediawiki_private
-      - MYSQL_USER=pawneemayor
-      - MYSQL_PASSWORD=password321
-    volumes:
-      - adnd2e_private_db_data:/var/lib/mysql
-    networks:
-      - saltbox
+      - mariadb
 
 networks:
   saltbox:
     external: true
-
-volumes:
-  adnd2e_private_db_data:
