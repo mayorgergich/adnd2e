@@ -1,0 +1,93 @@
+# AD&D 2nd Edition Campaign Wiki
+
+Welcome to the AD&D 2E Campaign Wiki! This page serves as your central hub for all campaign resources and references.
+
+## Character Resources
+
+* [[Character Creation and Management|templates/character/character_sheet.mediawiki]]
+* [[Character Sheets|templates/character/combat_character_sheet.mediawiki]]
+* [[Spiritual Development|templates/spiritual/spiritual_practice_tracker.mediawiki]]
+
+## Rules Reference
+
+* [[Core Rules|rules/core_rules.mediawiki]]
+* [[Combat Rules|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Magic System|rules/magic_system.mediawiki]]
+
+## Spell Compendium
+
+* [[Cleric Spells|guides/cleric_spellbook_index.mediawiki]]
+* [[Magic-User Spells|spells/magic_user_spells.mediawiki]]
+* [[Druid Spells|spells/druid_spells.mediawiki]]
+
+## Game Mechanics
+
+### Combat System
+* [[Combat Templates and Guidelines|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Encounter Management|templates/encounters/combat_encounter_template.mediawiki]]
+
+### Social Encounters
+* [[Social Interaction System|templates/social/social_encounter_template.mediawiki]]
+* [[NPC Reaction Tables|templates/social/social_relationship_tracker.mediawiki]]
+
+### Dungeon Encounters
+* [[Dungeon Encounter Templates|templates/encounters/dungeon_encounter_template.mediawiki]]
+* [[Trap Templates|templates/encounters/trap_template.mediawiki]]
+
+## Campaign Setting
+
+* [[World Overview|setting/world_overview.mediawiki]]
+* [[Geography|setting/geography.mediawiki]]
+* [[Factions and Organizations|setting/factions.mediawiki]]
+
+## Gameplay Guides
+
+* [[General Guides|guides/tactical-guide.mediawiki]]
+* [[New Player Guide|guides/new_player_guide.mediawiki]]
+* [[Dungeon Master Resources|guides/dm_resources.mediawiki]]
+
+## Activity Templates
+
+### Downtime Activities
+* [[Downtime System|templates/activities/downtime_template.mediawiki]]
+* [[Crafting|templates/activities/crafting_template.mediawiki]]
+* [[Training|templates/activities/training_template.mediawiki]]
+
+### Travel
+* [[Travel System|templates/activities/travel_template.mediawiki]]
+* [[Wilderness Exploration|templates/activities/wilderness_exploration.mediawiki]]
+
+### Research
+* [[Research System|templates/activities/research_template.mediawiki]]
+* [[Library Use|templates/activities/library_use.mediawiki]]
+
+### Spiritual Practices
+* [[Meditation|templates/spiritual/meditation_template.mediawiki]]
+* [[Prayer and Devotion|templates/spiritual/prayer_template.mediawiki]]
+
+## Quick Access Templates
+
+* [[Character Sheets|templates/character/character_sheet.mediawiki]]
+* [[Combat Quick Reference|templates/combat/combat_quick_reference.mediawiki]]
+* [[Social Encounter Worksheet|templates/social/social_encounter_template.mediawiki]]
+* [[Quest Tracker|templates/quests/quest_tracker_template.mediawiki]]
+* [[Activity Templates|templates/activities/research_template.mediawiki]]
+
+## Recent Updates
+
+* Added spiritual practice tracking system
+* Organized templates into categories
+* Added combat technique tracking
+* Enhanced character management tools
+
+## Contributing
+To add new content or suggest improvements, please follow these steps:
+1. Use appropriate templates for new content
+2. Follow the MediaWiki formatting guidelines
+3. Update relevant index pages
+4. Test all links before committing changes
+
+## Need Help?
+* Check the [[Markdown to MediaWiki Guide|guides/markdown_to_mediawiki_guide.mediawiki]]
+* Review template examples
+* Contact the campaign administrator 

@@ -1,0 +1,52 @@
+# Magic System
+
+This page details the magic system and spellcasting rules for AD&D 2nd Edition.
+
+## Spellcasting Basics
+
+* Spell Components
+* Casting Time
+* Range
+* Duration
+* Area of Effect
+* Saving Throws
+
+## Spell Schools
+
+* Abjuration
+* Alteration
+* Conjuration/Summoning
+* Divination
+* Enchantment/Charm
+* Illusion/Phantasm
+* Invocation/Evocation
+* Necromancy
+
+## Spell Lists
+
+* [[Cleric Spells|guides/cleric_spellbook_index.mediawiki]]
+* [[Magic-User Spells|spells/magic_user_spells.mediawiki]]
+* [[Druid Spells|spells/druid_spells.mediawiki]]
+
+## Magic Items
+
+* Potions
+* Scrolls
+* Wands
+* Staves
+* Rods
+* Rings
+* Miscellaneous Magic Items
+
+## Spell Research and Creation
+
+* Researching New Spells
+* Creating Magic Items
+* Spell Components
+* Material Components
+* Focus Items
+
+## Additional Resources
+
+* [[Core Rules|rules/core_rules.mediawiki]]
+* [[Combat Rules|templates/combat/combat_technique_tracker.mediawiki]] 

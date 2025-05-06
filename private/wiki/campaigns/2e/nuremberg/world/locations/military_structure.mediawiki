@@ -1,0 +1,43 @@
+|= Military Structure of Nuremberg =
+
+== City Defense ==
+* City Guard: Main security force
+* Watchmen: Night patrols
+* Gate Guards: Access control
+* Wall Sentries: Perimeter defense
+
+== Military Organization ==
+* City Militia: Citizen soldiers
+* Professional Guards: Paid security
+* Noble Retainers: Private forces
+* Guild Defenders: Craft protection
+
+== Equipment ==
+* Armor: Local production
+* Weapons: City armories
+* Siege Equipment: Defensive tools
+* Training Facilities: Practice grounds
+
+== Military Authority ==
+* Guard Captain: Security leadership
+* Watch Commander: Patrol control
+* Militia Leaders: Citizen command
+* Noble Officers: Private forces
+
+== Defense Systems ==
+* City Walls: Main defense
+* Guard Towers: Observation posts
+* Gate Systems: Access control
+* Emergency Response: Crisis handling
+
+== Military Relations ==
+* Imperial Forces: Emperor's troops
+* City Alliances: Defense pacts
+* Mercenary Contracts: Hired forces
+* Noble Retainers: Private armies
+
+== Training and Recruitment ==
+* Citizen Training: Basic defense
+* Guard Training: Professional skills
+* Noble Training: Advanced combat
+* Guild Training: Specialized skills 

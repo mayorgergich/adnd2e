@@ -1,0 +1,42 @@
+= World Building =
+
+== Overview ==
+This section contains all information about the world of Nuremberg, including its locations, history, culture, and factions. These pages provide the foundation for understanding the campaign setting and its context within the Holy Roman Empire.
+
+== Quick Navigation ==
+* [[Locations|Locations]] - Places and landmarks
+* [[History|History]] - Historical context and events
+
+== Locations ==
+* [[Locations/City of Nuremberg|The City of Nuremberg]] - Overview of the city
+* [[Locations/City Layout|City Layout]] - Streets, districts, and landmarks
+* [[Locations/City Infrastructure|City Infrastructure]] - Buildings and facilities
+* [[Locations/Religious Practices|Religious Practices]] - Faith and worship
+* [[Locations/Market System|Market System]] - Trade and commerce
+* [[Locations/Guilds and Crafts|Guilds and Crafts]] - Professional organizations
+* [[Locations/City Services|City Services]] - Public services
+* [[Locations/Notable Figures|Notable Figures]] - Important NPCs
+* [[Locations/Trade Routes|Trade Routes]] - Commerce and travel
+* [[Locations/Daily Life|Daily Life]] - Living in Nuremberg
+* [[Locations/Cultural Life|Cultural Life]] - Arts and entertainment
+* [[Locations/Military Structure|Military Structure]] - Defense and security
+* [[Locations/Political Structure|Political Structure]] - Government and power
+* [[Locations/Religious Institutions|Religious Institutions]] - Churches and orders
+* [[Locations/Economic Structure|Economic Structure]] - Trade and commerce
+* [[Locations/Social Structure|Social Structure]] - Society and class
+* [[Locations/City Laws|City Laws]] - Legal system
+
+== History ==
+* [[History/Campaign Introduction|Campaign Introduction]] - Getting started
+* [[History/Historical Context|Historical Context]] - The world in 1400
+* [[History/Background|Background]] - Setting details
+* [[History/Hussite Conflict|Hussite Conflict]] - Current events
+
+== Related Pages ==
+* [[../Mechanics|Game Mechanics]] - Rules and systems
+* [[../Player Resources|Player Resources]] - Character information
+* [[../Game Master Resources|Game Master Resources]] - GM content
+
+== Recent Updates ==
+* Latest locations added
+* Historical events updated 

@@ -1,0 +1,53 @@
+# First Level Magic-User Spells
+
+This page contains all first level spells available to Magic-Users in AD&D 2nd Edition.
+
+## Spell List
+
+* [[Abjure|spells/magic-user/abjure.mediawiki]]
+* [[Anti-Vermin Barrier|spells/magic-user/anti-vermin_barrier.mediawiki]]
+* [[Charm Person or Mammal|spells/magic-user/charm_person_or_mammal.mediawiki]]
+* [[Hold Animal|spells/magic-user/hold_animal.mediawiki]]
+* [[Burning Hands]]
+* [[Comprehend Languages]]
+* [[Detect Magic]]
+* [[Enlarge]]
+* [[Feather Fall]]
+* [[Find Familiar]]
+* [[Floating Disk]]
+* [[Friends]]
+* [[Grease]]
+* [[Jump]]
+* [[Light]]
+* [[Magic Missile]]
+* [[Mending]]
+* [[Message]]
+* [[Mount]]
+* [[Nystul's Magic Aura]]
+* [[Protection from Evil]]
+* [[Push]]
+* [[Read Magic]]
+* [[Shield]]
+* [[Shocking Grasp]]
+* [[Sleep]]
+* [[Spider Climb]]
+* [[Tenser's Floating Disk]]
+* [[Unseen Servant]]
+* [[Ventriloquism]]
+
+## Spell Schools
+
+* [[Abjuration Spells|spells/magic-user/abjuration.mediawiki]]
+* [[Alteration Spells|spells/magic-user/alteration.mediawiki]]
+* [[Conjuration/Summoning Spells|spells/magic-user/conjuration.mediawiki]]
+* [[Divination Spells|spells/magic-user/divination.mediawiki]]
+* [[Enchantment/Charm Spells|spells/magic-user/enchantment.mediawiki]]
+* [[Illusion/Phantasm Spells|spells/magic-user/illusion.mediawiki]]
+* [[Invocation/Evocation Spells|spells/magic-user/invocation.mediawiki]]
+* [[Necromancy Spells|spells/magic-user/necromancy.mediawiki]]
+
+## Additional Resources
+
+* [[Magic-User Spells|spells/magic_user_spells.mediawiki]]
+* [[Magic System|rules/magic_system.mediawiki]]
+* [[Spell Template|templates/template_spell.mediawiki]] 

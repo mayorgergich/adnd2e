@@ -1,0 +1,32 @@
+# Magic-User Spells
+
+This page contains the complete list of Magic-User spells for AD&D 2nd Edition.
+
+## Spell Lists by Level
+
+* [[First Level Spells|spells/magic-user/first_level.mediawiki]]
+* [[Second Level Spells|spells/magic-user/second_level.mediawiki]]
+* [[Third Level Spells|spells/magic-user/third_level.mediawiki]]
+* [[Fourth Level Spells|spells/magic-user/fourth_level.mediawiki]]
+* [[Fifth Level Spells|spells/magic-user/fifth_level.mediawiki]]
+* [[Sixth Level Spells|spells/magic-user/sixth_level.mediawiki]]
+* [[Seventh Level Spells|spells/magic-user/seventh_level.mediawiki]]
+* [[Eighth Level Spells|spells/magic-user/eighth_level.mediawiki]]
+* [[Ninth Level Spells|spells/magic-user/ninth_level.mediawiki]]
+
+## Spell Schools
+
+* [[Abjuration Spells|spells/magic-user/abjuration.mediawiki]]
+* [[Alteration Spells|spells/magic-user/alteration.mediawiki]]
+* [[Conjuration/Summoning Spells|spells/magic-user/conjuration.mediawiki]]
+* [[Divination Spells|spells/magic-user/divination.mediawiki]]
+* [[Enchantment/Charm Spells|spells/magic-user/enchantment.mediawiki]]
+* [[Illusion/Phantasm Spells|spells/magic-user/illusion.mediawiki]]
+* [[Invocation/Evocation Spells|spells/magic-user/invocation.mediawiki]]
+* [[Necromancy Spells|spells/magic-user/necromancy.mediawiki]]
+
+## Additional Resources
+
+* [[Magic System|rules/magic_system.mediawiki]]
+* [[Core Rules|rules/core_rules.mediawiki]]
+* [[Spell Template|templates/template_spell.mediawiki]] 

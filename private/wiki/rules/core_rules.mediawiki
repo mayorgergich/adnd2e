@@ -1,0 +1,52 @@
+# Core Rules
+
+This page contains the fundamental rules and mechanics for AD&D 2nd Edition.
+
+## Basic Concepts
+
+* Character Classes
+* Races
+* Ability Scores
+* Experience and Levels
+* Saving Throws
+* Skills and Proficiencies
+
+## Core Mechanics
+
+* Ability Checks
+* Saving Throws
+* Skill Checks
+* Proficiencies
+* Experience Points
+* Level Advancement
+
+## Character Development
+
+* Character Creation
+* Level Advancement
+* Class Features
+* Racial Abilities
+* Proficiencies
+* Skills
+
+## Equipment and Items
+
+* Weapons
+* Armor
+* Equipment
+* Magic Items
+* Treasure
+
+## Environmental Rules
+
+* Weather
+* Terrain
+* Time and Movement
+* Rest and Recovery
+* Encumbrance
+
+## Additional Resources
+
+* [[Combat Rules|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Magic System|rules/magic_system.mediawiki]]
+* [[Character Sheets|templates/character/character_sheet.mediawiki]] 

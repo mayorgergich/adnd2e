@@ -1,0 +1,65 @@
+= Quest Log =
+
+== Quest Categories ==
+
+=== Religious Affairs ===
+* Hussite conflict resolution
+* Church reform negotiations
+* Refugee settlement coordination
+* Religious order integration
+
+=== Political Matters ===
+* Patrician family disputes
+* Trade agreement negotiations
+* City council decisions
+* Guild regulations
+
+=== Administrative Tasks ===
+* City maintenance
+* Public services
+* Resource management
+* Infrastructure development
+
+== Quest Status ==
+
+=== Active Quests ===
+* Quest Name
+* Quest Giver
+* Location
+* Requirements
+* Rewards
+* Time Limit
+
+=== Completed Quests ===
+* Quest Name
+* Completion Date
+* Rewards Granted
+* Follow-up Available
+
+== Quest Requirements ==
+
+=== Character Requirements ===
+* Level Requirements
+* Class Restrictions
+* Skill Prerequisites
+* Reputation Requirements
+
+=== Resource Requirements ===
+* Gold Cost
+* Material Components
+* Equipment Needed
+* Time Investment
+
+== Quest Rewards ==
+
+=== Standard Rewards ===
+* Experience Points
+* Gold
+* Items
+* Reputation
+
+=== Special Rewards ===
+* Unique Items
+* Special Access
+* Title Grants
+* Property Rights 

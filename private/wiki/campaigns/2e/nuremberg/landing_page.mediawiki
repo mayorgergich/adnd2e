@@ -1,0 +1,105 @@
+= Nuremberg Campaign =
+
+== Campaign Overview ==
+Welcome to the Nuremberg Campaign, a detailed AD&D 2E setting set in the Holy Roman Empire during the early 15th century. This campaign focuses on the rich historical and cultural tapestry of Nuremberg, a free imperial city at the crossroads of trade, religion, and politics.
+
+== Quick Links ==
+* [[World|World Building]] - Explore the setting
+* [[Mechanics|Game Mechanics]] - Rules and systems
+* [[Player Resources|Player Resources]] - Character creation and player information
+* [[Game Master Resources|Game Master Resources]] - GM-only content
+
+== World Building ==
+=== Locations ===
+* [[World/Locations/City of Nuremberg|The City of Nuremberg]] - Overview of the city
+* [[World/Locations/City Layout|City Layout]] - Streets, districts, and landmarks
+* [[World/Locations/City Infrastructure|City Infrastructure]] - Buildings and facilities
+* [[World/Locations/Religious Practices|Religious Practices]] - Faith and worship
+* [[World/Locations/Market System|Market System]] - Trade and commerce
+* [[World/Locations/Guilds and Crafts|Guilds and Crafts]] - Professional organizations
+
+=== History ===
+* [[World/History/Campaign Introduction|Campaign Introduction]] - Getting started
+* [[World/History/Historical Context|Historical Context]] - The world in 1400
+* [[World/History/Background|Background]] - Setting details
+* [[World/History/Hussite Conflict|Hussite Conflict]] - Current events
+
+=== Culture ===
+* [[World/Culture/Social Structure|Social Structure]] - Society and class
+* [[World/Culture/Daily Life|Daily Life]] - Living in Nuremberg
+* [[World/Culture/Cultural Life|Cultural Life]] - Arts and entertainment
+* [[World/Culture/Religious Institutions|Religious Institutions]] - Churches and orders
+
+=== Factions ===
+* [[World/Factions/Political Structure|Political Structure]] - Government and power
+* [[World/Factions/Military Structure|Military Structure]] - Defense and security
+* [[World/Factions/Trade Routes|Trade Routes]] - Commerce and travel
+* [[World/Factions/Notable Figures|Notable Figures]] - Important NPCs
+
+== Game Mechanics ==
+=== Rules ===
+* [[Mechanics/Rules/House Rules|House Rules]] - Campaign-specific rules
+* [[Mechanics/Rules/Character Creation|Character Creation]] - Making characters
+* [[Mechanics/Rules/Combat Rules|Combat Rules]] - Battle system
+* [[Mechanics/Rules/Magic System|Magic System]] - Spellcasting
+
+=== Items ===
+* [[Mechanics/Items/Equipment|Equipment]] - Weapons and armor
+* [[Mechanics/Items/Magic Items|Magic Items]] - Enchanted objects
+* [[Mechanics/Items/Trade Goods|Trade Goods]] - Merchandise
+
+=== Monsters ===
+* [[Mechanics/Monsters/NPCs|NPCs]] - Non-player characters
+* [[Mechanics/Monsters/Creatures|Creatures]] - Monsters and beasts
+* [[Mechanics/Monsters/Encounters|Encounters]] - Random encounters
+
+== Player Resources ==
+=== Characters ===
+* [[Player Resources/Characters/Character Classes|Character Classes]] - Available classes
+* [[Player Resources/Characters/Races|Races]] - Playable races
+* [[Player Resources/Characters/Backgrounds|Backgrounds]] - Character origins
+
+=== Handouts ===
+* [[Player Resources/Handouts/Maps|Maps]] - Player maps
+* [[Player Resources/Handouts/Guides|Guides]] - Player guides
+* [[Player Resources/Handouts/Resources|Resources]] - Player resources
+
+== Game Master Resources ==
+=== Quests ===
+* [[Game Master Resources/Quests/Main Plot|Main Plot]] - Campaign storyline
+* [[Game Master Resources/Quests/Side Quests|Side Quests]] - Optional adventures
+* [[Game Master Resources/Quests/Encounters|Encounters]] - Planned encounters
+
+=== Maps ===
+* [[Game Master Resources/Maps/City Maps|City Maps]] - Detailed city maps
+* [[Game Master Resources/Maps/Battle Maps|Battle Maps]] - Combat maps
+* [[Game Master Resources/Maps/Region Maps|Region Maps]] - Area maps
+
+=== Secrets ===
+* [[Game Master Resources/Secrets/Plot Hooks|Plot Hooks]] - Story ideas
+* [[Game Master Resources/Secrets/NPC Secrets|NPC Secrets]] - Hidden information
+* [[Game Master Resources/Secrets/Location Secrets|Location Secrets]] - Hidden locations
+
+== Campaign Information ==
+* [[Campaign Information/Session Logs|Session Logs]] - Game session records
+* [[Campaign Information/Player Characters|Player Characters]] - Active characters
+* [[Campaign Information/Calendar|Calendar]] - In-game timeline
+* [[Campaign Information/Weather|Weather]] - Climate and conditions
+
+== Getting Started ==
+New to the campaign? Start with these essential pages:
+# [[World/History/Campaign Introduction|Campaign Introduction]]
+# [[World/Locations/City of Nuremberg|The City of Nuremberg]]
+# [[Mechanics/Rules/Character Creation|Character Creation]]
+# [[Player Resources/Characters/Character Classes|Character Classes]]
+
+== Recent Updates ==
+* Latest session notes
+* New locations added
+* Updated rules
+* New NPCs introduced
+
+== External Resources ==
+* [https://en.wikipedia.org/wiki/Nuremberg|Nuremberg on Wikipedia]
+* [https://en.wikipedia.org/wiki/Holy_Roman_Empire|Holy Roman Empire]
+* [https://en.wikipedia.org/wiki/AD%26D|AD&D 2E Rules] 

@@ -1,0 +1,46 @@
+# Trap Template
+
+This template is used for tracking and managing traps in dungeon encounters.
+
+## Basic Information
+
+* Trap Name:
+* Location:
+* Trigger Type:
+* Difficulty Class:
+* Detection DC:
+
+## Trap Details
+
+* Type:
+* Damage/Effect:
+* Save Type:
+* Save DC:
+* Duration:
+
+## Mechanics
+
+* Trigger Mechanism:
+* Reset Method:
+* Bypass Method:
+* Special Rules:
+
+## Visual Description
+
+* Appearance:
+* Signs of Presence:
+* Hidden Features:
+* Environmental Clues:
+
+## Countermeasures
+
+* Detection Methods:
+* Disarm Options:
+* Bypass Techniques:
+* Special Requirements:
+
+## Additional Resources
+
+* [[Dungeon Encounter Template|templates/encounters/dungeon_encounter_template.mediawiki]]
+* [[Combat Encounter Template|templates/encounters/combat_encounter_template.mediawiki]]
+* [[Social Encounter Template|templates/encounters/social_encounter_template.mediawiki]] 

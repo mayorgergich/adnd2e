@@ -1,0 +1,45 @@
+# Prayer and Devotion Template
+
+This template is used for tracking prayer and devotional practices.
+
+## Basic Information
+
+* Character Name:
+* Deity/Patron:
+* Practice Type:
+* Location:
+* Time of Day:
+
+## Devotional Details
+
+* Prayer Style:
+* Ritual Elements:
+* Offerings:
+* Sacred Texts:
+
+## Spiritual Goals
+
+* Primary Objective:
+* Secondary Goals:
+* Expected Benefits:
+* Challenges:
+
+## Progress Tracking
+
+* Current Level:
+* Breakthroughs:
+* Obstacles:
+* Insights:
+
+## Results
+
+* Spiritual Growth:
+* Divine Favor:
+* Special Abilities:
+* Community Impact:
+
+## Additional Resources
+
+* [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker.mediawiki]]
+* [[Meditation Template|templates/spiritual/meditation_template.mediawiki]]
+* [[Character Sheet|templates/character/character_sheet.mediawiki]] 

@@ -1,0 +1,43 @@
+= Social Structure of Nuremberg =
+
+== Class Hierarchy ==
+* Patrician Families: 26 ruling families
+* Guild Masters: Trade and craft leaders
+* Citizens: Free city residents
+* Commoners: Working population
+
+== Economic Classes ==
+* Merchant Class: Trade and commerce
+* Artisan Class: Crafts and production
+* Labor Class: Manual workers
+* Service Class: Support roles
+
+== Professional Groups ==
+* Armorers: Military equipment
+* Alchemists: Chemical and medical
+* Spies: Information gathering
+* Guild Members: Organized crafts
+
+== Social Mobility ==
+* Merchant Path: Trade success
+* Guild Advancement: Craft mastery
+* Political Rise: Council positions
+* Religious Service: Church roles
+
+== Power Distribution ==
+* Wealth: Economic influence
+* Status: Social standing
+* Authority: Political power
+* Influence: Social connections
+
+== Cultural Elements ==
+* Education: Limited access
+* Religion: Catholic dominance
+* Tradition: Guild customs
+* Innovation: Trade practices
+
+== Social Restrictions ==
+* Class Barriers: Limited mobility
+* Gender Roles: Traditional structure
+* Religious Limits: Church influence
+* Economic Constraints: Wealth requirements 

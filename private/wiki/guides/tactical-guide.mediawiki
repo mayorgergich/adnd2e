@@ -15,9 +15,6 @@ This guide outlines effective combat strategies for Augustus "X" Groß, integrat
 
 Augustus can fulfill several roles in combat, depending on the situation and party needs:
 
-
-
-
 === Divine Support Role ===
 
 In this role, Augustus acts primarily as a cleric, focusing on empowering allies while staying relatively safe.
@@ -28,21 +25,17 @@ In this role, Augustus acts primarily as a cleric, focusing on empowering allies
 - Facing multiple weaker enemies that others can handle
 
 '''Key Tactics:'''
-1. '''Opening Blessing:''' Begin combat with '''Bless''' to enhance the entire party
+1. '''Opening Blessing:''' Begin combat with [[Bless|spells/cleric/bless.mediawiki]] to enhance the entire party
 2. '''Strategic Positioning:''' Stay behind frontline fighters, using your quarterstaff defensively
 3. '''Support Movement:''' Reposition to aid wounded allies with future healing abilities
 4. '''Ranged Harassment:''' Use darts when direct engagement is unnecessary
 
 '''Sample Round Sequence:'''
-1. Cast '''Bless''' affecting maximum number of allies
+1. Cast [[Bless|spells/cleric/bless.mediawiki]] affecting maximum number of allies
 2. Move to protected position with good visibility of battlefield
 3. Ready quarterstaff defensively or prepare darts for ranged attacks
 4. Use darts to attack vulnerable or injured enemies
 5. Maintain tactical awareness, ready to aid allies in subsequent rounds
-
-
-
-
 
 === Monastic Warrior Role ===
 
@@ -54,21 +47,17 @@ In this role, Augustus reveals more of her eastern training, engaging in direct 
 - Operating alone without witnesses to her true abilities
 
 '''Key Tactics:'''
-1. '''Empowered Strikes:''' Enhance unarmed or staff attacks with '''Strength of Stone'''
+1. '''Empowered Strikes:''' Enhance unarmed or staff attacks with [[Strength of Stone|spells/cleric/strength_of_stone.mediawiki]]
 2. '''Defensive Flow:''' Utilize monastic defensive abilities to maintain survivability
 3. '''Combat Mobility:''' Stay mobile, using eastern movement techniques to control positioning
 4. '''Targeted Strikes:''' Focus attacks on vulnerable opponents or specific threat points
 
 '''Sample Round Sequence:'''
-1. Cast '''Strength of Stone''' on self (pre-combat if possible)
+1. Cast [[Strength of Stone|spells/cleric/strength_of_stone.mediawiki]] on self (pre-combat if possible)
 2. Activate '''Meditative Stance''' to improve AC
 3. Move quickly to optimal position using monastic movement techniques
 4. Attack with quarterstaff using eastern forms for enhanced effectiveness
 5. Reposition using remaining movement, maintaining tactical advantage
-
-
-
-
 
 === Sacred Fist (Hybrid Role) ===
 
@@ -86,21 +75,13 @@ This balanced approach reveals some monastic techniques but frames them within c
 4. '''Measured Revelation:''' Gradually demonstrate more advanced techniques as the situation demands
 
 '''Sample Round Sequence:'''
-1. Cast '''Bless''' or activate a divine ability (establishing clerical identity)
+1. Cast [[Bless|spells/cleric/bless.mediawiki]] or activate a divine ability (establishing clerical identity)
 2. Move into combat position using conventional movement
 3. Attack with quarterstaff using subtle eastern techniques
 4. Describe any exceptional success as "Saint Sebaldus guides my hand"
 5. Maintain position that supports both offense and ally protection
 
-
-
-
-
-
 == Weapon Tactics ==
-
-
-
 
 === Ornate Quarterstaff ===
 
@@ -123,10 +104,6 @@ Your primary weapon combines religious symbolism with practical effectiveness, m
 - '''Warding Circle:''' Spinning defensive pattern that appears ceremonial but offers protection
 - '''Eastern Extension:''' When using the staff, emphasize it as an "extension of divine will" to mask eastern training
 
-
-
-
-
 === Unarmed Combat ===
 
 Your eastern monastery training enables effective unarmed combat, though this should be used selectively to maintain your cover.
@@ -147,10 +124,6 @@ Your eastern monastery training enables effective unarmed combat, though this sh
 - '''Icicle Palm:''' Channel your once-daily ability for a penetrating strike
 - '''Saint's Echo:''' Follow a successful strike with a defensive movement, gaining +1 AC
 - '''Flowing Water:''' Series of rapid, light strikes that appear desperate but are precisely targeted
-
-
-
-
 
 === Eastern-Style Darts ===
 
@@ -173,40 +146,26 @@ Your monastery training includes the use of thrown darts, providing a ranged opt
 - '''Precision Targeting:''' Aim for exposed flesh or joints with +1 to hit but -2 damage (called shot)
 - '''Distraction Toss:''' Throw without expectation of damage to create opening for allies (+2 to next ally's attack)
 
-
-
-
-
-
 == Defensive Strategies ==
 
 === Layered Defense System ===
 
 Augustus employs a multi-layered approach to defense, combining conventional armor with eastern techniques and divine protection.
 
-Physical Protection
-
-
+'''Physical Protection'''
 * '''Brigandine Armor:''' Primary physical protection (AC 6)
 * '''Ornate Buckler:''' Additional protection when needed (improves to AC 5)
 * '''Defensive Stance:''' +1 AC when using quarterstaff defensively
 
-
-Monastic Protection
-
-
+'''Monastic Protection'''
 * '''Meditative Stance (1/day):''' +1 AC for 1 hour (Wisdom modifier)
 * '''Saint's Echo (1/encounter):''' +1 AC for 1 turn after successful unarmed hit
 * '''Defensive Flow:''' Apply Dexterity bonus to AC when lightly armored
-* '''Eastern Reflexes:''' +1 to initiative and saves vs. poison &amp; charm
+* '''Eastern Reflexes:''' +1 to initiative and saves vs. poison & charm
 
-
-Divine Protection
-
-
-* '''Protection from Evil:''' +2 AC against evil creatures
-* '''Remove Fear:''' +4 saves vs. fear effects, preventing combat penalties
-
+'''Divine Protection'''
+* [[Protection from Evil|spells/cleric/protection_from_evil.mediawiki]]: +2 AC against evil creatures
+* [[Remove Fear|spells/cleric/remove_fear.mediawiki]]: +4 saves vs. fear effects, preventing combat penalties
 
 === Tactical Movement ===
 
@@ -218,12 +177,7 @@ Proper positioning is essential to maximize your defensive capabilities while ma
 3. '''Positional Awareness:''' Stay aware of terrain features and ally positions
 4. '''Escape Routes:''' Always identify clear paths for tactical retreat if needed
 
-
-
 == Situational Tactics ==
-
-
-
 
 === Group Combat ===
 
@@ -231,7 +185,7 @@ When fighting alongside allies, adapt your approach to complement their strength
 
 '''With Heavy Fighters:'''
 - Position behind them, using reach of quarterstaff to attack past them
-- Support with '''Bless''' to enhance their effectiveness
+- Support with [[Bless|spells/cleric/bless.mediawiki]] to enhance their effectiveness
 - Be ready to step in if they become injured
 
 '''With Ranged Allies:'''
@@ -243,10 +197,6 @@ When fighting alongside allies, adapt your approach to complement their strength
 - Alternate casting turns to maintain continuous magical support
 - Position to protect them while they cast longer spells
 - Focus on defensive magic if they provide offensive spells
-
-
-
-
 
 === Solo Combat ===
 
@@ -265,10 +215,6 @@ When fighting alone, you can fully utilize your eastern techniques without conce
 4. Engage primary threat with full eastern combat techniques
 5. Maintain mobility, never allowing yourself to be surrounded
 
-
-
-
-
 === Stealth Operations ===
 
 When infiltration or discretion is required, your monastic training provides significant advantages.
@@ -285,11 +231,6 @@ When infiltration or discretion is required, your monastic training provides sig
 - Leverage clerical authority when challenged
 - Switch between identities as needed to maintain cover
 
-
-
-
-
-
 == Specialized Combat Scenarios ==
 
 === Against Supernatural Threats ===
@@ -297,13 +238,13 @@ When infiltration or discretion is required, your monastic training provides sig
 The rising Hussite conflict and supernatural beliefs prevalent in 1420s Nuremberg make encounters with spiritual threats possible.
 
 '''Against Demonic/Evil Entities:'''
-- Lead with '''Protection from Evil''' for enhanced defense
+- Lead with [[Protection from Evil|spells/cleric/protection_from_evil.mediawiki]] for enhanced defense
 - Use quarterstaff as primary weapon (described in lore as effective against spirits)
 - Channel divine energy through eastern techniques (maximizing both skillsets)
 - Use religious authority to attempt to command lesser spirits
 
 '''Against Possession/Mind Control:'''
-- Activate '''Remove Fear''' to enhance saves against mental effects
+- Activate [[Remove Fear|spells/cleric/remove_fear.mediawiki]] to enhance saves against mental effects
 - Use meditative techniques to strengthen mental resistance
 - Maintain distance until protection spells are active
 - Target the controller rather than the controlled when possible
@@ -323,8 +264,6 @@ As tensions rise in the region, you may face opponents from within the church or
 - Use your family's patrician status for protection
 - Demonstrate respect while maintaining your position
 - Rely on social tactics rather than physical confrontation
-
-
 
 == Roleplaying Your Combat Style ==
 
@@ -357,8 +296,6 @@ As Augustus, you must carefully manage how your combat abilities are perceived b
 - "Center. Flow. Strike." (personal mantra)
 - "The mountain does not fear the wind." (eastern teaching when facing powerful foes)
 - "Both river and stone." (reminder to balance offense and defense)
-
-
 
 == Progressive Revelation Strategy ==
 

@@ -1,0 +1,39 @@
+# Factions and Organizations
+
+This page details the major factions, organizations, and power groups in the campaign world.
+
+## Major Factions
+
+* Political Powers
+* Religious Organizations
+* Merchant Guilds
+* Military Orders
+* Secret Societies
+
+## Religious Organizations
+
+* Major Churches
+* Religious Orders
+* Cult Groups
+* Spiritual Movements
+
+## Political Powers
+
+* Kingdoms
+* City-States
+* Noble Houses
+* Political Alliances
+* Rival Factions
+
+## Economic Powers
+
+* Merchant Guilds
+* Trade Organizations
+* Banking Houses
+* Craft Guilds
+
+## Additional Resources
+
+* [[World Overview|setting/world_overview.mediawiki]]
+* [[Geography|setting/geography.mediawiki]]
+* [[Social Interaction System|templates/social/social_encounter_template.mediawiki]] 

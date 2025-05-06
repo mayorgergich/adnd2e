@@ -1,0 +1,43 @@
+|= City Layout of Nuremberg =
+
+== Defensive Structures ==
+* City Walls: High stone walls
+* Gates: Controlled access points
+* Watch Towers: Defensive positions
+* Guard Posts: Security checkpoints
+
+== Key Districts ==
+* Merchant Quarter: Trade center
+* Craft District: Artisan workshops
+* Religious Center: Church district
+* Patrician Homes: Noble residences
+
+== Important Buildings ==
+* St. Sebaldus Church: Main religious center
+* Burgrave's Castle: Noble residence
+* Imperial Castle: Emperor's property
+* Council Chambers: Government center
+
+== Public Spaces ==
+* Market Squares: Trading areas
+* Guild Halls: Craft centers
+* Public Wells: Water sources
+* City Streets: Main thoroughfares
+
+== Religious Structures ==
+* Churches: Main worship sites
+* Monasteries: Religious orders
+* Chapels: Smaller worship sites
+* Religious Schools: Education centers
+
+== Administrative Centers ==
+* Council Building: Government offices
+* Tax Collection: Revenue centers
+* Law Courts: Judicial buildings
+* Guard Posts: Security offices
+
+== Residential Areas ==
+* Patrician Homes: Noble residences
+* Merchant Houses: Trade families
+* Artisan Quarters: Craft workers
+* Common Housing: General population 

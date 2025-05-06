@@ -1,0 +1,73 @@
+= Markdown to MediaWiki Conversion Guide =
+
+== Basic Syntax Conversion ==
+
+{| class="wikitable"
+|-
+! Markdown !! MediaWiki !! Notes
+|-
+| # Title || = Title = || Level 1 header
+|-
+| ## Subtitle || == Subtitle == || Level 2 header
+|-
+| '''Bold''' || '''Bold''' || Bold text
+|-
+| ''Italic'' || ''Italic'' || Italic text
+|-
+| - List item || \* List item || Bullet points
+|-
+| [[Link Text]] || [[Link Text]] || Internal links
+|-
+| [url Link Text] || [url Link Text] || External links
+|}
+
+== Spell Template Conversion ==
+
+1. Replace the first `#` with `=`
+2. Replace `##` with `==`
+3. Replace `**` with `'''`
+4. Keep the bullet points as is (they work in both formats)
+5. For internal links, change `[Link Text](url)` to `[[Link Text]]`
+
+== Example Conversion ==
+
+Markdown:
+
+<pre>
+# Bless
+
+**Sphere:** Special  
+**Level:** 1  
+**Range:** 60 yds
+</pre>
+
+MediaWiki:
+
+<pre>
+= Bless =
+
+'''Sphere:''' Special
+'''Level:''' 1
+'''Range:''' 60 yds
+</pre>
+
+== Tips for Easy Conversion ==
+
+1. Use consistent formatting in your Markdown files
+2. Keep internal links in the format `[[Page Name]]` even in Markdown
+3. Use bullet points with `-` as they work in both formats
+4. Add a blank line after headers
+5. Use double spaces at the end of lines for line breaks
+
+== Automated Conversion ==
+
+You can use tools like `pandoc` to automate the conversion:
+
+<pre>
+pandoc -f markdown -t mediawiki input.md -o output.mediawiki
+</pre>
+
+Or use online converters like:
+
+- [https://www.mediawiki.org/wiki/Extension:Markdown MediaWiki Markdown Extension]
+- [https://github.com/outofcontrol/mediawiki-markdown-converter MediaWiki Markdown Converter]

@@ -1,0 +1,49 @@
+= City Laws of Nuremberg =
+
+== Legal Authority ==
+* City Council: Primary lawmaker
+* Imperial Rights: Higher authority
+* Guild Laws: Craft regulations
+* Church Laws: Religious rules
+
+== Criminal Law ==
+* Theft: Property crimes
+* Assault: Violent crimes
+* Fraud: Commercial crimes
+* Treason: State crimes
+
+== Civil Law ==
+* Property Rights: Land ownership
+* Trade Disputes: Commercial law
+* Guild Regulations: Craft rules
+* Family Law: Domestic matters
+
+== Market Laws ==
+* Price Controls: Market regulation
+* Quality Standards: Goods inspection
+* Trade Rights: Commercial privileges
+* Market Hours: Trading times
+
+== Guild Regulations ==
+* Craft Standards: Quality control
+* Apprentice Rules: Training requirements
+* Master Rights: Guild privileges
+* Trade Practices: Commercial rules
+
+== Religious Laws ==
+* Church Rights: Religious privileges
+* Worship Rules: Religious practices
+* Charity Laws: Poor relief
+* Religious Education: Faith teaching
+
+== Enforcement ==
+* City Guard: Law enforcement
+* Guild Officials: Craft regulation
+* Market Guards: Trade control
+* Church Officials: Religious law
+
+== Related Pages ==
+* [[Political Structure]]: Government system
+* [[City Services]]: Law enforcement
+* [[Guilds and Crafts]]: Guild regulations
+* [[Market System]]: Trade laws 

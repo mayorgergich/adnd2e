@@ -1,0 +1,43 @@
+|= Magical Healing in Nuremberg =
+
+== Divine Healing ==
+* Clerical Spells: Religious magic
+* Prayer Effects: Faith-based healing
+* Holy Artifacts: Sacred healing items
+* Divine Intervention: Miracle healing
+
+== Arcane Healing ==
+* Wizard Spells: Arcane healing
+* Alchemical Cures: Magical potions
+* Enchanted Items: Healing artifacts
+* Magical Tools: Healing implements
+
+== Healing Spells ==
+* Cure Light Wounds: Basic healing
+* Cure Serious Wounds: Major healing
+* Heal: Complete restoration
+* Regenerate: Advanced healing
+
+== Healing Items ==
+* Healing Potions: Liquid cures
+* Healing Salves: Topical treatments
+* Healing Amulets: Worn items
+* Healing Scrolls: Written magic
+
+== Healing Restrictions ==
+* Religious Limits: Faith requirements
+* Magical Costs: Spell components
+* Time Constraints: Casting time
+* Usage Limits: Daily restrictions
+
+== Healing Traditions ==
+* Church Magic: Religious practices
+* Guild Magic: Craft traditions
+* Noble Magic: Elite practices
+* Folk Magic: Common traditions
+
+== Related Pages ==
+* [[../rules/magic|Magic Rules]]: General magic
+* [[../items/magical_items|Magical Items]]: Healing items
+* [[../rules/combat|Combat Rules]]: Combat healing
+* [[../rules/character_creation|Character Creation]]: Healing classes 

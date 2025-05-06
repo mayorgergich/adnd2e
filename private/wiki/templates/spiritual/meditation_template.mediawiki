@@ -1,0 +1,45 @@
+# Meditation Template
+
+This template is used for tracking meditation and spiritual practices.
+
+## Basic Information
+
+* Character Name:
+* Practice Type:
+* Location:
+* Start Time:
+* Duration:
+
+## Practice Details
+
+* Meditation Style:
+* Focus Points:
+* Breathing Techniques:
+* Mantras/Chants:
+
+## Spiritual Goals
+
+* Primary Objective:
+* Secondary Goals:
+* Expected Benefits:
+* Challenges:
+
+## Progress Tracking
+
+* Current Level:
+* Breakthroughs:
+* Obstacles:
+* Insights:
+
+## Results
+
+* Spiritual Growth:
+* Special Abilities:
+* Mental Benefits:
+* Physical Benefits:
+
+## Additional Resources
+
+* [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker.mediawiki]]
+* [[Prayer and Devotion|templates/spiritual/prayer_template.mediawiki]]
+* [[Character Sheet|templates/character/character_sheet.mediawiki]] 

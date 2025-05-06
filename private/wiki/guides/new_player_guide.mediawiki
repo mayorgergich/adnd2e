@@ -1,0 +1,38 @@
+# New Player Guide
+
+Welcome to AD&D 2nd Edition! This guide will help you get started with the game.
+
+## Getting Started
+
+* Creating Your First Character
+* Understanding Basic Rules
+* Roleplaying Basics
+* Game Etiquette
+
+## Character Creation
+
+* Choosing a Race
+* Selecting a Class
+* Determining Ability Scores
+* Choosing Equipment
+* Learning Your Character's Abilities
+
+## Basic Rules
+
+* [[Core Rules|rules/core_rules.mediawiki]]
+* [[Combat Rules|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Magic System|rules/magic_system.mediawiki]]
+
+## Gameplay Tips
+
+* Roleplaying Your Character
+* Working with the Party
+* Combat Tactics
+* Problem Solving
+* Resource Management
+
+## Additional Resources
+
+* [[Character Sheets|templates/character/character_sheet.mediawiki]]
+* [[Quick Reference Guide|quick_reference.mediawiki]]
+* [[Tactical Guide|guides/tactical-guide.mediawiki]] 

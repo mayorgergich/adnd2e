@@ -1,0 +1,234 @@
+= Social Identity Tracker - Augustus "X" Groß =
+
+== Identity Management ==
+
+=== Public Persona (Augustus Groß) ===
+
+{| class="wikitable"
+|-
+! Aspect !! Details
+|-
+| '''Appearance''' || Noble male cleric
+|-
+| '''Status''' || Member of St. Sebaldus clergy
+|-
+| '''Known For''' || Family connections, religious authority
+|-
+| '''Behavioral Cues''' ||
+
+- Outwardly haughty demeanor
+- Traditional clerical mannerisms
+- Noble bearing and speech
+- Reserved and formal
+  |}
+
+=== Secret Identity (X) ===
+
+{| class="wikitable"
+|-
+! Aspect !! Details
+|-
+| '''Appearance''' || Private female identity
+|-
+| '''Status''' || Known only to trusted few
+|-
+| '''Known For''' || Eastern training, personal authenticity
+|-
+| '''Behavioral Cues''' ||
+
+- More relaxed posture
+- Eastern-influenced movements
+- Personal meditation practices
+- Authentic emotional expression
+  |}
+
+=== True Identity (Brayden) ===
+
+{| class="wikitable"
+|-
+! Aspect !! Details
+|-
+| '''Appearance''' || Original birth identity
+|-
+| '''Status''' || Known only to monastery elders
+|-
+| '''Known For''' || Family's second child
+|-
+| '''Behavioral Cues''' ||
+
+- Deeply personal
+- Connected to family history
+- Source of inner conflict
+- Basis for spiritual journey
+  |}
+
+== Social Network ==
+
+=== Those Who Know the Truth ===
+
+{| class="wikitable"
+|-
+! Name !! Role !! Knowledge Level !! Trust Level !! Notes
+|-
+| Monastery Elders || Mentors || Full || 5 || Know true name and identity
+|-
+| [Trusted Ally] || || Partial || || Knows about X identity
+|-
+| [Trusted Ally] || || Partial || || Knows about X identity
+|}
+
+=== Those Who Suspect ===
+
+{| class="wikitable"
+|-
+! Name !! Role !! Suspicions !! Risk Level !! Notes
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+=== Those to Maintain Distance From ===
+
+{| class="wikitable"
+|-
+! Name !! Role !! Reason !! Risk Level !! Notes
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+== Identity Maintenance ==
+
+=== Daily Routines ===
+
+{| class="wikitable"
+|-
+! Activity !! Public Version !! Private Version !! Notes
+|-
+| Morning Prayer || Traditional Sebaldus rites || Combined with eastern meditation ||
+|-
+| Combat Training || "Ceremonial staff practice" || Eastern martial forms ||
+|-
+| Meditation || "Contemplative prayer" || Eastern techniques ||
+|-
+| Evening Reflection || "Evening prayers" || Personal identity work ||
+|}
+
+=== Cover Stories ===
+
+{| class="wikitable"
+|-
+! Situation !! Public Story !! Private Truth !! Notes
+|-
+| Eastern Training || "Alternative devotional practices" || Martial arts mastery ||
+|-
+| Meditation || "Divine contemplation" || Eastern spiritual practice ||
+|-
+| Combat Abilities || "Divinely inspired techniques" || Eastern martial arts ||
+|}
+
+== Social Interactions ==
+
+=== Recent Encounters ===
+
+{| class="wikitable"
+|-
+! Date !! Person !! Context !! Identity Used !! Notes
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+=== Planned Interactions ===
+
+{| class="wikitable"
+|-
+! Date !! Person !! Context !! Identity to Use !! Preparation Needed
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+== Identity Development ==
+
+=== Current Challenges ===
+
+#
+
+#
+
+#
+
+=== Growth Opportunities ===
+
+#
+
+#
+
+#
+
+=== Long-term Goals ===
+
+#
+
+#
+
+#
+
+== Notes ==
+
+=== Identity-related Incidents ===
+
+{| class="wikitable"
+|-
+! Date !! Incident !! Resolution !! Lessons Learned
+|-
+| || || ||
+|-
+| || || ||
+|}
+
+=== Close Calls ===
+
+{| class="wikitable"
+|-
+! Date !! Situation !! How Avoided !! Prevention for Future
+|-
+| || || ||
+|-
+| || || ||
+|}
+
+== Resources ==
+
+=== Safe Spaces ===
+
+{| class="wikitable"
+|-
+! Location !! Purpose !! Security Level !! Notes
+|-
+| Private Quarters || Identity expression || High ||
+|-
+| Monastery || Training || Medium ||
+|-
+| || || ||
+|}
+
+=== Emergency Contacts ===
+
+{| class="wikitable"
+|-
+! Name !! Role !! Contact Method !! Notes
+|-
+| || || ||
+|-
+| || || ||
+|}
+
+== Notes ==
+
+--- 

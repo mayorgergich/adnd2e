@@ -1,0 +1,43 @@
+= City Services of Nuremberg =
+
+== Public Works ==
+* Street Maintenance: Road care
+* Wall Repair: Defense maintenance
+* Well Maintenance: Water supply
+* Market Upkeep: Trading areas
+
+== Health Services ==
+* Church Hospitals: Medical care
+* Public Health: Disease prevention
+* Guild Healers: Craft medicine
+* Noble Physicians: Elite care
+
+== Security Services ==
+* City Guard: Main security
+* Night Watch: Evening patrol
+* Market Guards: Trade security
+* Gate Guards: Access control
+
+== Education Services ==
+* Church Schools: Religious education
+* Guild Training: Craft education
+* Noble Tutors: Elite education
+* Public Learning: Basic education
+
+== Market Services ==
+* Trade Regulation: Market control
+* Quality Control: Goods inspection
+* Price Regulation: Market stability
+* Market Security: Trade protection
+
+== Religious Services ==
+* Church Services: Regular worship
+* Religious Education: Faith teaching
+* Charity Work: Poor relief
+* Spiritual Guidance: Religious counsel
+
+== Administrative Services ==
+* Tax Collection: Revenue service
+* Law Enforcement: Legal service
+* Record Keeping: City archives
+* Public Announcements: City news 

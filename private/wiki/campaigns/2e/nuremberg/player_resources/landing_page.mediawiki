@@ -1,0 +1,33 @@
+= Player Resources =
+
+== Overview ==
+This section contains all information relevant to players, including character creation resources, handouts, and guides. These pages provide the tools and information needed for players to create and develop their characters within the Nuremberg setting.
+
+== Quick Navigation ==
+* [[Characters|Characters]] - Character creation and development
+* [[Handouts|Handouts]] - Player guides and resources
+
+== Characters ==
+* [[Characters/Character Classes|Character Classes]] - Available classes
+* [[Characters/Races|Races]] - Playable races
+* [[Characters/Backgrounds|Backgrounds]] - Character origins
+
+== Handouts ==
+* [[Handouts/Maps|Maps]] - Player maps
+* [[Handouts/Guides|Guides]] - Player guides
+* [[Handouts/Resources|Resources]] - Player resources
+
+== Getting Started ==
+New players should begin with:
+# [[Characters/Character Classes|Character Classes]]
+# [[Characters/Races|Races]]
+# [[Characters/Backgrounds|Backgrounds]]
+# [[Handouts/Guides|Player Guides]]
+
+== Related Pages ==
+* [[../World|World Building]] - Setting information
+* [[../Mechanics|Game Mechanics]] - Rules and systems
+* [[../Game Master Resources|Game Master Resources]] - GM content
+
+== Recent Updates ==
+* Player Resources section under development 

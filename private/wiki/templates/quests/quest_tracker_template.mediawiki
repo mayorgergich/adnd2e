@@ -1,0 +1,126 @@
+= Quest Tracker Template =
+
+== Quest Overview ==
+
+{| class="wikitable"
+|-
+! Field !! Value
+|-
+| '''Quest Name''' ||
+|-
+| '''Quest Giver''' ||
+|-
+| '''Location''' ||
+|-
+| '''Time Limit''' ||
+|-
+| '''Reward''' ||
+|-
+| '''Reputation Impact''' ||
+|}
+
+== Objectives ==
+
+=== Primary Objectives ===
+
+{| class="wikitable"
+|-
+! Objective !! Status !! Notes
+|-
+| || ||
+|-
+| || ||
+|}
+
+=== Secondary Objectives ===
+
+{| class="wikitable"
+|-
+! Objective !! Status !! Notes
+|-
+| || ||
+|-
+| || ||
+|}
+
+== Progress Tracking ==
+
+=== Completed Steps ===
+
+#
+
+#
+
+#
+
+=== Pending Steps ===
+
+#
+
+#
+
+#
+
+=== Blocked Steps ===
+
+#
+
+#
+
+#
+
+== Related NPCs ==
+
+{| class="wikitable"
+|-
+! Name !! Role !! Status !! Notes
+|-
+| || || ||
+|-
+| || || ||
+|}
+
+== Related Locations ==
+
+{| class="wikitable"
+|-
+! Location !! Importance !! Status !! Notes
+|-
+| || || ||
+|-
+| || || ||
+|}
+
+== Timeline ==
+
+{| class="wikitable"
+|-
+! Event !! Date/Status
+|-
+| '''Start Date''' ||
+|-
+| '''Current Progress''' ||
+|-
+| '''Deadline''' ||
+|-
+| '''Time-sensitive Events''' ||
+|}
+
+== Consequences ==
+
+{| class="wikitable"
+|-
+! Type !! Impact
+|-
+| '''Success Impact''' ||
+|-
+| '''Failure Impact''' ||
+|-
+| '''Alternative Outcomes''' ||
+|-
+| '''Faction Reactions''' ||
+|}
+
+== Notes ==
+
+---

@@ -1,0 +1,44 @@
+= Campaign Categories =
+
+This page serves as an index for all campaign-related content, organized by category.
+
+== Main Categories ==
+
+=== Characters ===
+* [[characters/player_characters|Player Characters]]
+* [[characters/npcs|Non-Player Characters]]
+* [[characters/character_creation|Character Creation Guidelines]]
+
+=== Locations ===
+* [[locations/city_of_nuremberg|City of Nuremberg]]
+* [[locations/regions|Surrounding Regions]]
+* [[locations/important_sites|Important Sites]]
+
+=== Quests ===
+* [[quests/current|Current Quests]]
+* [[quests/completed|Completed Quests]]
+* [[quests/quest_log|Quest Log]]
+
+=== History ===
+* [[history/timeline|Campaign Timeline]]
+* [[history/events|Major Events]]
+* [[history/background|Campaign Background]]
+
+=== Factions ===
+* [[factions/organizations|Organizations]]
+* [[factions/guilds|Guilds]]
+* [[factions/religious_orders|Religious Orders]]
+
+=== Items ===
+* [[items/magical_items|Magical Items]]
+* [[items/artifacts|Artifacts]]
+* [[items/treasure|Treasure]]
+
+=== Monsters ===
+* [[monsters/encountered|Encountered Creatures]]
+* [[monsters/bestiary|Campaign Bestiary]]
+
+== Additional Resources ==
+* [[maps|Campaign Maps]]
+* [[handouts|Player Handouts]]
+* [[rules|Campaign-Specific Rules]] 

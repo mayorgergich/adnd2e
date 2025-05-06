@@ -1,0 +1,38 @@
+# World Overview
+
+This page provides an overview of the campaign world and its major features.
+
+## World History
+
+* Creation Myths
+* Major Historical Events
+* Timeline of Important Events
+* Ancient Civilizations
+
+## Current Age
+
+* Major Powers
+* Current Conflicts
+* Political Landscape
+* Cultural Developments
+
+## World Features
+
+* [[Geography|setting/geography.mediawiki]]
+* [[Factions and Organizations|setting/factions.mediawiki]]
+* Major Cities
+* Important Landmarks
+* Natural Wonders
+
+## Cosmology
+
+* Planes of Existence
+* Deities and Pantheons
+* Outer Planes
+* Inner Planes
+* Material Plane
+
+## Additional Resources
+
+* [[Sebaldus Connection|setting/sebaldus-connection.mediawiki]]
+* [[Setting Integration|setting/setting-integration.mediawiki]] 

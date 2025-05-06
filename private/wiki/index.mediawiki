@@ -4,14 +4,14 @@ Welcome to the AD&D 2E Campaign Wiki. This wiki contains templates, guides, and 
 
 ## Quick Navigation
 
-* [[Quick Reference Guide|quick_reference]] - Essential templates and workflows
-* [[Character Management|Character Templates and Tools]]
-* [[Combat System|Combat Templates and Tools]]
-* [[Social Interaction|Social Templates and Tools]]
-* [[Spiritual Practices|Spiritual Templates and Tools]]
-* [[Encounter Management|Encounter Templates and Tools]]
-* [[Activity Tracking|Activity Templates and Tools]]
-* [[Quest Management|Quest Templates and Tools]]
+* [[Quick Reference Guide|quick_reference.mediawiki]] - Essential templates and workflows
+* [[Character Management|templates/character/character_sheet.mediawiki]]
+* [[Combat System|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Social Interaction|templates/social/social_relationship_tracker.mediawiki]]
+* [[Spiritual Practices|templates/spiritual/spiritual_practice_tracker.mediawiki]]
+* [[Encounter Management|templates/encounters/dungeon_encounter_template.mediawiki]]
+* [[Activity Tracking|templates/activities/research_template.mediawiki]]
+* [[Quest Management|templates/quests/quest_tracker_template.mediawiki]]
 
 ## Recent Updates
 
@@ -22,47 +22,48 @@ Welcome to the AD&D 2E Campaign Wiki. This wiki contains templates, guides, and 
 
 ## Getting Started
 
-1. For new characters, start with the [[Character Sheet Template|templates/character/character_sheet]]
-2. Set up their [[Combat Sheet|templates/character/combat_character_sheet]]
+1. For new characters, start with the [[Character Sheet Template|templates/character/character_sheet.mediawiki]]
+2. Set up their [[Combat Sheet|templates/character/combat_character_sheet.mediawiki]]
 3. Choose relevant tracking templates based on character focus:
-   * [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker]]
-   * [[Combat Technique Tracker|templates/combat/combat_technique_tracker]]
-   * [[Social Identity Tracker|templates/social/social_identity_tracker]]
+   * [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker.mediawiki]]
+   * [[Combat Technique Tracker|templates/combat/combat_technique_tracker.mediawiki]]
+   * [[Social Identity Tracker|templates/social/social_identity_tracker.mediawiki]]
 
 ## Template Categories
 
 ### Character Templates
-* [[Character Sheet|templates/character/character_sheet]]
-* [[Combat Character Sheet|templates/character/combat_character_sheet]]
+* [[Character Sheet|templates/character/character_sheet.mediawiki]]
+* [[Combat Character Sheet|templates/character/combat_character_sheet.mediawiki]]
 
 ### Combat Templates
-* [[Combat Technique Tracker|templates/combat/combat_technique_tracker]]
-* [[Combat Encounter Template|templates/encounters/combat_encounter_template]]
+* [[Combat Technique Tracker|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Combat Encounter Template|templates/encounters/combat_encounter_template.mediawiki]]
 
 ### Social Templates
-* [[Social Identity Tracker|templates/social/social_identity_tracker]]
-* [[Social Relationship Tracker|templates/social/social_relationship_tracker]]
-* [[Social Encounter Template|templates/encounters/social_encounter_template]]
+* [[Social Identity Tracker|templates/social/social_identity_tracker.mediawiki]]
+* [[Social Relationship Tracker|templates/social/social_relationship_tracker.mediawiki]]
+* [[Social Encounter Template|templates/social/social_encounter_template.mediawiki]]
 
 ### Spiritual Templates
-* [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker]]
+* [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker.mediawiki]]
 
 ### Encounter Templates
-* [[Combat Encounter Template|templates/encounters/combat_encounter_template]]
-* [[Social Encounter Template|templates/encounters/social_encounter_template]]
-* [[Dungeon Encounter Template|templates/encounters/dungeon_encounter_template]]
+* [[Combat Encounter Template|templates/encounters/combat_encounter_template.mediawiki]]
+* [[Dungeon Encounter Template|templates/encounters/dungeon_encounter_template.mediawiki]]
 
 ### Activity Templates
-* [[Research Template|templates/activities/research_template]]
-* [[Downtime Template|templates/activities/downtime_template]]
-* [[Travel Template|templates/activities/travel_template]]
+* [[Research Template|templates/activities/research_template.mediawiki]]
+* [[Downtime Template|templates/activities/downtime_template.mediawiki]]
+* [[Travel Template|templates/activities/travel_template.mediawiki]]
 
 ### Quest Templates
-* [[Quest Tracker Template|templates/quests/quest_tracker_template]]
+* [[Quest Tracker Template|templates/quests/quest_tracker_template.mediawiki]]
 
 ## Resources and Guides
-* [[Markdown to MediaWiki Guide|markdown_to_mediawiki_guide]]
-* [[Spell Template|template_spell]]
+* [[Markdown to MediaWiki Guide|guides/markdown_to_mediawiki_guide.mediawiki]]
+* [[Tactical Guide|guides/tactical-guide.mediawiki]]
+* [[Cleric Spellbook Index|guides/cleric_spellbook_index.mediawiki]]
+* [[Spell Template|templates/template_spell.mediawiki]]
 
 ## Contributing
 To add new content or suggest improvements, please follow these steps:
@@ -72,6 +73,6 @@ To add new content or suggest improvements, please follow these steps:
 4. Test all links before committing changes
 
 ## Need Help?
-* Check the [[Markdown to MediaWiki Guide|markdown_to_mediawiki_guide]]
+* Check the [[Markdown to MediaWiki Guide|guides/markdown_to_mediawiki_guide.mediawiki]]
 * Review template examples
 * Contact the campaign administrator 

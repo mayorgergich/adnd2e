@@ -1,0 +1,27 @@
+{
+    "api": "https://adnd2e.fandom.com/api.php",
+    "api_chunksize": 50,
+    "curonly": false,
+    "date": "20250505",
+    "delay": 1.5,
+    "exnamespaces": [],
+    "export": "",
+    "failfast": false,
+    "http_method": "POST",
+    "images": true,
+    "index": "https://adnd2e.fandom.com/index.php",
+    "logs": false,
+    "namespaces": [
+        0,
+        6,
+        14
+    ],
+    "path": "./adnd2e.fandom.com-20250505-wikidump",
+    "redirects": false,
+    "retries": 5,
+    "templates": false,
+    "xml": true,
+    "xmlapiexport": false,
+    "xmlrevisions": false,
+    "xmlrevisions_page": false
+}

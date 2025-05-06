@@ -1,0 +1,49 @@
+|= Healing Practices of Nuremberg =
+
+== Medical Facilities ==
+* Church Hospitals: Main medical centers
+* Guild Apothecaries: Medicine preparation
+* Private Physicians: Noble healthcare
+* Public Health Centers: Basic care
+
+== Medical Practitioners ==
+* Church Healers: Religious medical care
+* Guild Physicians: Craft medical experts
+* Noble Doctors: Elite medical care
+* Folk Healers: Traditional medicine
+
+== Treatment Methods ==
+* Religious Healing: Prayer and faith
+* Herbal Medicine: Natural remedies
+* Surgical Procedures: Basic operations
+* Magical Healing: Divine intervention
+
+== Medical Knowledge ==
+* Church Medicine: Religious practices
+* Guild Secrets: Craft knowledge
+* Noble Learning: Elite education
+* Folk Wisdom: Traditional knowledge
+
+== Health Services ==
+* Emergency Care: Immediate treatment
+* Long-term Care: Extended healing
+* Preventive Care: Health maintenance
+* Specialized Care: Expert treatment
+
+== Medical Resources ==
+* Herbs and Plants: Natural medicine
+* Medical Tools: Treatment equipment
+* Religious Artifacts: Healing items
+* Medical Texts: Knowledge sources
+
+== Health Regulations ==
+* Medical Standards: Treatment guidelines
+* Health Inspections: Public health
+* Quarantine Rules: Disease control
+* Medical Licensing: Practitioner control
+
+== Related Pages ==
+* [[religious_institutions|Religious Institutions]]: Church hospitals
+* [[guilds_and_crafts|Guilds and Crafts]]: Medical guilds
+* [[city_services|City Services]]: Public health
+* [[cultural_life|Cultural Life]]: Medical traditions 

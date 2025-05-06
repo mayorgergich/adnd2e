@@ -1,0 +1,43 @@
+= City Infrastructure of Nuremberg =
+
+== Defensive Structures ==
+* City Walls: Main defense
+* Guard Towers: Observation posts
+* Gate Systems: Access control
+* Moat System: Water defense
+
+== Water Systems ==
+* Public Wells: Water supply
+* River Access: Water transport
+* Drainage System: Waste removal
+* Water Distribution: Supply network
+
+== Transportation ==
+* Main Streets: Primary routes
+* Market Roads: Trade access
+* Noble Lanes: Elite areas
+* Common Paths: General access
+
+== Public Buildings ==
+* Council Chambers: Government center
+* Guild Halls: Craft centers
+* Market Halls: Trading spaces
+* Church Buildings: Religious centers
+
+== Storage Facilities ==
+* Warehouses: Trade storage
+* Guild Stores: Craft supplies
+* Market Stalls: Trading spaces
+* Noble Stores: Elite storage
+
+== Communication ==
+* City Gates: Access points
+* Watch Towers: Observation
+* Market Squares: Public gathering
+* Church Bells: Public signals
+
+== Support Systems ==
+* Guard Posts: Security points
+* Market Areas: Trading zones
+* Religious Centers: Worship areas
+* Administrative Offices: Government services 

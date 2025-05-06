@@ -1,0 +1,33 @@
+# Druid Spells
+
+This page contains the complete list of Druid spells for AD&D 2nd Edition.
+
+## Spell Lists by Level
+
+* [[First Level Spells|spells/druid/first_level.mediawiki]]
+* [[Second Level Spells|spells/druid/second_level.mediawiki]]
+* [[Third Level Spells|spells/druid/third_level.mediawiki]]
+* [[Fourth Level Spells|spells/druid/fourth_level.mediawiki]]
+* [[Fifth Level Spells|spells/druid/fifth_level.mediawiki]]
+* [[Sixth Level Spells|spells/druid/sixth_level.mediawiki]]
+* [[Seventh Level Spells|spells/druid/seventh_level.mediawiki]]
+
+## Spell Categories
+
+* [[Elemental Spells|spells/druid/elemental.mediawiki]]
+* [[Nature Spells|spells/druid/nature.mediawiki]]
+* [[Healing Spells|spells/druid/healing.mediawiki]]
+* [[Protection Spells|spells/druid/protection.mediawiki]]
+* [[Weather Spells|spells/druid/weather.mediawiki]]
+
+## Special Abilities
+
+* [[Wild Shape|spells/druid/wild_shape.mediawiki]]
+* [[Animal Companion|spells/druid/animal_companion.mediawiki]]
+* [[Natural Affinity|spells/druid/natural_affinity.mediawiki]]
+
+## Additional Resources
+
+* [[Magic System|rules/magic_system.mediawiki]]
+* [[Core Rules|rules/core_rules.mediawiki]]
+* [[Spell Template|templates/template_spell.mediawiki]] 

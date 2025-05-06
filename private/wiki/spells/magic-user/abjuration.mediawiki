@@ -1,0 +1,53 @@
+# Abjuration Spells
+
+This page lists all Magic-User spells from the School of Abjuration.
+
+## Description
+Abjuration spells are protective in nature, though some have offensive applications. These spells create magical barriers, negate magical or physical abilities, harm trespassers, or banish creatures to other planes of existence.
+
+## Spell List by Level
+
+### 1st Level
+* [[Abjure|spells/magic-user/abjure.mediawiki]]
+* [[Protection from Evil]]
+* [[Shield]]
+
+### 2nd Level
+* [[Protection from Cantrips]]
+* [[Protection from Paralysis]]
+
+### 3rd Level
+* [[Dispel Magic]]
+* [[Protection from Evil, 10' Radius]]
+* [[Protection from Normal Missiles]]
+
+### 4th Level
+* [[Minor Globe of Invulnerability]]
+* [[Remove Curse]]
+
+### 5th Level
+* [[Dismissal]]
+* [[Protection from Normal Weapons]]
+
+### 6th Level
+* [[Antimagic Shell]]
+* [[Globe of Invulnerability]]
+* [[Repulsion]]
+
+### 7th Level
+* [[Banishment]]
+* [[Sequester]]
+
+### 8th Level
+* [[Mind Blank]]
+* [[Prismatic Wall]]
+
+### 9th Level
+* [[Imprisonment]]
+* [[Prismatic Sphere]]
+
+## Additional Resources
+
+* [[Magic-User Spells|spells/magic_user_spells.mediawiki]]
+* [[Magic System|rules/magic_system.mediawiki]]
+* [[Spell Template|templates/template_spell.mediawiki]] 

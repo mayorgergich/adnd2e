@@ -1,0 +1,49 @@
+= Market System of Nuremberg =
+
+== Market Types ==
+* Daily Markets: Regular trade
+* Weekly Markets: Larger gatherings
+* Seasonal Fairs: Major events
+* Special Markets: Craft goods
+
+== Market Locations ==
+* Main Square: Central market
+* Guild Markets: Craft areas
+* Noble Markets: Elite goods
+* Common Markets: Basic goods
+
+== Market Goods ==
+* Local Products: City crafts
+* Imported Goods: Foreign trade
+* Luxury Items: High-value goods
+* Basic Supplies: Common needs
+
+== Market Regulation ==
+* Price Controls: Market stability
+* Quality Standards: Goods inspection
+* Trade Hours: Market times
+* Vendor Rights: Trading privileges
+
+== Market Services ==
+* Money Changers: Currency exchange
+* Weights and Measures: Standards
+* Market Guards: Security
+* Tax Collectors: Revenue
+
+== Market Participants ==
+* Guild Members: Craft sellers
+* Foreign Merchants: Import trade
+* Local Vendors: City sellers
+* Noble Traders: Elite commerce
+
+== Market Infrastructure ==
+* Market Stalls: Trading spaces
+* Storage Areas: Goods keeping
+* Money Tables: Financial services
+* Guard Posts: Security points
+
+== Related Pages ==
+* [[Trade Routes]]: Commercial connections
+* [[City Laws]]: Market regulations
+* [[Guilds and Crafts]]: Craft markets
+* [[City Services]]: Market services 

@@ -1,0 +1,44 @@
+= First Adventure Information =
+
+== Adventure Overview ==
+* Title: The Black Cross of Nuremberg
+* Level Range: 1st
+* Location: Nuremberg
+* Duration: Initial campaign arc
+* Type: Urban adventure
+
+== Character Requirements ==
+* Starting Level: 1st
+* Classes: All core classes
+* Races: Human, Dwarf, Elf, Halfling
+* Alignment: Any non-evil
+
+== Equipment Guidelines ==
+* Starting Gold: Standard
+* Equipment Restrictions: None
+* Magic Items: None at start
+* Special Items: See [[../items/starting_equipment|Starting Equipment]]
+
+== Location Information ==
+* Primary Setting: Nuremberg
+* Key Areas: See [[../locations/city_of_nuremberg|City of Nuremberg]]
+* Travel Restrictions: None
+* Safe Areas: See [[../locations/safe_havens|Safe Havens]]
+
+== Faction Information ==
+* Available Factions: See [[../factions/organizations|Organizations]]
+* Initial Contacts: See [[../characters/npcs|Non-Player Characters]]
+* Reputation System: See [[../rules/reputation|Reputation Rules]]
+* Faction Benefits: See [[../factions/benefits|Faction Benefits]]
+
+== Rules Reference ==
+* Core Rules: AD&D 2nd Edition
+* House Rules: See [[../rules/house_rules|House Rules]]
+* Combat Rules: See [[../rules/combat|Combat Rules]]
+* Magic Rules: See [[../rules/magic|Magic Rules]]
+
+== Player Resources ==
+* Character Sheets: See [[../characters/character_sheets|Character Sheets]]
+* Maps: See [[../maps|Campaign Maps]]
+* Handouts: See [[../handouts|Player Handouts]]
+* Quick Reference: See [[../rules/quick_reference|Quick Reference]] 

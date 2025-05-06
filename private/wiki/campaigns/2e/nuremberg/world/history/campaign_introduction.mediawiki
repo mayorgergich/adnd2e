@@ -1,0 +1,37 @@
+= Campaign Introduction: The Black Cross of Nuremberg =
+
+== Campaign Overview ==
+* Setting: Nuremberg, 1420s
+* System: AD&D 2nd Edition
+* Style: Historical fantasy
+* Tone: Political intrigue, religious tension
+
+== Historical Context ==
+* Period: Early 15th century
+* Location: Holy Roman Empire
+* Key Events: Hussite Wars
+* Social Structure: Patrician families, guilds, church
+
+== Campaign Rules ==
+* Core Rules: AD&D 2nd Edition
+* House Rules: See [[../rules/house_rules|House Rules]]
+* Character Creation: See [[../characters/character_creation|Character Creation]]
+* Experience System: See [[../rules/experience|Experience Rules]]
+
+== Starting Information ==
+* Character Level: 1st
+* Starting Equipment: Standard
+* Background Requirements: See [[../characters/background_requirements|Background Requirements]]
+* Initial Location: Nuremberg
+
+== Important References ==
+* [[../locations/city_of_nuremberg|City of Nuremberg]]
+* [[../factions/religious_orders|Religious Orders]]
+* [[../factions/guilds|Guilds]]
+* [[../rules/combat|Combat Rules]]
+
+== Player Resources ==
+* [[../handouts/player_guide|Player Guide]]
+* [[../maps/city_map|City Map]]
+* [[../rules/quick_reference|Quick Reference]]
+* [[../characters/character_sheets|Character Sheets]] 

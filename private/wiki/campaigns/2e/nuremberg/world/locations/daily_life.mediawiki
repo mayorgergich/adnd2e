@@ -1,0 +1,43 @@
+= Daily Life in Nuremberg =
+
+== Work and Labor ==
+* Guild Work: Craft production
+* Market Trade: Commerce
+* City Services: Public work
+* Domestic Labor: Household tasks
+
+== Food and Drink ==
+* Local Markets: Food supply
+* Taverns: Public dining
+* Noble Kitchens: Elite cuisine
+* Common Fare: Basic food
+
+== Housing ==
+* Patrician Homes: Noble residences
+* Merchant Houses: Trade families
+* Artisan Quarters: Craft workers
+* Common Housing: General population
+
+== Transportation ==
+* City Streets: Main routes
+* Market Carts: Goods transport
+* Noble Carriages: Elite travel
+* Common Walking: Daily movement
+
+== Public Services ==
+* Water Supply: Public wells
+* Waste Disposal: City maintenance
+* Market Regulation: Trade control
+* Security: City guards
+
+== Social Activities ==
+* Market Days: Regular commerce
+* Church Services: Religious observance
+* Guild Meetings: Craft business
+* Public Gatherings: City events
+
+== Health and Welfare ==
+* Church Hospitals: Medical care
+* Public Health: City maintenance
+* Guild Support: Craft assistance
+* Noble Patronage: Elite charity 

@@ -1,0 +1,17 @@
+= Game Mechanics =
+
+== Overview ==
+This section contains all the mechanical aspects of the campaign, including rules, items, and monsters. These pages provide the technical framework for gameplay and character interaction within the Nuremberg setting.
+
+== Quick Navigation ==
+* [[Rules|Rules]] - Game rules and systems
+* [[Items|Items]] - Equipment and objects
+* [[Monsters|Monsters]] - Creatures and NPCs
+
+== Related Pages ==
+* [[../World|World Building]] - Setting information
+* [[../Player Resources|Player Resources]] - Character information
+* [[../Game Master Resources|Game Master Resources]] - GM content
+
+== Recent Updates ==
+* Mechanics section under development 

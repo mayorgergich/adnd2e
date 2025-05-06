@@ -1,0 +1,39 @@
+= City of Nuremberg =
+
+== Overview ==
+Nuremberg in 1420 is a thriving imperial city, known for its trade, craftsmanship, and political significance. The city serves as the primary setting for our campaign.
+
+== Political Structure ==
+* '''Patrician Families:''' Including the Groß family, these form the Inner Council
+* '''City Governance:''' Complex system of councils and guilds
+* '''Religious Authority:''' Bishop's representative Heinrich von Stein oversees spiritual matters
+
+== Key Locations ==
+* '''St. Sebaldus Church:''' City's patron saint's church, central to religious life
+* '''Merchant District:''' Home to many patrician families
+* '''Craft Guilds:''' Centers of trade and craftsmanship
+
+== Religious Life ==
+* '''Patron Saint:''' St. Sebaldus
+* '''Church Hierarchy:''' Complex relationship between city and church
+* '''Religious Orders:''' Various monastic and religious organizations
+
+== Social Structure ==
+* '''Patrician Class:''' Wealthy merchant families
+* '''Craftsmen:''' Organized in guilds
+* '''Common Folk:''' City's working population
+
+== Current Events ==
+* '''Hussite Conflict:''' Growing tension with Bohemian religious reformers
+* '''Refugee Crisis:''' Eastern monks and others fleeing conflict
+* '''Political Intrigue:''' Complex web of alliances and rivalries
+
+== Campaign Integration ==
+* '''Character Connections:''' How player characters fit into the city
+* '''Adventure Hooks:''' Potential storylines and quests
+* '''Important NPCs:''' Key figures in city life
+
+== Historical Context ==
+* '''1420s Setting:''' Historical background
+* '''Supernatural Beliefs:''' Common magical and religious practices
+* '''Daily Life:''' Typical routines and customs 

@@ -1,0 +1,124 @@
+= Research Template =
+
+== Research Overview ==
+
+- '''Topic:'''
+- '''Purpose:'''
+- '''Timeframe:'''
+- '''Required Resources:'''
+- '''Known Sources:'''
+- '''Expected Outcomes:'''
+
+== Source Materials ==
+
+=== Primary Sources ===
+
+{| class="wikitable"
+|-
+! Source !! Type !! Location !! Reliability !! Key Information !! Status
+|-
+| || || || || ||
+|-
+| || || || || ||
+|}
+
+=== Secondary Sources ===
+
+{| class="wikitable"
+|-
+! Source !! Type !! Location !! Reliability !! Key Information !! Status
+|-
+| || || || || ||
+|-
+| || || || || ||
+|}
+
+== Research Progress ==
+
+=== Daily Notes ===
+
+==== Day 1 ====
+
+- '''Sources Consulted:'''
+- '''Key Findings:'''
+- '''Questions Raised:'''
+- '''Next Steps:'''
+- '''Notes:'''
+
+==== Day 2 ====
+
+- '''Sources Consulted:'''
+- '''Key Findings:'''
+- '''Questions Raised:'''
+- '''Next Steps:'''
+- '''Notes:'''
+
+== Findings & Hypotheses ==
+
+{| class="wikitable"
+|-
+! Finding !! Source !! Confidence !! Implications !! Notes
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+== Connections & Patterns ==
+
+{| class="wikitable"
+|-
+! Pattern !! Related Elements !! Significance !! Verification Needed !! Notes
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+== Required Skills & Spells ==
+
+{| class="wikitable"
+|-
+! Skill/Spell !! Purpose !! Success Rate !! Alternatives !! Notes
+|-
+| [[Know Age]] || Dating artifacts || High || None || Primary method
+|-
+| [[Detect Magic]] || Identify magical properties || Medium || [[Identify]] || Backup option
+|-
+| [[Read Magic]] || Decipher magical text || High || None || Essential
+|}
+
+== Resource Requirements ==
+
+{| class="wikitable"
+|-
+! Resource !! Needed !! Available !! Source !! Notes
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+== Timeline & Milestones ==
+
+{| class="wikitable"
+|-
+! Milestone !! Target Date !! Status !! Dependencies !! Notes
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+== Potential Applications ==
+
+{| class="wikitable"
+|-
+! Application !! Requirements !! Benefits !! Risks !! Status
+|-
+| || || || ||
+|-
+| || || || ||
+|}
+
+== Notes == 

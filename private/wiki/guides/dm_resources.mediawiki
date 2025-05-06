@@ -1,0 +1,36 @@
+# Dungeon Master Resources
+
+This page contains resources and guidelines for Dungeon Masters running AD&D 2nd Edition campaigns.
+
+## Campaign Management
+
+* Session Planning
+* Adventure Design
+* World Building
+* NPC Creation
+* Encounter Design
+
+## Rules Reference
+
+* [[Core Rules|rules/core_rules.mediawiki]]
+* [[Combat Rules|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Magic System|rules/magic_system.mediawiki]]
+
+## Templates and Tools
+
+* [[Combat Encounter Template|templates/encounters/combat_encounter_template.mediawiki]]
+* [[Dungeon Encounter Template|templates/encounters/dungeon_encounter_template.mediawiki]]
+* [[Social Encounter Template|templates/social/social_encounter_template.mediawiki]]
+* [[Quest Tracker Template|templates/quests/quest_tracker_template.mediawiki]]
+
+## World Building
+
+* [[World Overview|setting/world_overview.mediawiki]]
+* [[Geography|setting/geography.mediawiki]]
+* [[Factions and Organizations|setting/factions.mediawiki]]
+
+## Additional Resources
+
+* [[Tactical Guide|guides/tactical-guide.mediawiki]]
+* [[New Player Guide|guides/new_player_guide.mediawiki]]
+* [[Quick Reference Guide|quick_reference.mediawiki]] 

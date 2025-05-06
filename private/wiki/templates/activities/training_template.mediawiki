@@ -1,0 +1,45 @@
+# Training Template
+
+This template is used for tracking character training and skill development during downtime.
+
+## Basic Information
+
+* Character Name:
+* Skill/Ability:
+* Trainer:
+* Location:
+* Start Date:
+
+## Training Requirements
+
+* Prerequisites:
+* Required Materials:
+* Training Cost:
+* Time Commitment:
+
+## Progress Tracking
+
+* Current Level:
+* Progress Points:
+* Milestones:
+* Challenges:
+
+## Time and Resources
+
+* Hours Per Day:
+* Total Days:
+* Resources Used:
+* Additional Costs:
+
+## Results
+
+* Skill Level Gained:
+* Special Abilities:
+* Certifications:
+* Notes:
+
+## Additional Resources
+
+* [[Downtime System|templates/activities/downtime_template.mediawiki]]
+* [[Crafting Template|templates/activities/crafting_template.mediawiki]]
+* [[Research Template|templates/activities/research_template.mediawiki]] 

@@ -1,0 +1,37 @@
+|= Healing Rules =
+
+== Basic Healing ==
+* Natural Healing: 1 hit point per day of rest
+* Medical Care: +1 hit point per day with treatment
+* Expert Care: +2 hit points per day with skilled healer
+* Magical Care: Instant healing through spells
+
+== Treatment Types ==
+* First Aid: Immediate stabilization
+* Long-term Care: Extended recovery
+* Magical Treatment: Spell-based healing
+* Divine Intervention: Miracle healing
+
+== Recovery Rules ==
+* Rest Requirements: Full day of rest
+* Activity Restrictions: Limited movement
+* Treatment Duration: Days to weeks
+* Magical Acceleration: Faster recovery
+
+== Medical Skills ==
+* Healing NWP: Basic medical knowledge
+* Herbalism NWP: Natural remedies
+* Surgery NWP: Advanced treatment
+* Diagnosis NWP: Medical assessment
+
+== Magical Healing ==
+* Spell Components: Required materials
+* Casting Time: Action requirements
+* Healing Limits: Daily restrictions
+* Faith Requirements: Divine healing
+
+== Related Pages ==
+* [[../magic/healing_magic|Magical Healing]]: Spell-based healing
+* [[../../world/locations/healing_practices|Healing Practices]]: Medical facilities
+* [[../items/healing_items|Healing Items]]: Medical supplies
+* [[combat|Combat Rules]]: Combat healing 

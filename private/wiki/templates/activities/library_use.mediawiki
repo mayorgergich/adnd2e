@@ -1,0 +1,45 @@
+# Library Use Template
+
+This template is used for tracking research and library use activities.
+
+## Basic Information
+
+* Character Name:
+* Research Topic:
+* Library Location:
+* Start Date:
+* Expected Duration:
+
+## Research Goals
+
+* Primary Objective:
+* Secondary Objectives:
+* Specific Questions:
+* Required Information:
+
+## Resources Available
+
+* Library Collections:
+* Special Collections:
+* Restricted Materials:
+* Expert Assistance:
+
+## Research Process
+
+* Search Methods:
+* Sources Consulted:
+* Notes Taken:
+* Cross-References:
+
+## Results
+
+* Information Found:
+* New Leads:
+* Gaps in Knowledge:
+* Additional Research Needed:
+
+## Additional Resources
+
+* [[Research System|templates/activities/research_template.mediawiki]]
+* [[Downtime System|templates/activities/downtime_template.mediawiki]]
+* [[Training Template|templates/activities/training_template.mediawiki]] 

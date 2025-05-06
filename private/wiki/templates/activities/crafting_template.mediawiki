@@ -1,0 +1,45 @@
+# Crafting Template
+
+This template is used for tracking crafting activities during downtime.
+
+## Basic Information
+
+* Character Name:
+* Craft Type:
+* Project Name:
+* Start Date:
+* Expected Completion:
+
+## Resources Required
+
+* Materials:
+* Tools:
+* Workspace:
+* Special Requirements:
+
+## Progress Tracking
+
+* Current Stage:
+* Progress Points:
+* Quality Check:
+* Complications:
+
+## Time and Cost
+
+* Hours Spent:
+* Materials Cost:
+* Additional Expenses:
+* Time Remaining:
+
+## Results
+
+* Final Quality:
+* Special Features:
+* Market Value:
+* Notes:
+
+## Additional Resources
+
+* [[Downtime System|templates/activities/downtime_template.mediawiki]]
+* [[Training Template|templates/activities/training_template.mediawiki]]
+* [[Research Template|templates/activities/research_template.mediawiki]] 

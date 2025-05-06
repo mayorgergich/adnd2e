@@ -1,0 +1,52 @@
+# Wilderness Exploration Template
+
+This template is used for tracking wilderness exploration and travel activities.
+
+## Basic Information
+
+* Party Members:
+* Destination:
+* Starting Point:
+* Travel Date:
+* Expected Duration:
+
+## Travel Planning
+
+* Route:
+* Terrain Types:
+* Known Hazards:
+* Rest Points:
+
+## Resources
+
+* Supplies:
+* Equipment:
+* Mounts/Transport:
+* Special Items:
+
+## Navigation
+
+* Maps Available:
+* Guides:
+* Landmarks:
+* Navigation Checks:
+
+## Encounters
+
+* Random Encounters:
+* Planned Encounters:
+* Weather Effects:
+* Special Events:
+
+## Results
+
+* Distance Traveled:
+* Resources Used:
+* Discoveries:
+* Complications:
+
+## Additional Resources
+
+* [[Travel System|templates/activities/travel_template.mediawiki]]
+* [[Dungeon Encounter Template|templates/encounters/dungeon_encounter_template.mediawiki]]
+* [[Combat Encounter Template|templates/encounters/combat_encounter_template.mediawiki]] 

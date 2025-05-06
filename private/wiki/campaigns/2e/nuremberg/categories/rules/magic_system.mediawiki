@@ -1,0 +1,43 @@
+= Magic System and Supernatural Elements =
+
+== Religious Magic ==
+* Type: Divine intervention
+* Presentation: Subtle, ritual-based
+* Acceptance: Limited to clerical practice
+* Examples: Healing, blessings, protection
+
+== Arcane Magic ==
+* Status: Feared and hunted
+* Practice: Secretive, dangerous
+* Discovery: Leads to persecution
+* Location: Hidden in universities, scriptoriums
+
+== Magic Restrictions ==
+* Public Use: Forbidden
+* Religious Context: Limited acceptance
+* Social Impact: Suspicion and fear
+* Legal Status: Potential heresy
+
+== Supernatural Elements ==
+* Miracles: Accepted as divine intervention
+* Witchcraft: Feared and persecuted
+* Alchemy: Hidden practice
+* Demonology: Forbidden knowledge
+
+== Magical Practice ==
+* Clerical Magic: Subtle and ritual-based
+* Arcane Magic: Hidden and dangerous
+* Folk Magic: Superstitious practices
+* Natural Philosophy: Cover for arcane study
+
+== Social Impact ==
+* Church Response: Inquisition
+* Public Perception: Fear and suspicion
+* Academic Study: Hidden research
+* Cultural Impact: Superstition and folklore
+
+== Game Mechanics ==
+* Clerical Spells: Limited to religious context
+* Arcane Spells: Require secrecy
+* Healing Magic: Scarce and limited
+* Death: Permanent consequences 

@@ -1,0 +1,54 @@
+# Combat Quick Reference
+
+This page provides quick access to essential combat rules and mechanics.
+
+## Basic Actions
+
+* Attack
+* Move
+* Cast Spell
+* Use Item
+* Special Action
+
+## Combat Sequence
+
+1. Surprise
+2. Initiative
+3. Movement
+4. Missile Combat
+5. Magic
+6. Melee Combat
+
+## Attack Modifiers
+
+* Strength Bonus
+* Dexterity Bonus
+* Weapon Proficiency
+* Specialization
+* Magic Items
+* Circumstances
+
+## Damage Types
+
+* Slashing
+* Piercing
+* Bludgeoning
+* Fire
+* Cold
+* Electricity
+* Acid
+* Magic
+
+## Saving Throws
+
+* Paralyzation, Poison, Death Magic
+* Rod, Staff, Wand
+* Petrification, Polymorph
+* Breath Weapon
+* Spell
+
+## Additional Resources
+
+* [[Combat Technique Tracker|templates/combat/combat_technique_tracker.mediawiki]]
+* [[Combat Encounter Template|templates/encounters/combat_encounter_template.mediawiki]]
+* [[Core Rules|rules/core_rules.mediawiki]] 

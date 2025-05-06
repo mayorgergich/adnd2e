@@ -1,0 +1,170 @@
+= Character Sheet Template =
+
+== Character Overview ==
+
+{| class="wikitable"
+|-
+! Field !! Value
+|-
+| '''Race''' || 
+|-
+| '''Class''' || 
+|-
+| '''Kit''' || 
+|-
+| '''Level''' || 
+|-
+| '''Alignment''' || 
+|-
+| '''Deity''' || 
+|-
+| '''Experience''' || 
+|-
+| '''Hit Dice''' || 
+|-
+| '''Starting Gold''' || 
+|-
+| '''Gold Remaining''' || 
+|}
+
+== Abilities ==
+
+{| class="wikitable"
+|-
+! Ability !! Score !! Modifier !! Notes
+|-
+| Strength || || || Hit / Dmg / Wgt Allow
+|-
+| Dexterity || || || Reaction / Missile
+|-
+| Constitution || || || HP / Sys / Res
+|-
+| Intelligence || || || languages / Learn
+|-
+| Wisdom || || || Mag Def / Spell Bonus
+|-
+| Charisma || || || Reaction / Loyalty
+|}
+
+== Saving Throws ==
+
+{| class="wikitable"
+|-
+! vs. !! Value
+|-
+| Paralyze/Poison || 
+|-
+| Rod, Staff or Wand || 
+|-
+| Petrify/Polymorph || 
+|-
+| Breath Weapon || 
+|-
+| Spells (Charm) || 
+|}
+
+== Combat Statistics ==
+
+=== Armor Class & Hit Points ===
+
+{| class="wikitable"
+|-
+! Description !! Value
+|-
+| Base AC || 
+|-
+| With Armor || 
+|-
+| With Shield || 
+|-
+| Total HP || 
+|-
+| Current HP || 
+|}
+
+=== Weapon Combat ===
+
+{| class="wikitable"
+|-
+! Weapon !! # Attacks !! THAC0 !! Attack Adj !! Damage Adj !! Damage (S/M/L) !! Type !! Range !! Weight !! Size !! Speed
+|-
+| || || || || || || || || || ||
+|}
+
+== Equipment ==
+
+=== Armor & Weapons ===
+
+* 
+* 
+
+=== Clothing & Accessories ===
+
+* 
+* 
+
+=== Adventuring Gear ===
+
+* 
+* 
+
+== Special Abilities ==
+
+=== Class Abilities ===
+
+* 
+
+=== Kit Abilities ===
+
+* 
+
+=== Other Abilities ===
+
+* 
+
+== Proficiencies / Skills ==
+
+{| class="wikitable"
+|-
+! Skill / Proficiency !! Value !! Key Attribute !! Notes
+|-
+| || || ||
+|}
+
+== Spellcasting ==
+
+=== Memorized Spells ===
+
+==== Level 1 ====
+
+{| class="wikitable"
+|-
+! Spell Name !! Range !! Duration !! Area of Effect !! Components !! Casting Time !! School !! Sphere
+|-
+| || || || || || || ||
+|}
+
+=== Daily Divine Abilities ===
+
+{| class="wikitable"
+|-
+! Priest Level !! Ability !! Uses/Day !! Duration
+|-
+| || || ||
+|}
+
+== Background & Personality ==
+
+=== Background ===
+
+=== Personality Traits ===
+
+* 
+
+== Character Development Goals ==
+
+1. 
+2. 
+3. 
+
+== Notes == 

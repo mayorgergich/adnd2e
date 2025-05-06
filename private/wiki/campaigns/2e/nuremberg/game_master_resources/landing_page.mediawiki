@@ -1,0 +1,17 @@
+= Game Master Resources =
+
+== Overview ==
+This section contains all information specifically for Game Masters, including quests, maps, and secrets. These pages provide the tools and information needed to run the campaign effectively while maintaining the historical and cultural integrity of the Nuremberg setting.
+
+== Quick Navigation ==
+* [[Quests|Quests]] - Adventures and storylines
+* [[Maps|Maps]] - GM maps and locations
+* [[Secrets|Secrets]] - Hidden information
+
+== Related Pages ==
+* [[../World|World Building]] - Setting information
+* [[../Mechanics|Game Mechanics]] - Rules and systems
+* [[../Player Resources|Player Resources]] - Player content
+
+== Recent Updates ==
+* Game Master Resources section under development 

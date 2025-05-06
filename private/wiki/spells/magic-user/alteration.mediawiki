@@ -1,0 +1,64 @@
+# Alteration Spells
+
+This page lists all Magic-User spells from the School of Alteration.
+
+## Description
+Alteration spells change the properties of creatures, objects, or conditions. These spells can alter the physical world and manipulate matter in various ways.
+
+## Spell List by Level
+
+### 1st Level
+* [[Enlarge]]
+* [[Feather Fall]]
+* [[Jump]]
+* [[Spider Climb]]
+
+### 2nd Level
+* [[Alter Self]]
+* [[Knock]]
+* [[Levitate]]
+* [[Rope Trick]]
+* [[Strength]]
+
+### 3rd Level
+* [[Blink]]
+* [[Fly]]
+* [[Haste]]
+* [[Slow]]
+* [[Water Breathing]]
+
+### 4th Level
+* [[Extension I]]
+* [[Massmorph]]
+* [[Polymorph Other]]
+* [[Polymorph Self]]
+
+### 5th Level
+* [[Extension II]]
+* [[Passwall]]
+* [[Telekinesis]]
+* [[Transmute Rock to Mud]]
+
+### 6th Level
+* [[Control Weather]]
+* [[Extension III]]
+* [[Lower Water]]
+* [[Stone to Flesh]]
+
+### 7th Level
+* [[Reverse Gravity]]
+* [[Statue]]
+
+### 8th Level
+* [[Mass Polymorph]]
+* [[Permanency]]
+
+### 9th Level
+* [[Shape Change]]
+* [[Temporal Stasis]]
+
+## Additional Resources
+
+* [[Magic-User Spells|spells/magic_user_spells.mediawiki]]
+* [[Magic System|rules/magic_system.mediawiki]]
+* [[Spell Template|templates/template_spell.mediawiki]] 

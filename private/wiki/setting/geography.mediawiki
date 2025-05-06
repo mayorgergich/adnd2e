@@ -1,0 +1,38 @@
+# Geography
+
+This page details the geographical features and regions of the campaign world.
+
+## Continents and Regions
+
+* Major Continents
+* Geographic Regions
+* Climate Zones
+* Natural Features
+
+## Political Geography
+
+* Kingdoms and Nations
+* City-States
+* Independent Territories
+* Border Regions
+
+## Natural Features
+
+* Mountain Ranges
+* Rivers and Lakes
+* Forests and Jungles
+* Deserts and Wastelands
+* Oceans and Seas
+
+## Travel and Trade
+
+* Major Trade Routes
+* Travel Times
+* Transportation Methods
+* Natural Barriers
+
+## Additional Resources
+
+* [[World Overview|setting/world_overview.mediawiki]]
+* [[Factions and Organizations|setting/factions.mediawiki]]
+* [[Travel System|templates/activities/travel_template.mediawiki]] 
