@@ -1,0 +1,19 @@
+# Ignore everything
+*
+
+# Except the backups folder
+!backups/
+!backups/*
+
+# Except LocalSettings.php
+!LocalSettings.php
+
+# Ignore other copies of LocalSettings.php
+LocalSettings-*.php
+LocalSettings*.bak
+
+# Ignore shell commands
+*.sh
+
+# Ignore .env files
+.env
