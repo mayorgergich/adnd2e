@@ -128,9 +128,9 @@ $wgDefaultSkin = "biosterminal";
 # Comment out skins that aren't installed
 #wfLoadSkin( 'Vector' );
 wfLoadSkin( 'BIOSTerminal' );
-wfLoadSkin( 'Gamepress' );
-wfLoadSkin( 'Pivot' );
-wfLoadSkin( 'WPTouch' );
+#wfLoadSkin( 'Gamepress' );
+#wfLoadSkin( 'Pivot' );
+#wfLoadSkin( 'WPTouch' );
 #wfLoadSkin( 'Vector' );
 
 # Citizen skin configuration

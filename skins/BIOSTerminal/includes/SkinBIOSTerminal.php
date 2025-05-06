@@ -6,6 +6,8 @@
  * @ingroup Skins
  */
 
+use MediaWiki\MediaWikiServices;
+
 class SkinBIOSTerminal extends SkinTemplate {
 	/** @var string */
 	public $skinname = 'biosterminal';
@@ -27,7 +29,9 @@ class SkinBIOSTerminal extends SkinTemplate {
 		
 		// Check if user has a preference for theme variant
 		$user = $this->getUser();
-		$theme = $user->getOption( 'biosterminal-theme' );
+		// Get the user option using MediaWikiServices
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+		$theme = $userOptionsLookup->getOption( $user, 'biosterminal-theme' );
 		
 		if ( $theme === 'white-black' ) {
 			$out->addModules( 'skins.biosterminal.white-black' );
