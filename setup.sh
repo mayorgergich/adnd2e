@@ -1,4 +1,3 @@
-cat > /opt/mediawiki/update-setup.sh << 'EOF'
 #!/bin/bash
 # Script to update MediaWiki setup to use a single shared database
 
@@ -19,9 +18,17 @@ docker compose down
 cd /opt/mediawiki/private
 docker compose down
 
-# Create mediawiki_fresh database if it doesn't exist
-echo "Creating mediawiki_fresh database..."
-docker exec mariadb mysql -u pawneemayor -p"password321" -e "CREATE DATABASE IF NOT EXISTS mediawiki_fresh;"
+# Create database and user if they don't exist
+echo "Creating database and user..."
+# Assuming root password is set in MariaDB container
+docker exec mariadb mysql -u root -p"rootpassword" <<'EOSQL'
+CREATE DATABASE IF NOT EXISTS mediawiki_fresh;
+CREATE DATABASE IF NOT EXISTS mediawiki_private;
+CREATE USER IF NOT EXISTS 'pawneemayor'@'%' IDENTIFIED BY 'password321';
+GRANT ALL PRIVILEGES ON mediawiki_fresh.* TO 'pawneemayor'@'%';
+GRANT ALL PRIVILEGES ON mediawiki_private.* TO 'pawneemayor'@'%';
+FLUSH PRIVILEGES;
+EOSQL
 
 # Create directory structure for both wikis
 echo "Creating directory structure..."
@@ -455,7 +462,7 @@ cat > /opt/mediawiki/images/resources/sources/logo.png << 'EOI'
 iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB+ElEQVR4nO3dsU7CUBSA4ZPahCFx0EXaEF2Mo8/hG/kC+io+gLMrg6vRxVIICcMtHodW09CWFrz3lPN/G2nMvZz0pCmEUgAAAAAAAAAAAMCfVi37Rfr9/urwsFMrlbL18XiSLspF92tq9d6jdpeqznGu2k3rdnvJarXWr9V6L6oZ1cqLiJSqrU+TSasVj7N8/LzWVp6v9utpJFW9s9l0u+t04/FkUwqxxWKRxeP2bbnzaA9CfTefz3fqbjablMIWDIfD0s5Fuxb3vFEX50e5GsjmOlQKIYQwm05LO+paDxl4vboo7ayO3dMlXjeTjx/npZ3P3h68AQMEYoBADPj1+yHflctSt9v99lP42WwW5vNZuLm9y3wCv5bnebg8PwmnJ52w1zt+3R0cHIbLy4vQ6Ry9+7hpmobt7W3vkEK51A9Pz/G03/9Q9/CwE15eRtt+aB/i6enxXd3JyWnVx4UgD/X6TlXnh3/60wAEIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgjEAIEYIBADBGKAQAwQiAECMUAgBgAAAAAAAAAA8K/8AEe5Zopd89RFAAAAAElFTkSuQmCC
 EOI
 
-# Create a simple placeholder favicon (Base64 encoded)
+# Create a properly formatted favicon.ico file (Base64 encoded)
 cat > /opt/mediawiki/images/resources/sources/favicon.ico << 'EOI'
 AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmZmYAZmZmDGZmZkxmZmZ1ZmZmZGZmZhhmZmYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZmZgBmZmYCZmZmSmZmZq9mZmbnZmZm9WZmZupmZma2ZmZmWGZmZgRmZmYAAAAAAAAAAAAAAAAAAAAAAGZmZgBmZmYyZmZmtWZmZvhmZmb/ZmZm/2ZmZv9mZmb/ZmZm+WZmZrxmZmY8ZmZmAAAAAAAAAAAAAAAAAAAAAABmZmYqZmZmzmZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm2GZmZjQAAAAAAAAAAAAAAABmZmYAZmZmVGZmZvRmZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb3ZmZmYGZmZgAAAAAAAAAAAGZmZgpmZmbCZmZm/2ZmZv9mZmb/ZmZm/2ZmZvNmZmbzZmZm/2ZmZv9mZmb/ZmZm/2ZmZshmZmYQAAAAAAAAAAAAAAAAAAAAAGZmZohmZmb/ZmZm/2ZmZv9mZmbXZmZmVGZmZlRmZmbXZmZm/2ZmZv9mZmb/ZmZmkAAAAAAAAAAAAAAAAAAAAABmZmYAZmZmTmZmZvxmZmb/ZmZm/2ZmZn4AAAAAAAAAAAAAAAAAAAAAZmZmfmZmZv9mZmb8ZmZmTmZmZgAAAAAAAAAAAGZmZgBmZmYaZmZm2GZmZv9mZmb/ZmZmXgAAAAAAAAAAAAAAAAAAAABmZmZeZmZm/2ZmZthmZmYaZmZmAAAAAAAAAAAAZmZmAGZmZgBmZmaWZmZm/2ZmZv9mZmaOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZmZmRGZmZpRmZmYCZmZmAAAAAAAAAAAAZmZmAGZmZgBmZmZKZmZm/2ZmZv9mZmbBZmZmDAAAAAAAAAAAAAAAAAAAAAAAAAAAZmZmAGZmZgBmZmYAZmZmAAAAAAAAAAAAZmZmAGZmZgBmZmYaZmZm82ZmZv9mZmb3ZmZmYgAAAAAAAAAAAAAAAAAAAABmZmYAZmZmAGZmZgBmZmYAAAAAAAAAAAAAAAAAAAAAAGZmZgBmZmYAZmZmxGZmZv9mZmb/ZmZmvGZmZiBmZmYAZmZmAGZmZgBmZmYAZmZmAGZmZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmZmYAZmZmiGZmZv9mZmb/ZmZm+2ZmZpBmZmYaZmZmAGZmZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZmZgBmZmYyZmZm6GZmZv9mZmb/ZmZm/2ZmZrxmZmZAZmZmAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZmZgBmZmYIZmZmcGZmZtBmZmb0ZmZm5GZmZoJmZmYOZmZmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZmZmAGZmZhJmZmYwZmZmHmZmZgIAAAAAAAAAAAAAAAAAAAAA8A8AAOAHAADAAwAAgAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAgAEAAMADAADgBwAA8A8AAA==
 EOI
@@ -473,7 +480,7 @@ docker compose up -d
 
 # Wait for containers to be ready
 echo "Waiting for containers to initialize..."
-sleep 10
+sleep 30  # Increased sleep time for better container initialization
 
 # Update LocalSettings.php files in containers
 echo "Updating LocalSettings.php in containers..."
@@ -508,6 +515,16 @@ echo "Running update script for both wikis..."
 docker exec -u www-data adnd2e php maintenance/update.php --quick
 docker exec -u www-data adnd2e-private php maintenance/update.php --quick
 
+# Create admin user for both wikis
+echo "Creating admin user for both wikis..."
+# For main wiki
+docker exec -u www-data adnd2e php maintenance/createAndPromote.php --bureaucrat --sysop --force Admin "SecureAdminPass123"
+
+# For private wiki
+docker exec -u www-data adnd2e-private php maintenance/createAndPromote.php --bureaucrat --sysop --force Admin "SecureAdminPass123"
+
+echo "Admin user 'Admin' created with password 'SecureAdminPass123' for both wikis"
+
 # Restart containers
 echo "Restarting containers to apply all changes..."
 docker restart adnd2e
@@ -520,6 +537,10 @@ echo "  * https://adnd2e-private.mayorgergich.xyz"
 echo ""
 echo "Both wikis are now using the shared MariaDB container."
 echo ""
+echo "Login credentials:"
+echo "  * Username: Admin"
+echo "  * Password: SecureAdminPass123"
+echo ""
 echo "IMPORTANT: Remember that LocalSettings.php must be manually copied"
 echo "into the containers after any changes:"
 echo ""
@@ -530,6 +551,3 @@ echo ""
 echo "  docker cp /opt/mediawiki/private/LocalSettings.php adnd2e-private:/var/www/html/"
 echo "  docker exec adnd2e-private chmod 644 /var/www/html/LocalSettings.php"
 echo "  docker exec adnd2e-private chown www-data:www-data /var/www/html/LocalSettings.php"
-EOF
-
-chmod +x /opt/mediawiki/update-setup.sh
