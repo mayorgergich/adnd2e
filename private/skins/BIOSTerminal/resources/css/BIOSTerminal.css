@@ -1,0 +1,352 @@
+/* BIOSTerminal - A MediaWiki skin that mimics classic BIOS/DOS terminals
+ * Author: Created by Claude for GitHub project
+ * Date: May 6, 2025
+ */
+
+/* Import the DOS VGA font */
+@font-face {
+  font-family: 'MorePerfectDOSVGA';
+  src: url('http://laemeur.sdf.org/fonts/MorePerfectDOSVGA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Improve font loading behavior */
+}
+
+/* Fallback font stack in case the primary font fails to load */
+:root {
+  --font-family: 'MorePerfectDOSVGA', 'Courier New', monospace;
+}
+
+/* Base Theme - Blue/White (Default) */
+:root {
+  --background-color: #0000FF;
+  --text-color: #FFFFFF;
+  --link-color: #FFFFFF;
+  --link-hover-color: #AAAAAA;
+  --border-color: #FFFFFF;
+  --font-family: 'MorePerfectDOSVGA', monospace;
+  --font-size: 16px;
+  --line-height: 1.4;
+}
+
+/* Reset and base styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  height: 100%;
+}
+
+/* Layout structure */
+#mw-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Left sidebar navigation */
+#mw-sidebar {
+  width: 200px;
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#mw-sidebar .portal {
+  margin-bottom: 1.5rem;
+}
+
+#mw-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+#mw-sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#mw-sidebar li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+/* Main content area */
+#content {
+  flex: 1;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Header styling */
+#mw-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+#p-personal {
+  text-align: right;
+}
+
+#p-personal ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#p-personal li {
+  margin-left: 1rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: normal;
+  color: var(--text-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4, h5, h6 {
+  font-size: 1.1rem;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Form elements */
+input, textarea, select, button {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.5rem;
+}
+
+button, input[type="submit"] {
+  cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Special widgets */
+.mw-editsection {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+/* Search box */
+#p-search {
+  margin: 1rem 0;
+}
+
+#searchInput {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Categories */
+#catlinks {
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+/* Login and user tools */
+#pt-login {
+  font-weight: bold;
+}
+
+/* Notification area */
+#mw-notification-area {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  max-width: 300px;
+}
+
+/* Footer */
+#footer {
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Code blocks */
+pre, code {
+  font-family: var(--font-family);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  display: block;
+  overflow-x: auto;
+}
+
+/* Terminal cursor effect */
+.terminal-cursor::after {
+  content: "█";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+/* Tablet adjustments */
+@media (max-width: 992px) {
+  #mw-sidebar {
+    width: 180px;
+  }
+  
+  #content {
+    padding: 1rem;
+  }
+  
+  .mw-body {
+    padding: 0.5rem;
+  }
+  
+  --font-size: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #mw-wrapper {
+    flex-direction: column;
+  }
+  
+  #mw-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  #content {
+    padding: 0.75rem;
+  }
+  
+  /* Collapsible sidebar on mobile */
+  #mw-sidebar .portal:not(:first-child) {
+    display: none;
+  }
+  
+  #mw-sidebar .portal.active {
+    display: block;
+  }
+  
+  #mw-sidebar .nav-toggle {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+  
+  #mw-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #p-personal {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  input, textarea, select {
+    font-size: 16px; /* Prevent zoom on input focus on mobile */
+  }
+  
+  /* Adjust font size for readability on small screens */
+  :root {
+    --font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  #p-personal ul {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  #p-personal li {
+    margin: 0.25rem 0;
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  :root {
+    --font-size: 13px;
+  }
+}
