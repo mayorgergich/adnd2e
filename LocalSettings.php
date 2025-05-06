@@ -122,16 +122,16 @@ $wgDiff3 = "/usr/bin/diff3";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "monobook";
+$wgDefaultSkin = "biosterminal";
 
 # Enabled skins.
 # Comment out skins that aren't installed
 #wfLoadSkin( 'Vector' );
-wfLoadSkin( 'MonoBook' );
-wfLoadSkin( 'Citizen' );
-
-# Set Citizen as the default skin
-$wgDefaultSkin = "citizen";
+wfLoadSkin( 'BIOSTerminal' );
+wfLoadSkin( 'Gamepress' );
+wfLoadSkin( 'Pivot' );
+wfLoadSkin( 'WPTouch' );
+#wfLoadSkin( 'Vector' );
 
 # Citizen skin configuration
 $wgCitizenThemeDefault = 'dark'; // or 'light' if you prefer
