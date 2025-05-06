@@ -1,0 +1,66 @@
+= AD&D 2nd Edition Campaign Wiki =
+
+Welcome to the AD&D 2E Campaign Wiki! This page serves as your central hub for all campaign resources and references.
+
+== Character Resources ==
+* [[templates/character|Character Creation and Management]]
+* [[templates/character/sheets|Character Sheets]]
+* [[templates/spiritual|Spiritual Development]]
+
+== Rules Reference ==
+* [[rules|Core Rules]]
+* [[rules/combat|Combat Rules]]
+* [[rules/magic|Magic System]]
+
+== Spell Compendium ==
+* [[spells/cleric|Cleric Spells]]
+* [[spells/magic-user|Magic-User Spells]]
+* [[spells/druid|Druid Spells]]
+
+== Game Mechanics ==
+=== Combat System ===
+* [[templates/combat|Combat Templates and Guidelines]]
+* [[templates/encounters|Encounter Management]]
+
+=== Social Encounters ===
+* [[templates/social|Social Interaction System]]
+* [[templates/social/reaction|NPC Reaction Tables]]
+
+=== Dungeon Encounters ===
+* [[templates/encounters/dungeon|Dungeon Encounter Templates]]
+* [[templates/encounters/traps|Trap Templates]]
+
+== Campaign Setting ==
+* [[setting|World Overview]]
+* [[setting/geography|Geography]]
+* [[setting/factions|Factions and Organizations]]
+
+== Gameplay Guides ==
+* [[guides|General Guides]]
+* [[guides/new-player|New Player Guide]]
+* [[guides/dm|Dungeon Master Resources]]
+
+== Activity Templates ==
+=== Downtime Activities ===
+* [[templates/activities/downtime|Downtime System]]
+* [[templates/activities/crafting|Crafting]]
+* [[templates/activities/training|Training]]
+
+=== Travel ===
+* [[templates/activities/travel|Travel System]]
+* [[templates/activities/exploration|Wilderness Exploration]]
+
+=== Research ===
+* [[templates/activities/research|Research System]]
+* [[templates/activities/library|Library Use]]
+
+=== Spiritual Practices ===
+* [[templates/spiritual/meditation|Meditation]]
+* [[templates/spiritual/prayer|Prayer and Devotion]]
+
+== Quick Access Templates ==
+* [[templates/character/sheets|Character Sheets]]
+* [[templates/combat/quick|Combat Quick Reference]]
+* [[templates/social/quick|Social Encounter Worksheet]]
+* [[templates/quests/tracker|Quest Tracker]]
+* [[templates/activities/quick|Activity Templates]]

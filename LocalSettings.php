@@ -40,8 +40,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/resources/assets/change-your-logo.svg",
-	'icon' => "$wgResourceBasePath/resources/assets/change-your-logo-icon.svg",
+	'1x' => "$wgResourceBasePath/resources/sources/favicon.ico",
+	'icon' => "$wgResourceBasePath/resources/sources/logo.png",
 ];
 
 ## UPO means: this is also a user preference option
@@ -64,7 +64,7 @@ $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # MySQL specific settings
-$wgDBprefix = "adnd2e";
+$wgDBprefix = "";
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update

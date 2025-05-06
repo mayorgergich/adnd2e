@@ -1,6 +1,6 @@
 services:
   adnd2e-private:
-    image: mediawiki:1.35
+    image: mediawiki:latest
     container_name: adnd2e-private
     hostname: adnd2e-private
     restart: unless-stopped
@@ -12,10 +12,10 @@ services:
       - MEDIAWIKI_DB_HOST=mariadb
       - MEDIAWIKI_DB_NAME=mediawiki_private
       - MEDIAWIKI_DB_USER=pawneemayor
-      - MEDIAWIKI_DB_PASSWORD=password321
+      - MEDIAWIKI_DB_PASSWORD=${DB_PASSWORD}
       - MEDIAWIKI_SITE_NAME=AD&D 2E Private Wiki
     volumes:
-      - /opt/mediawiki/private/images:/var/www/html/images
+      - /opt/mediawiki/private/resources:/var/www/html/images
       - /etc/localtime:/etc/localtime:ro
       - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
     networks:
@@ -38,4 +38,3 @@ services:
 networks:
   saltbox:
     external: true
-

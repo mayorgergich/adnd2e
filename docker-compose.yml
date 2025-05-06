@@ -19,7 +19,6 @@ services:
       - /opt/mediawiki/images:/var/www/html/images
       - /etc/localtime:/etc/localtime:ro
       - /opt/mediawiki/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
-      - /opt/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
     networks:
       - saltbox
     labels:

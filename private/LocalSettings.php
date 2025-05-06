@@ -37,8 +37,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/resources/assets/change-your-logo.svg",
-	'icon' => "$wgResourceBasePath/resources/assets/change-your-logo-icon.svg",
+	'1x' => "$wgResourceBasePath/resources/logo.png",
+	'icon' => "$wgResourceBasePath/resources/favicon.ico",
 ];
 
 ## UPO means: this is also a user preference option
@@ -55,7 +55,7 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "adnd2e-private-db";
+$wgDBserver = "mariadb";
 $wgDBname = "mediawiki_private";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
@@ -126,7 +126,7 @@ $wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
 # The following skins were automatically enabled:
-#wfLoadSkin( 'MinervaNeue' );
+wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );

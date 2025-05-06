@@ -1,3 +1,4 @@
+# Add LocalSettings.php mount
 services:
   adnd2e-private:
     image: mediawiki:latest
@@ -15,12 +16,9 @@ services:
       - MEDIAWIKI_DB_PASSWORD=${DB_PASSWORD}
       - MEDIAWIKI_SITE_NAME=AD&D 2E Private Wiki
     volumes:
-      - /opt/mediawiki/private/images:/var/www/html/images
+      - /opt/mediawiki/private/resources:/var/www/html/images
       - /etc/localtime:/etc/localtime:ro
       - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
-    entrypoint: >
-      sh -c "if [ -f /opt/config/LocalSettings.php ]; then cp /opt/config/LocalSettings.php /var/www/html/; fi && 
-             docker-php-entrypoint apache2-foreground"
     networks:
       - saltbox
     labels:
@@ -37,22 +35,6 @@ services:
       traefik.http.routers.adnd2e-private.tls.certresolver: cfdns
       traefik.http.routers.adnd2e-private.tls.options: securetls@file
       traefik.http.services.adnd2e-private.loadbalancer.server.port: 80
-    depends_on:
-      - mariadb
-
-  mariadb:
-    image: mariadb:10.7
-    container_name: mediawiki-mariadb
-    restart: unless-stopped
-    environment:
-      - MYSQL_DATABASE=mediawiki_private
-      - MYSQL_USER=pawneemayor
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
-    volumes:
-      - /opt/mediawiki/private/db_data:/var/lib/mysql
-    networks:
-      - saltbox
 
 networks:
   saltbox:
