@@ -61,7 +61,7 @@ $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # MySQL specific settings
-$wgDBprefix = "adnd2e_private_"; # Added prefix for separation
+$wgDBprefix = ""; # Added prefix for separation
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update
@@ -121,14 +121,14 @@ $wgRightsIcon = "";
 $wgDiff3 = "/usr/bin/diff3";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
-## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "vector-2022";
+## names, e.g. 'vector' or 'monobook':#
+$wgDefaultSkin = "monobook";
 
 # Enabled skins.
 # Comment out skins that aren't installed
-wfLoadSkin( 'Vector' );
+#wfLoadSkin( 'Vector' );
 #wfLoadSkin( 'MinervaNeue' );
-#wfLoadSkin( 'MonoBook' );
+wfLoadSkin( 'MonoBook' );
 #wfLoadSkin( 'Timeless' );
 
 # Performance settings
