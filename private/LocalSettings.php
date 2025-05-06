@@ -61,7 +61,7 @@ $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # MySQL specific settings
-$wgDBprefix = "adnd2e_private";
+$wgDBprefix = "";
 $wgDBssl = false;
 
 # MySQL table options to use during installation or update
@@ -126,7 +126,7 @@ $wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
 # The following skins were automatically enabled:
-wfLoadSkin( 'MinervaNeue' );
+#wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );

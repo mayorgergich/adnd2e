@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   adnd2e-private:
-    image: mediawiki:latest
+    image: mediawiki:1.35
     container_name: adnd2e-private
     hostname: adnd2e-private
     restart: unless-stopped
@@ -18,7 +18,11 @@ services:
     volumes:
       - /opt/mediawiki/private/images:/var/www/html/images
       - /etc/localtime:/etc/localtime:ro
+      - /opt/mediawiki/private/LocalSettings.php:/local/LocalSettings.php:ro
       - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
+    entrypoint: >
+      sh -c "cp /local/LocalSettings.php /var/www/html/LocalSettings.php &&
+             docker-php-entrypoint apache2-foreground"
     networks:
       - saltbox
     labels:
