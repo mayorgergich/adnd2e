@@ -55,7 +55,7 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "adnd2e-private-db";
+$wgDBserver = "database";
 $wgDBname = "mediawiki_private";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
