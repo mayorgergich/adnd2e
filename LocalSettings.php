@@ -121,16 +121,17 @@ $wgRightsIcon = "";
 $wgDiff3 = "/usr/bin/diff3";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
-## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "pivot";
+## names
+$wgDefaultSkin = "wptouch";
 
 # Enabled skins.
 # Comment out skins that aren't installed
-#wfLoadSkin( 'Vector' );
+wfLoadSkin( 'Vector' );
 #wfLoadSkin( 'BIOSTerminal' );
-#wfLoadSkin( 'Gamepress' );
+wfLoadSkin( 'Gamepress' );
 wfLoadSkin( 'Pivot' );
 wfLoadSkin( 'WPTouch' );
+#wfLoadSkin( 'Vector' );
 
 # Citizen skin configuration
 $wgCitizenThemeDefault = 'dark'; // or 'light' if you prefer
@@ -156,3 +157,4 @@ ini_set('max_execution_time', 120);
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
 $wgShowSQLErrors = true;
+
