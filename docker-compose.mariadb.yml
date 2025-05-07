@@ -1,1 +1,47 @@
- 
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb:10
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      TZ: America/Los_Angeles
+      MARIADB_ROOT_PASSWORD: password321
+      MARIADB_USER: pawneemayor
+      MARIADB_PASSWORD: password321
+      MARIADB_DATABASE: saltbox
+      MARIADB_AUTO_UPGRADE: 1
+    volumes:
+      - ./my.cnf:/etc/mysql/conf.d/custom.cnf:ro
+      - /opt/mariadb:/var/lib/mysql:rw
+    networks:
+      - saltbox
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-p${MARIADB_ROOT_PASSWORD}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    user: "1000:1000"
+    ports:
+      - "3306:3306"
+
+networks:
+  saltbox:
+    external: true
