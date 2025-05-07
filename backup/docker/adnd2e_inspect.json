@@ -1,0 +1,329 @@
+[
+    {
+        "Id": "ccf8f9d72411607aeeacd085d637e06997abbc43e30b8c74546a1c1581fa5ab5",
+        "Created": "2025-05-06T08:26:11.086183117Z",
+        "Path": "docker-php-entrypoint",
+        "Args": [
+            "apache2-foreground"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 550971,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-05-07T08:47:55.543756861Z",
+            "FinishedAt": "2025-05-07T08:47:55.314175173Z"
+        },
+        "Image": "sha256:d964ba1627e0d678c7e95d2f75298784c7b314646adc01a4467c37f80c04f2a2",
+        "ResolvConfPath": "/var/lib/docker/containers/ccf8f9d72411607aeeacd085d637e06997abbc43e30b8c74546a1c1581fa5ab5/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ccf8f9d72411607aeeacd085d637e06997abbc43e30b8c74546a1c1581fa5ab5/hostname",
+        "HostsPath": "/var/lib/docker/containers/ccf8f9d72411607aeeacd085d637e06997abbc43e30b8c74546a1c1581fa5ab5/hosts",
+        "LogPath": "/var/lib/docker/containers/ccf8f9d72411607aeeacd085d637e06997abbc43e30b8c74546a1c1581fa5ab5/ccf8f9d72411607aeeacd085d637e06997abbc43e30b8c74546a1c1581fa5ab5-json.log",
+        "Name": "/adnd2e",
+        "RestartCount": 1,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": [
+            "17325500c9c51030bf58c90123186b578387e366efc1f04539f2fdaa394ca538"
+        ],
+        "HostConfig": {
+            "Binds": [
+                "/opt/mediawiki/cache:/var/www/html/cache:rw",
+                "/opt/mediawiki/extensions:/var/www/html/extensions:rw",
+                "/opt/mediawiki/skins:/var/www/html/skins:rw",
+                "/opt/mediawiki/config:/var/www/html/config:rw",
+                "/etc/localtime:/etc/localtime:ro",
+                "/opt/mediawiki/apache-config.conf:/etc/apache2/conf-enabled/servername.conf:rw",
+                "/opt/mediawiki/images:/var/www/html/images:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {
+                    "max-file": "3",
+                    "max-size": "10m"
+                }
+            },
+            "NetworkMode": "4eb9474ed399deda8a373d053331999f953ffc2e136335018a8efe269ccb67af",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/58e67c19c27ca6d04cc274934af61d7f6b607d61d3c786b49e42edfa4c5b8067-init/diff:/var/lib/docker/overlay2/98a5edea7ea67004de5c925c60f17c88c25c5f67239918b252cd8e4b32cb9b35/diff:/var/lib/docker/overlay2/c5bc4b7266b88de0de15e22ae8b69cd7f3cb3f9a10fbfbc36a658089a3ab382e/diff:/var/lib/docker/overlay2/83b57dc0a4af160360f36d616f4196ff34e1a0a73124a02c237711a694d4d7bb/diff:/var/lib/docker/overlay2/074d676b1d5111c26c4e31f0e797d3d2129d309b4b7e733ae601fcc6d7ceb8e8/diff:/var/lib/docker/overlay2/1dc4322e750b565546564b4da44f2e62b8782f1083fc2947eb39f2ba072993e7/diff:/var/lib/docker/overlay2/62e6d6a3a6e59c15b3f506bf956d722b16808f47d1b3d394a60d404d74642d33/diff:/var/lib/docker/overlay2/6d345ae8e46e83da0b4dd673247b1ff18cbc2431f2409b01bc2e388f3bb4f68c/diff:/var/lib/docker/overlay2/5f32d5782fa485a381c8355939826358d6fa5c4d16e4256d9569011fe3ddd0a1/diff:/var/lib/docker/overlay2/3c970453170bcbdf1846423d54a02d4af2fc26453a3ee57e15d6ab0a75eae932/diff:/var/lib/docker/overlay2/6f216595788f01516e81e2132786b69ddf8b70f54ab7de39502e0575f1275ae4/diff:/var/lib/docker/overlay2/5fec89686e57143b46581c9a09d97554297688d297e7a6bd9904c63f5cdaeb21/diff:/var/lib/docker/overlay2/482698257fa0e16fc960cda0ec32e205abd78e75673c55062a5a45554e6fd748/diff:/var/lib/docker/overlay2/db711f65d2b81fb0d1dbdddfca59f13e6f04d5e04bd83729881a7500b7965ea8/diff:/var/lib/docker/overlay2/b78f36c52906b198479fccb3f3216c086881c016bcb957bc8332deeb1efafa06/diff:/var/lib/docker/overlay2/12bf453e0bdf8324ad953f11c93d44495aa4b209c5d6594d5c07b8d897991f33/diff:/var/lib/docker/overlay2/0de4ee7776f52dcc6b0dead9b4ff5a602b960a111f1b508f3d628304f2ac5219/diff:/var/lib/docker/overlay2/f92f9936d4d072bc591890f5f3db7f9ca33b6635cfadcd54a6a996802e29d6ab/diff:/var/lib/docker/overlay2/d0e57907f44be5c5615d643f7bee426df0c1551ab57b25e0e5271e653210297e/diff:/var/lib/docker/overlay2/cf5e64dc2b08955f5926c7f4f3bf0362733ea89352119d64c52cdacd9ed506a3/diff:/var/lib/docker/overlay2/98df1fd8bbd1227fd12b982f6f4db01bfe5f231d37c7ebaac271da34f10d9b4c/diff:/var/lib/docker/overlay2/c8d0a77a3010bc20890f0cb7c7155a89558d726ac0da610e96152d641f5e9280/diff",
+                "MergedDir": "/var/lib/docker/overlay2/58e67c19c27ca6d04cc274934af61d7f6b607d61d3c786b49e42edfa4c5b8067/merged",
+                "UpperDir": "/var/lib/docker/overlay2/58e67c19c27ca6d04cc274934af61d7f6b607d61d3c786b49e42edfa4c5b8067/diff",
+                "WorkDir": "/var/lib/docker/overlay2/58e67c19c27ca6d04cc274934af61d7f6b607d61d3c786b49e42edfa4c5b8067/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/opt/mediawiki/skins",
+                "Destination": "/var/www/html/skins",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/opt/mediawiki/config",
+                "Destination": "/var/www/html/config",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/etc/localtime",
+                "Destination": "/etc/localtime",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/opt/mediawiki/apache-config.conf",
+                "Destination": "/etc/apache2/conf-enabled/servername.conf",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/opt/mediawiki/images",
+                "Destination": "/var/www/html/images",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/opt/mediawiki/cache",
+                "Destination": "/var/www/html/cache",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/opt/mediawiki/extensions",
+                "Destination": "/var/www/html/extensions",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "adnd2e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MEDIAWIKI_SITE_NAME=AD&D 2E Wiki",
+                "PUID=1000",
+                "PGID=1000",
+                "MEDIAWIKI_DB_NAME=mediawiki_fresh",
+                "MEDIAWIKI_DB_TYPE=mysql",
+                "MEDIAWIKI_DB_HOST=mariadb",
+                "TZ=UTC",
+                "MEDIAWIKI_DB_USER=pawneemayor",
+                "MEDIAWIKI_DB_PASSWORD=password321",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "PHPIZE_DEPS=autoconf \t\tdpkg-dev \t\tfile \t\tg++ \t\tgcc \t\tlibc-dev \t\tmake \t\tpkg-config \t\tre2c",
+                "PHP_INI_DIR=/usr/local/etc/php",
+                "APACHE_CONFDIR=/etc/apache2",
+                "APACHE_ENVVARS=/etc/apache2/envvars",
+                "PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+                "PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64",
+                "PHP_LDFLAGS=-Wl,-O1 -pie",
+                "GPG_KEYS=528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 39B641343D8C104B2B146DC3F9C39DC0B9698544 F1F692238FBC1666E5A5CCD4199F9DFEF6FFBAFD",
+                "PHP_VERSION=8.1.32",
+                "PHP_URL=https://www.php.net/distributions/php-8.1.32.tar.xz",
+                "PHP_ASC_URL=https://www.php.net/distributions/php-8.1.32.tar.xz.asc",
+                "PHP_SHA256=c582ac682a280bbc69bc2186c21eb7e3313cc73099be61a6bc1d2cd337cbf383",
+                "MEDIAWIKI_MAJOR_VERSION=1.43",
+                "MEDIAWIKI_VERSION=1.43.1"
+            ],
+            "Cmd": [
+                "apache2-foreground"
+            ],
+            "Image": "mediawiki:latest",
+            "Volumes": null,
+            "WorkingDir": "/var/www/html",
+            "Entrypoint": [
+                "docker-php-entrypoint"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "1394311000857c0e39d9e8391a8c22412f37e940f943084cc641fbe7d7410a23",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:d964ba1627e0d678c7e95d2f75298784c7b314646adc01a4467c37f80c04f2a2",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "mediawiki",
+                "com.docker.compose.project.config_files": "/opt/mediawiki/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/opt/mediawiki",
+                "com.docker.compose.service": "adnd2e",
+                "com.docker.compose.version": "2.25.0",
+                "com.github.saltbox.saltbox_managed": "true",
+                "traefik.enable": "true",
+                "traefik.http.routers.adnd2e-http.entrypoints": "web",
+                "traefik.http.routers.adnd2e-http.middlewares": "globalHeaders@file,redirect-to-https@docker,robotHeaders@file,cloudflarewarp@docker",
+                "traefik.http.routers.adnd2e-http.rule": "Host(`adnd2e.mayorgergich.xyz`)",
+                "traefik.http.routers.adnd2e-http.service": "adnd2e",
+                "traefik.http.routers.adnd2e.entrypoints": "websecure",
+                "traefik.http.routers.adnd2e.middlewares": "globalHeaders@file,secureHeaders@file,robotHeaders@file,cloudflarewarp@docker",
+                "traefik.http.routers.adnd2e.rule": "Host(`adnd2e.mayorgergich.xyz`)",
+                "traefik.http.routers.adnd2e.service": "adnd2e",
+                "traefik.http.routers.adnd2e.tls.certresolver": "cfdns",
+                "traefik.http.routers.adnd2e.tls.options": "securetls@file",
+                "traefik.http.services.adnd2e.loadbalancer.server.port": "80"
+            },
+            "StopSignal": "SIGWINCH"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "58f5bf65efa3a47d6d1dd864bfca9390b250fabc4a9bba16888a31d902d6936f",
+            "SandboxKey": "/var/run/docker/netns/58f5bf65efa3",
+            "Ports": {
+                "80/tcp": null
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "saltbox": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "adnd2e",
+                        "adnd2e"
+                    ],
+                    "MacAddress": "02:42:ac:13:00:0b",
+                    "NetworkID": "4eb9474ed399deda8a373d053331999f953ffc2e136335018a8efe269ccb67af",
+                    "EndpointID": "757f474f78704bb23e16e74a90ce292e9537af80955ba69521bbc5abee4c1ea5",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.11",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": [
+                        "adnd2e",
+                        "ccf8f9d72411"
+                    ]
+                }
+            }
+        }
+    }
+]
