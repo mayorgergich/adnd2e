@@ -2,6 +2,21 @@
  * Author: Created by Claude for GitHub project
  * Date: May 6, 2025
  */
+/* Prevent Flash of Unstyled Content */
+html.js-loading {
+  /* Hide content during loading */
+  visibility: hidden;
+}
+
+/* This will only apply to the boot sequence */
+html.js-loading .boot-sequence-active {
+  visibility: visible;
+}
+
+/* If JavaScript is disabled, still show content */
+html.no-js {
+  visibility: visible;
+}
 
 /* Import the DOS VGA font */
 @font-face {
