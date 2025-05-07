@@ -1,0 +1,31 @@
+# Performance Optimizations
+$wgMainCacheType = CACHE_ACCEL;
+$wgParserCacheType = CACHE_ACCEL;
+$wgMessageCacheType = CACHE_ACCEL;
+$wgUseFileCache = false;
+$wgFileCacheDirectory = "$IP/cache";
+$wgResourceLoaderMaxage['versioned'] = 60 * 60 * 24 * 30;
+$wgResourceLoaderMaxage['unversioned'] = 60 * 60 * 24;
+$wgEnableSidebarCache = true;
+$wgAdaptiveMessageCache = true;
+$wgUseGzip = true;
+
+# Set memory limits higher for your robust server
+ini_set('memory_limit', '1G');
+ini_set('max_execution_time', 300);
+
+# Database optimizations
+$wgMysqlSlave = true; # Use replica connections for read-only queries
+$wgDBmysql5 = false;  # Disable if using MariaDB 10+
+
+# Temporarily disable potentially problematic settings
+$wgUseGzip = false;
+$wgMainCacheType = CACHE_NONE;
+$wgParserCacheType = CACHE_NONE;
+$wgMessageCacheType = CACHE_NONE;
+
+# Disable problematic caching settings
+$wgUseFileCache = false;
+$wgMainCacheType = CACHE_NONE;
+$wgParserCacheType = CACHE_NONE;
+$wgMessageCacheType = CACHE_NONE;
