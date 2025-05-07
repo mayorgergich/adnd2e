@@ -1,2 +1,59 @@
+# AD&D 2nd Edition Campaign Wiki
+
+Welcome to the AD&D 2E Campaign Wiki! This is your central hub for all campaign resources and references.
+
+== Quick Links ==
+* [[quick_reference|Quick Reference]]
+* [[landing_page|Detailed Landing Page]]
+
+== Core Rules ==
+* [[rules/core_rules|Core Rules]]
+* [[rules/magic_system|Magic System]]
+* [[rules/monastic-combat|Monastic Combat]]
+* [[rules/updated-character-sheet|Character Sheet Rules]]
+
+== Spells ==
+* [[spells/magic_user_spells|Magic-User Spells]]
+* [[spells/druid_spells|Druid Spells]]
+* [[spells/cleric_spells|Cleric Spells]]
+
+== Templates ==
+* [[templates/index|All Templates]]
+
+=== Character Templates ===
+* [[templates/character/index|Character Templates]]
+* [[templates/character/character_sheet|Basic Character Sheet]]
+* [[templates/character/combat_character_sheet|Combat Character Sheet]]
+
+=== Combat Templates ===
+* [[templates/combat/index|Combat Templates]]
+* [[templates/combat/combat_technique_tracker|Combat Technique Tracker]]
+* [[templates/combat/combat_quick_reference|Combat Quick Reference]]
+
+=== Activity Templates ===
+* [[templates/activities/index|Activity Templates]]
+* [[templates/activities/downtime_template|Downtime Activities]]
+* [[templates/activities/research_template|Research]]
+* [[templates/activities/travel_template|Travel]]
+
+=== Quest Templates ===
+* [[templates/quests/index|Quest Templates]]
+* [[templates/quests/quest_tracker_template|Quest Tracker]]
+
+=== Social Templates ===
+* [[templates/social/index|Social Templates]]
+* [[templates/social/social_encounter_template|Social Encounters]]
+* [[templates/social/social_relationship_tracker|Relationships]]
+
+=== Spiritual Templates ===
+* [[templates/spiritual/index|Spiritual Templates]]
+* [[templates/spiritual/spiritual_practice_tracker|Spiritual Practices]]
+* [[templates/spiritual/meditation_template|Meditation]]
+
+=== Encounter Templates ===
+* [[templates/encounters/index|Encounter Templates]]
+* [[templates/encounters/combat_encounter_template|Combat Encounters]]
+* [[templates/encounters/dungeon_encounter_template|Dungeon Encounters]]
+* [[templates/encounters/trap_template|Traps]]
 
 [[Category:AD&D 2E]]

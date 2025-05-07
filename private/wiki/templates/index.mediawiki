@@ -1,0 +1,43 @@
+# Templates
+
+This is the central hub for all campaign templates. These templates help standardize gameplay elements and provide consistent structures for various aspects of the campaign.
+
+== Template Categories ==
+
+=== Character Templates ===
+* [[character/index|Character Templates Index]]
+* [[character/character_sheet|Basic Character Sheet]]
+* [[character/combat_character_sheet|Combat Character Sheet]]
+
+=== Combat Templates ===
+* [[combat/index|Combat Templates Index]]
+* [[combat/combat_technique_tracker|Combat Technique Tracker]]
+* [[combat/combat_quick_reference|Combat Quick Reference]]
+
+=== Activity Templates ===
+* [[activities/index|Activity Templates Index]]
+* [[activities/downtime_template|Downtime Activities]]
+* [[activities/research_template|Research]]
+* [[activities/travel_template|Travel]]
+
+=== Quest Templates ===
+* [[quests/index|Quest Templates Index]]
+* [[quests/quest_tracker_template|Quest Tracker]]
+
+=== Social Templates ===
+* [[social/index|Social Templates Index]]
+* [[social/social_encounter_template|Social Encounters]]
+* [[social/social_relationship_tracker|Relationships]]
+
+=== Spiritual Templates ===
+* [[spiritual/index|Spiritual Templates Index]]
+* [[spiritual/spiritual_practice_tracker|Spiritual Practices]]
+* [[spiritual/meditation_template|Meditation]]
+
+=== Encounter Templates ===
+* [[encounters/index|Encounter Templates Index]]
+* [[encounters/combat_encounter_template|Combat Encounters]]
+* [[encounters/dungeon_encounter_template|Dungeon Encounters]]
+* [[encounters/trap_template|Traps]]
+
+[[Category:Templates]] 

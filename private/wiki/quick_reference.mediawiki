@@ -1,45 +1,65 @@
 # Quick Reference Guide
 
+## Character Essentials
+* [[templates/character/character_sheet|Character Sheet]] - Core character information
+* [[templates/character/combat_character_sheet|Combat Character Sheet]] - Combat statistics and abilities
+* [[rules/updated-character-sheet|Character Sheet Rules]] - Guidelines for character creation and advancement
+* [[templates/character/index|Character Templates]] - All character-related resources
+
+## Core Rules References
+* [[rules/core_rules|Core Rules]] - Essential game mechanics
+* [[rules/magic_system|Magic System]] - Spell casting and magic rules
+* [[rules/monastic-combat|Monastic Combat]] - Special combat techniques
+
+## Spellcasting
+* [[spells/index|Spell Compendium]] - Complete spell reference
+* [[spells/magic_user_spells|Magic-User Spells]] - Arcane spell list
+* [[spells/magic-user/index|Magic-User Spell Index]] - Categorized arcane spells
+* [[spells/druid_spells|Druid Spells]] - Nature-based spellcasting
+* [[spells/druid/index|Druid Spell Index]] - Categorized nature spells
+* [[spells/cleric_spells|Cleric Spells]] - Divine magic
+* [[spells/cleric/index|Cleric Spell Index]] - Categorized divine spells
+
 ## Common Templates
 
 ### Character Management
-* [[Character Sheet|templates/character/character_sheet.mediawiki]] - Core character information
-* [[Combat Sheet|templates/character/combat_character_sheet.mediawiki]] - Combat statistics and abilities
-* [[Combat Technique Tracker|templates/combat/combat_technique_tracker.mediawiki]] - Special abilities and combat styles
+* [[templates/character/character_sheet|Character Sheet]] - Core character information
+* [[templates/character/combat_character_sheet|Combat Sheet]] - Combat statistics and abilities
+* [[templates/combat/combat_technique_tracker|Combat Technique Tracker]] - Special abilities and combat styles
 
 ### Encounter Templates
-* [[Combat Encounter|templates/encounters/combat_encounter_template.mediawiki]] - Battle management
-* [[Social Encounter|templates/encounters/social_encounter_template.mediawiki]] - NPC interactions
-* [[Dungeon Encounter|templates/encounters/dungeon_encounter_template.mediawiki]] - Location-based encounters
+* [[templates/encounters/combat_encounter_template|Combat Encounter]] - Battle management
+* [[templates/social/social_encounter_template|Social Encounter]] - NPC interactions
+* [[templates/encounters/dungeon_encounter_template|Dungeon Encounter]] - Location-based encounters
 
 ### Activity Tracking
-* [[Travel Template|templates/activities/travel_template.mediawiki]] - Journey management
-* [[Downtime Template|templates/activities/downtime_template.mediawiki]] - Between-adventure activities
-* [[Research Template|templates/activities/research_template.mediawiki]] - Information gathering
+* [[templates/activities/travel_template|Travel Template]] - Journey management
+* [[templates/activities/downtime_template|Downtime Template]] - Between-adventure activities
+* [[templates/activities/research_template|Research Template]] - Information gathering
 
 ## Quick Actions
 
 ### Starting a Session
-1. Update [[Character Sheet|templates/character/character_sheet.mediawiki]]
-2. Review active [[Quest Tracker|templates/quests/quest_tracker_template.mediawiki]]
-3. Check [[Social Relationship Tracker|templates/social/social_relationship_tracker.mediawiki]]
+1. Update [[templates/character/character_sheet|Character Sheet]]
+2. Review active [[templates/quests/quest_tracker_template|Quest Tracker]]
+3. Check [[templates/social/social_relationship_tracker|Social Relationship Tracker]]
 4. Prepare relevant encounter templates
 
 ### During Combat
-1. Use [[Combat Encounter|templates/encounters/combat_encounter_template.mediawiki]]
+1. Use [[templates/encounters/combat_encounter_template|Combat Encounter]]
    * Initiative order
    * Enemy stats
    * Environmental factors
-2. Track resources on [[Combat Sheet|templates/character/combat_character_sheet.mediawiki]]
-3. Monitor special abilities via [[Combat Technique Tracker|templates/combat/combat_technique_tracker.mediawiki]]
+2. Track resources on [[templates/character/combat_character_sheet|Combat Sheet]]
+3. Monitor special abilities via [[templates/combat/combat_technique_tracker|Combat Technique Tracker]]
 
 ### Social Interactions
-1. Reference [[Social Identity Tracker|templates/social/social_identity_tracker.mediawiki]]
-2. Use [[Social Encounter Template|templates/encounters/social_encounter_template.mediawiki]]
-3. Update [[Social Relationship Tracker|templates/social/social_relationship_tracker.mediawiki]]
+1. Reference [[templates/social/social_identity_tracker|Social Identity Tracker]]
+2. Use [[templates/social/social_encounter_template|Social Encounter Template]]
+3. Update [[templates/social/social_relationship_tracker|Social Relationship Tracker]]
 
 ### Spiritual Practice
-1. Daily [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker.mediawiki]]
+1. Daily [[templates/spiritual/spiritual_practice_tracker|Spiritual Practice Tracker]]
    * Morning rituals
    * Evening practices
    * Energy management
@@ -72,17 +92,17 @@
 ## Template Categories
 
 ### Character Development
-* [[Character Management|templates/character/index.mediawiki]]
-* [[Combat System|templates/combat/index.mediawiki]]
-* [[Spiritual Practices|templates/spiritual/index.mediawiki]]
+* [[templates/character/index|Character Management]]
+* [[templates/combat/index|Combat System]]
+* [[templates/spiritual/index|Spiritual Practices]]
 
 ### World Interaction
-* [[Social Interaction|templates/social/index.mediawiki]]
-* [[Encounter Management|templates/encounters/index.mediawiki]]
-* [[Quest Management|templates/quests/index.mediawiki]]
+* [[templates/social/index|Social Interaction]]
+* [[templates/encounters/index|Encounter Management]]
+* [[templates/quests/index|Quest Management]]
 
 ### Activities
-* [[Activity Management|templates/activities/index.mediawiki]]
+* [[templates/activities/index|Activity Management]]
   * Research
   * Travel
   * Downtime
@@ -90,26 +110,27 @@
 ## Common Workflows
 
 ### New Character Setup
-1. Create base [[Character Sheet|templates/character/character_sheet.mediawiki]]
-2. Add [[Combat Sheet|templates/character/combat_character_sheet.mediawiki]]
+1. Create base [[templates/character/character_sheet|Character Sheet]]
+2. Add [[templates/character/combat_character_sheet|Combat Sheet]]
 3. Set up relevant specialty trackers:
-   * Combat: [[Combat Technique Tracker|templates/combat/combat_technique_tracker.mediawiki]]
-   * Social: [[Social Identity Tracker|templates/social/social_identity_tracker.mediawiki]]
-   * Spiritual: [[Spiritual Practice Tracker|templates/spiritual/spiritual_practice_tracker.mediawiki]]
+   * Combat: [[templates/combat/combat_technique_tracker|Combat Technique Tracker]]
+   * Social: [[templates/social/social_identity_tracker|Social Identity Tracker]]
+   * Spiritual: [[templates/spiritual/spiritual_practice_tracker|Spiritual Practice Tracker]]
 
 ### Quest Management
-1. Create quest in [[Quest Tracker|templates/quests/quest_tracker_template.mediawiki]]
-2. Link relevant NPCs in [[Social Relationship Tracker|templates/social/social_relationship_tracker.mediawiki]]
+1. Create quest in [[templates/quests/quest_tracker_template|Quest Tracker]]
+2. Link relevant NPCs in [[templates/social/social_relationship_tracker|Social Relationship Tracker]]
 3. Prepare needed encounter templates
 4. Track progress and updates
 
 ### Travel Planning
-1. Fill [[Travel Template|templates/activities/travel_template.mediawiki]]
+1. Fill [[templates/activities/travel_template|Travel Template]]
 2. Prepare potential encounters
 3. Track resources and supplies
 4. Note discoveries and events
 
 ## Navigation
-* [[Main Index|index.mediawiki]]
-* [[Markdown Guide|guides/markdown_to_mediawiki_guide.mediawiki]]
-* [[Template Categories|templates/index.mediawiki]] 
+* [[Main_Page|Main Index]]
+* [[landing_page|Detailed Landing Page]]
+* [[guides/markdown_to_mediawiki_guide|Markdown Guide]]
+* [[templates/index|Template Categories]] 

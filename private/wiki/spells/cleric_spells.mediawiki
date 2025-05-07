@@ -1,0 +1,32 @@
+# Cleric Spells
+
+This page contains a comprehensive list of cleric spells available in the campaign.
+
+== Overview ==
+
+Clerics are divine spellcasters who draw their magic directly from their deity. The spells available to a cleric depend on their deity, alignment, and level.
+
+== Spell List By Level ==
+
+=== Level 1 ===
+* [[spells/cleric/bless|Bless]]
+* [[spells/cleric/cure_light_wounds|Cure Light Wounds]]
+* [[spells/cleric/detect_evil|Detect Evil]]
+* [[spells/cleric/detect_magic|Detect Magic]]
+* [[spells/cleric/light|Light]]
+* [[spells/cleric/protection_from_evil|Protection from Evil]]
+* [[spells/cleric/purify_food_and_drink|Purify Food and Drink]]
+* [[spells/cleric/remove_fear|Remove Fear]]
+* [[spells/cleric/sanctuary|Sanctuary]]
+
+== Specialty Priests ==
+
+Different deities grant their clerics access to specialized spell lists. See the specific deity pages for details on what spells are available to their clergy.
+
+== See Also ==
+* [[rules/magic_system|Magic System]]
+* [[spells/magic_user_spells|Magic-User Spells]]
+* [[spells/druid_spells|Druid Spells]]
+
+[[Category:Spells]]
+[[Category:Clerics]] 

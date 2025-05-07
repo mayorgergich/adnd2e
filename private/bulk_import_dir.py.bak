@@ -3,10 +3,9 @@ import requests
 import json
 import sys
 import time
-from typing import Optional, Dict, Any, Tuple
+from typing import Optional, Dict, Any
 from requests.exceptions import RequestException
 import logging
-import hashlib
 
 # Set up logging
 logging.basicConfig(
@@ -20,7 +19,7 @@ class MediaWikiAPIError(Exception):
     pass
 
 class MediaWikiAPI:
-    def __init__(self, base_url: str, request_delay: float = 0.0):
+    def __init__(self, base_url: str, request_delay: float = 1.0):
         # Ensure the base_url doesn't end with a slash
         self.base_url = base_url.rstrip('/')
         self.session = requests.Session()
@@ -29,10 +28,6 @@ class MediaWikiAPI:
         
     def _wait_for_rate_limit(self):
         """Ensure minimum delay between requests"""
-        # No-op when request_delay is 0
-        if self.request_delay <= 0:
-            return
-            
         now = time.time()
         time_since_last_request = now - self.last_request_time
         if time_since_last_request < self.request_delay:
@@ -141,45 +136,6 @@ class MediaWikiAPI:
         except (KeyError, json.JSONDecodeError) as e:
             logger.error(f"Failed to get CSRF token: {str(e)}")
             raise MediaWikiAPIError(f"Failed to get CSRF token: {str(e)}")
-            
-    def get_page_content(self, title: str) -> Tuple[bool, str]:
-        """Get the content of a page
-        
-        Returns:
-            Tuple[bool, str]: (exists, content) - exists is True if page exists, False otherwise
-                               content is the page content if exists is True, empty string otherwise
-        """
-        try:
-            result = self._make_request('get', '/api.php', params={
-                'action': 'query',
-                'prop': 'revisions',
-                'titles': title,
-                'rvprop': 'content',
-                'rvslots': 'main',
-                'formatversion': '2',
-                'format': 'json'
-            })
-            
-            if 'query' not in result or 'pages' not in result['query']:
-                logger.error(f"Unexpected page content response: {json.dumps(result)}")
-                return False, ""
-                
-            # Check if page exists
-            page = result['query']['pages'][0]
-            if 'missing' in page:
-                logger.debug(f"Page {title} does not exist")
-                return False, ""
-                
-            if 'revisions' not in page:
-                logger.error(f"No revisions found for page {title}")
-                return False, ""
-                
-            content = page['revisions'][0]['slots']['main']['content']
-            return True, content
-            
-        except (KeyError, IndexError, json.JSONDecodeError) as e:
-            logger.error(f"Failed to get page content for {title}: {str(e)}")
-            return False, ""
 
     def edit_page(self, title: str, content: str, summary: str) -> Dict[str, Any]:
         """Edit a page with error handling"""
@@ -204,33 +160,14 @@ class MediaWikiAPI:
             logger.error(f"Failed to edit page: {str(e)}")
             raise MediaWikiAPIError(f"Failed to edit page: {str(e)}")
 
-def calculate_md5(content: str) -> str:
-    """Calculate MD5 hash of content"""
-    return hashlib.md5(content.encode('utf-8')).hexdigest()
-
-def process_files(api: MediaWikiAPI, directory_path: str, force_update: bool = False) -> None:
-    """Process files with error handling
-    
-    Args:
-        api: MediaWikiAPI instance
-        directory_path: Directory containing .mediawiki files
-        force_update: If True, update all pages regardless of content changes
-    """
+def process_files(api: MediaWikiAPI, directory_path: str) -> None:
+    """Process files with error handling"""
     abs_path = os.path.abspath(directory_path)
     
     if not os.path.exists(abs_path):
         raise FileNotFoundError(f"Directory {directory_path} does not exist")
 
     logger.info(f"Starting import from directory: {abs_path}")
-    
-    # Statistics counters
-    stats = {
-        'total': 0,
-        'updated': 0,
-        'skipped': 0,
-        'created': 0,
-        'failed': 0
-    }
     
     for root, _, files in os.walk(abs_path):
         for file in files:
@@ -242,80 +179,42 @@ def process_files(api: MediaWikiAPI, directory_path: str, force_update: bool = F
             wiki_title = wiki_title[:-10]  # Remove .mediawiki extension
             wiki_title = wiki_title.replace('/', ':')  # Use : for namespace separation
             
-            stats['total'] += 1
-            
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
-                    local_content = f.read()
+                    content = f.read()
                 
-                # Check if page exists and get current content
-                exists, remote_content = api.get_page_content(wiki_title)
-                
-                # Calculate content hashes for comparison
-                local_hash = calculate_md5(local_content)
-                remote_hash = calculate_md5(remote_content) if exists else ""
-                
-                # Determine if update is needed
-                needs_update = force_update or not exists or local_hash != remote_hash
-                
-                if needs_update:
-                    action = "Creating" if not exists else "Updating"
-                    logger.info(f"{action}: {wiki_title}")
-                    
-                    result = api.edit_page(wiki_title, local_content, f'Imported from {file_path}')
-                    
-                    if exists:
-                        stats['updated'] += 1
-                    else:
-                        stats['created'] += 1
-                        
-                    logger.info(f"Successfully {action.lower()} {wiki_title}")
-                    logger.debug(json.dumps(result, indent=2))
-                else:
-                    logger.info(f"Skipping {wiki_title} (no changes)")
-                    stats['skipped'] += 1
+                logger.info(f"Importing: {wiki_title}")
+                result = api.edit_page(wiki_title, content, f'Imported from {file_path}')
+                logger.info(f"Successfully imported {wiki_title}")
+                logger.debug(json.dumps(result, indent=2))
                 
             except (IOError, UnicodeDecodeError) as e:
                 logger.error(f"Failed to read file {file_path}: {str(e)}")
-                stats['failed'] += 1
                 continue
             except MediaWikiAPIError as e:
                 logger.error(f"Failed to import {wiki_title}: {str(e)}")
-                stats['failed'] += 1
                 continue
-    
-    # Print statistics
-    logger.info("Import completed. Summary:")
-    logger.info(f"  Total files: {stats['total']}")
-    logger.info(f"  Created: {stats['created']}")
-    logger.info(f"  Updated: {stats['updated']}")
-    logger.info(f"  Skipped (unchanged): {stats['skipped']}")
-    logger.info(f"  Failed: {stats['failed']}")
 
 def main() -> None:
     """Main function with argument validation"""
     try:
-        if len(sys.argv) < 2:
-            print("Usage: python3 bulk_import_dir.py <directory_path> [--force]")
-            print("Options:")
-            print("  --force    Force update all pages regardless of content changes")
+        if len(sys.argv) != 2:
+            print("Usage: python3 bulk_import_dir.py <directory_path>")
             sys.exit(1)
             
         directory_path = sys.argv[1]
-        force_update = "--force" in sys.argv
         
         # Make sure we're using the correct URL for your private wiki
-        # No rate limiting (request_delay=0)
         api = MediaWikiAPI('https://adnd2e-private.mayorgergich.xyz')
         
-        # Set logging to INFO level (or DEBUG for more details)
-        logger.setLevel(logging.INFO)
+        # Set logging to DEBUG level temporarily to see more details
+        logger.setLevel(logging.DEBUG)
         
         # Attempt login
         api.login()
         
         # Process files
-        process_files(api, directory_path, force_update)
+        process_files(api, directory_path)
         
     except MediaWikiAPIError as e:
         logger.error(f"API Error: {str(e)}")
