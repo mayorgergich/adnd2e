@@ -37,8 +37,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/images/resources/sources/favicon.ico",
-	'icon' => "$wgResourceBasePath/images/resources/sources/logo.png",
+	'1x' => "$wgResourceBasePath//favicon.ico",
+	'icon' => "$wgResourceBasePath/images/logo.png",
 ];
 
 ## UPO means: this is also a user preference option
@@ -99,6 +99,9 @@ $wgLocaltimezone = "UTC";
 ## to make your wiki go slightly faster. The directory should not
 ## be publicly accessible from the web.
 $wgCacheDirectory = "$IP/cache";
+$wgUseFileCache = false;
+
+$wgDirectoryMode = 0777;
 
 $wgSecretKey = "2bb341eaf6836414e801e978a37eb6db4ec92b531fec7d7758ee27fe15424f6e";
 
@@ -122,24 +125,16 @@ $wgDiff3 = "/usr/bin/diff3";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names
-$wgDefaultSkin = "wptouch";
+$wgDefaultSkin = "biosterminal";
 
 # Enabled skins.
 # Comment out skins that aren't installed
-wfLoadSkin( 'Vector' );
-#wfLoadSkin( 'BIOSTerminal' );
-wfLoadSkin( 'Gamepress' );
-wfLoadSkin( 'Pivot' );
-wfLoadSkin( 'WPTouch' );
 #wfLoadSkin( 'Vector' );
+wfLoadSkin( 'BIOSTerminal' );
+#wfLoadSkin( 'Gamepress' );
+#wfLoadSkin( 'Pivot' );
+#wfLoadSkin( 'WPTouch' );
 
-# Citizen skin configuration
-$wgCitizenThemeDefault = 'dark'; // or 'light' if you prefer
-$wgCitizenEnableCollapsibleSections = true;
-$wgCitizenShowPageTools = true;
-$wgCitizenEnableDrawerSiteStats = true;
-$wgCitizenEnableSearch = true;
-$wgCitizenSearchModule = 'core';
 
 # End of automatically generated settings.
 # Add more configuration options below.
