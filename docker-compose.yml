@@ -1,44 +1,53 @@
+# Please see DEVELOPERS.md for help
+#
+# Contributions to this file are welcome but please note that this file is
+# minimal by design, with the idea to make it easily extensible via
+# docker-compose.override.yml. For help with doing that, please see
+# DEVELOPERS.md
 services:
-  adnd2e:
-    image: mediawiki:latest
-    container_name: adnd2e
-    hostname: adnd2e
-    restart: unless-stopped
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-      - MEDIAWIKI_DB_TYPE=mysql
-      - MEDIAWIKI_DB_HOST=mariadb
-      - MEDIAWIKI_DB_NAME=mediawiki_fresh
-      - MEDIAWIKI_DB_USER=pawneemayor
-      - MEDIAWIKI_DB_PASSWORD=password321
-      - MEDIAWIKI_SITE_NAME=AD&D 2E Wiki
+  mediawiki:
+    image: docker-registry.wikimedia.org/dev/bookworm-php83-fpm:1.0.0
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"
     volumes:
-      - /opt/mediawiki/images:/var/www/html/images
-      - /opt/mediawiki/cache:/var/www/html/cache
-      - /opt/mediawiki/extensions:/var/www/html/extensions
-      - /opt/mediawiki/skins:/var/www/html/skins
-      - /opt/mediawiki/config:/var/www/html/config
-      - /etc/localtime:/etc/localtime:ro
-      - /opt/mediawiki/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
-    networks:
-      - saltbox
-    labels:
-      com.github.saltbox.saltbox_managed: true
-      traefik.enable: true
-      traefik.http.routers.adnd2e-http.entrypoints: web
-      traefik.http.routers.adnd2e-http.middlewares: globalHeaders@file,redirect-to-https@docker,robotHeaders@file,cloudflarewarp@docker
-      traefik.http.routers.adnd2e-http.rule: Host(`adnd2e.mayorgergich.xyz`)
-      traefik.http.routers.adnd2e-http.service: adnd2e
-      traefik.http.routers.adnd2e.entrypoints: websecure
-      traefik.http.routers.adnd2e.middlewares: globalHeaders@file,secureHeaders@file,robotHeaders@file,cloudflarewarp@docker
-      traefik.http.routers.adnd2e.rule: Host(`adnd2e.mayorgergich.xyz`)
-      traefik.http.routers.adnd2e.service: adnd2e
-      traefik.http.routers.adnd2e.tls.certresolver: cfdns
-      traefik.http.routers.adnd2e.tls.options: securetls@file
-      traefik.http.services.adnd2e.loadbalancer.server.port: 80
+      - ./:/var/www/html/w:cached
+    env_file:
+      - '.env'
+    environment:
+      COMPOSER_CACHE_DIR: '/var/www/html/w/cache/composer'
+      MW_SERVER: 'http://localhost:${MW_DOCKER_PORT:-8080}'
+      MW_DOCKER_PORT: "${MW_DOCKER_PORT:-8080}"
+      MW_SCRIPT_PATH: '/w'
+      MW_DBPATH: '/var/www/html/w/cache/sqlite'
+      MW_DBTYPE: 'sqlite'
+      MW_LANG: 'en'
+      MW_USER: '${MEDIAWIKI_USER:-Admin}'
+      MW_PASS: '${MEDIAWIKI_PASSWORD:-dockerpass}'
+      MW_SITENAME: 'MediaWiki'
+      MW_LOG_DIR: /var/www/html/w/cache
+      XDEBUG_CONFIG: '${XDEBUG_CONFIG}'
+      XDEBUG_ENABLE: '${XDEBUG_ENABLE:-true}'
+      XHPROF_ENABLE: '${XHPROF_ENABLE:-true}'
 
-networks:
-  saltbox:
-    external: true
+  mediawiki-web:
+    image: docker-registry.wikimedia.org/dev/bookworm-apache2:1.0.1
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"
+    ports:
+      - "${MW_DOCKER_PORT:-8080}:8080"
+    volumes:
+      - ./:/var/www/html/w:cached
+    env_file:
+      - '.env'
+    environment:
+      MW_LOG_DIR: /var/www/html/w/cache
+      MW_DOCKER_PORT: "${MW_DOCKER_PORT:-8080}"
+
+  mediawiki-jobrunner:
+    image: docker-registry.wikimedia.org/dev/bookworm-php83-jobrunner:1.0.0
+    user: "${MW_DOCKER_UID}:${MW_DOCKER_GID}"
+    volumes:
+      - ./:/var/www/html/w:cached
+    env_file:
+      - '.env'
+    environment:
+      MW_LOG_DIR: /var/www/html/w/cache
+      MW_INSTALL_PATH: /var/www/html/w

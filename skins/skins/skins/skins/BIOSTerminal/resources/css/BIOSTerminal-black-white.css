@@ -1,0 +1,17 @@
+/* BIOSTerminal Black/White variant
+ * Black background with white text
+ */
+
+/* Black/White Theme */
+:root {
+  --background-color: #000000;
+  --text-color: #FFFFFF;
+  --link-color: #00AAFF;
+  --link-hover-color: #AAAAFF;
+  --border-color: #FFFFFF;
+  --font-family: 'MorePerfectDOSVGA', monospace;
+  --font-size: 16px;
+  --line-height: 1.4;
+}
+
+/* No need to redefine all other styles as they're inherited from the main CSS file */
