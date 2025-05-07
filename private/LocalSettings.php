@@ -120,10 +120,6 @@ $wgRightsIcon = "";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
-## Default skin: you can change the default skin. Use the internal symbolic
-## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "biosterminal";
-
 # Enabled skins.
 # Comment out skins that aren't installed
 #wfLoadSkin( 'Vector' );
