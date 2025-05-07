@@ -3,6 +3,18 @@
  * Adds terminal-like effects and interactions
  */
 
+// Immediately add loading class to hide content
+document.documentElement.className += ' js-loading';
+
+// Remove the loading class when everything is ready
+window.addEventListener('load', function() {
+  // Remove the loading class
+  document.documentElement.classList.remove('js-loading');
+});
+
+// Add no-js class for users without JavaScript
+document.documentElement.className = document.documentElement.className.replace('no-js', '');
+
 ( function ( mw, $ ) {
 	'use strict';
 
@@ -32,26 +44,52 @@
 			});
 		}
 
-		// Terminal typing effect for headings
-		function typeEffect( element, text, i, callback ) {
-			if ( i < text.length ) {
-				element.innerHTML = text.substring( 0, i + 1 ) + '<span class="terminal-cursor"></span>';
+		// Improved terminal typing effect for headings
+		function typeEffect(element, text, i, callback) {
+			if (i < text.length) {
+				element.innerHTML = text.substring(0, i + 1) + '<span class="terminal-cursor"></span>';
 				
 				// Random typing speed between 50ms and 150ms for realistic effect
-				setTimeout( function () {
-					typeEffect( element, text, i + 1, callback );
-				}, Math.random() * 100 + 50 );
+				setTimeout(function() {
+					typeEffect(element, text, i + 1, callback);
+				}, Math.random() * 100 + 50);
 			} else {
-				if ( callback ) {
-					setTimeout( callback, 700 );
+				if (callback) {
+					// Remove cursor before callback
+					element.innerHTML = text;
+					setTimeout(callback, 100);
+				} else {
+					// Keep cursor at the end when typing is complete if no callback
+					element.innerHTML = text + '<span class="terminal-cursor"></span>';
 				}
-				element.innerHTML = text + '<span class="terminal-cursor"></span>';
 			}
 		}
 
-		// Terminal boot sequence
+		// Function to display a loading percentage
+		function displayLoading(element, text, callback) {
+			var count = 0;
+			var loadingText = text + ' (0%)';
+			element.innerHTML = loadingText;
+			
+			var loadingInterval = setInterval(function() {
+				count += Math.floor(Math.random() * 10) + 1; // Random increment for realism
+				if (count > 100) {
+					count = 100;
+					clearInterval(loadingInterval);
+					
+					element.innerHTML = text + ' (100%).';
+					if (callback) {
+						setTimeout(callback, 500);
+					}
+				} else {
+					element.innerHTML = text + ' (' + count + '%)';
+				}
+			}, 80); // Update speed
+		}
+
+		// Enhanced terminal boot sequence
 		function bootSequence() {
-			var overlay = document.createElement( 'div' );
+			var overlay = document.createElement('div');
 			overlay.style.position = 'fixed';
 			overlay.style.top = '0';
 			overlay.style.left = '0';
@@ -66,82 +104,150 @@
 			overlay.style.boxSizing = 'border-box';
 			overlay.style.overflow = 'auto';
 			
-			document.body.appendChild( overlay );
+			// Add boot-sequence-active class to make it visible even when js-loading is active
+			overlay.className = 'boot-sequence-active';
 			
-			var bootText = [
-				'BIOS Terminal v1.0',
-				'Copyright (c) 2025 MediaWiki Custom Skin',
-				'',
-				'Testing system memory...',
-				'Memory test successful.',
-				'',
-				'Initializing wiki subsystems...',
-				'Content database connected.',
-				'User authentication ready.',
-				'Search system online.',
-				'',
-				'Loading ' + mw.config.get( 'wgSiteName' ) + '...',
-				'',
-				'READY.',
-				''
+			document.body.appendChild(overlay);
+			
+			var bootContainer = document.createElement('div');
+			overlay.appendChild(bootContainer);
+			
+			// Boot text elements with periods and improved wording
+			var bootSequences = [
+				{
+					text: 'BIOS Terminal v1.0',
+					isLoading: false
+				},
+				{
+					text: 'Copyright (c) 2025 MediaWiki Custom Skin.',
+					isLoading: false
+				},
+				{
+					text: '',
+					isLoading: false
+				},
+				{
+					text: 'Testing system memory',
+					isLoading: true
+				},
+				{
+					text: 'Memory test successful.',
+					isLoading: false
+				},
+				{
+					text: '',
+					isLoading: false
+				},
+				{
+					text: 'Initializing wiki subsystems',
+					isLoading: true
+				},
+				{
+					text: 'Connecting to content database',
+					isLoading: true
+				},
+				{
+					text: 'Activating user authentication',
+					isLoading: true
+				},
+				{
+					text: 'Starting search system',
+					isLoading: true
+				},
+				{
+					text: '',
+					isLoading: false
+				},
+				{
+					text: 'Loading ' + mw.config.get('wgSiteName'),
+					isLoading: true
+				},
+				{
+					text: '',
+					isLoading: false
+				},
+				{
+					text: 'READY.',
+					isLoading: false
+				},
+				{
+					text: '',
+					isLoading: false
+				}
 			];
 			
-			function displayBootLines( lines, index ) {
-				if ( index < lines.length ) {
-					var line = document.createElement( 'div' );
-					line.style.marginBottom = '0.5rem';
-					overlay.appendChild( line );
-					
-					typeEffect( line, lines[index], 0, function () {
-						displayBootLines( lines, index + 1 );
-					} );
-				} else {
+			function processBootSequence(sequences, index) {
+				if (index >= sequences.length) {
 					// Boot sequence complete, fade out overlay
-					setTimeout( function () {
+					setTimeout(function() {
 						overlay.style.transition = 'opacity 1s';
 						overlay.style.opacity = '0';
 						
-						setTimeout( function () {
-							document.body.removeChild( overlay );
+						setTimeout(function() {
+							document.body.removeChild(overlay);
 							
 							// Apply typing effect to page title
-							var heading = document.getElementById( 'firstHeading' );
-							if ( heading ) {
+							var heading = document.getElementById('firstHeading');
+							if (heading) {
 								var originalText = heading.textContent || heading.innerText;
 								heading.innerHTML = '';
-								typeEffect( heading, originalText, 0 );
+								typeEffect(heading, originalText, 0);
 							}
-						}, 1000 );
-					}, 1000 );
+						}, 1000);
+					}, 1000);
+					
+					return;
+				}
+				
+				var sequence = sequences[index];
+				var line = document.createElement('div');
+				line.style.marginBottom = '0.5rem';
+				line.style.minHeight = '1.2em'; // Ensure consistent height
+				bootContainer.appendChild(line);
+				
+				if (sequence.text === '') {
+					// Empty line, move to next
+					processBootSequence(sequences, index + 1);
+				} else if (sequence.isLoading) {
+					// Display loading percentage animation
+					displayLoading(line, sequence.text, function() {
+						processBootSequence(sequences, index + 1);
+					});
+				} else {
+					// Normal text typing effect
+					typeEffect(line, sequence.text, 0, function() {
+						processBootSequence(sequences, index + 1);
+					});
 				}
 			}
 			
-			displayBootLines( bootText, 0 );
+			// Start boot sequence
+			processBootSequence(bootSequences, 0);
 		}
 
 		// Check if user has already seen boot sequence in this session
-		if ( !sessionStorage.getItem( 'biosterminal-boot-shown' ) ) {
+		if (!sessionStorage.getItem('biosterminal-boot-shown')) {
 			bootSequence();
-			sessionStorage.setItem( 'biosterminal-boot-shown', 'true' );
+			sessionStorage.setItem('biosterminal-boot-shown', 'true');
 		} else {
 			// Just apply typing effect to page title
-			var heading = document.getElementById( 'firstHeading' );
-			if ( heading ) {
+			var heading = document.getElementById('firstHeading');
+			if (heading) {
 				var originalText = heading.textContent || heading.innerText;
 				heading.innerHTML = '';
-				typeEffect( heading, originalText, 0 );
+				typeEffect(heading, originalText, 0);
 			}
 		}
 
 		// Keyboard navigation enhancements
-		$( document ).on( 'keydown', function ( e ) {
+		$(document).on('keydown', function(e) {
 			// Alt+H to toggle help dialog
-			if ( e.altKey && e.keyCode === 72 ) {
+			if (e.altKey && e.keyCode === 72) {
 				e.preventDefault();
 				
 				// Create help dialog if it doesn't exist
-				if ( !document.getElementById( 'terminal-help' ) ) {
-					var helpDialog = document.createElement( 'div' );
+				if (!document.getElementById('terminal-help')) {
+					var helpDialog = document.createElement('div');
 					helpDialog.id = 'terminal-help';
 					helpDialog.style.position = 'fixed';
 					helpDialog.style.top = '50%';
@@ -250,7 +356,7 @@
 				notification.style.border = '1px solid var(--border-color)';
 				notification.style.padding = '10px';
 				notification.style.zIndex = '1000';
-				notification.textContent = 'Theme variant changed';
+				notification.textContent = 'Theme variant changed.';
 				
 				document.body.appendChild(notification);
 				

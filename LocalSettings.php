@@ -11,7 +11,7 @@
 # https://www.mediawiki.org/wiki/Manual:Configuration_settings
 
 # Protect against web entry
-if ( !defined( 'MEDIAWIKI' ) ) {
+if (!defined('MEDIAWIKI')) {
 	exit;
 }
 
@@ -37,7 +37,7 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/favicon.ico",
+	'1x' => "$wgResourceBasePath/images/favicon.ico",
 	'icon' => "$wgResourceBasePath/images/logo.png",
 ];
 
@@ -138,7 +138,3 @@ $wgDefaultSkin = "biosterminal";
 
 # End of automatically generated settings.
 # Add more configuration options below.
-
-
-
-

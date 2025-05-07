@@ -20,8 +20,8 @@ html.no-js {
 
 /* Import the DOS VGA font */
 @font-face {
-  font-family: 'MorePerfectDOSVGA';
-  src: url('../fonts/MorePerfectDOSVGA.ttf') format('truetype');
+  font-family: "MorePerfectDOSVGA";
+  src: url("../fonts/MorePerfectDOSVGA.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Improve font loading behavior */
@@ -29,31 +29,226 @@ html.no-js {
 
 /* Fallback font stack in case the primary font fails to load */
 :root {
-  --font-family: 'MorePerfectDOSVGA', 'Courier New', monospace;
+  --font-family: "MorePerfectDOSVGA", "Courier New", monospace;
 }
 
-/* Base Theme - Blue/White (Default) */
+/* DOS-inspired terminal theme */
 :root {
-  --background-color: #0000FF;
-  --text-color: #FFFFFF;
-  --link-color: #FFFFFF;
-  --link-hover-color: #AAAAAA;
-  --border-color: #FFFFFF;
-  --font-family: 'MorePerfectDOSVGA', monospace;
-  --font-size: 16px;
-  --line-height: 1.4;
+  --dos-bg: #000080;
+  --dos-text: #ffffff;
+  --dos-highlight: #00ff00;
+  --dos-border: #c0c0c0;
+  --dos-menu-bg: #000080;
+  --dos-menu-text: #ffffff;
+  --dos-menu-highlight: #00ff00;
 }
 
-/* Reset and base styling */
-html, body {
+/* Base styles */
+body {
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+  font-family: "Courier New", monospace;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  line-height: var(--line-height);
+  line-height: 1.4;
+}
+
+/* Boot sequence */
+.boot-sequence {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background-color: #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 2s ease-in-out 4s forwards;
+}
+
+.boot-text {
+  color: var(--dos-highlight);
+  margin: 5px 0;
+  font-size: 1.2em;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.boot-text:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.boot-text:nth-child(2) {
+  animation-delay: 1s;
+}
+.boot-text:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.boot-text:nth-child(4) {
+  animation-delay: 2s;
+}
+.boot-text:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+/* DOS Interface */
+.dos-wrapper {
+  display: none;
+  animation: fadeIn 1s ease-in-out 4s forwards;
+}
+
+.dos-interface {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.dos-header {
+  background-color: var(--dos-menu-bg);
+  border-bottom: 2px solid var(--dos-border);
+  padding: 5px 10px;
+}
+
+.dos-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--dos-highlight);
+}
+
+.dos-path {
+  font-size: 0.9em;
+  color: var(--dos-text);
+}
+
+/* Sidebar */
+.dos-sidebar {
+  background-color: var(--dos-menu-bg);
+  border-right: 2px solid var(--dos-border);
+  padding: 10px;
+  width: 250px;
+}
+
+.dos-menu-title {
+  color: var(--dos-highlight);
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--dos-border);
+  padding-bottom: 5px;
+}
+
+/* Content area */
+.dos-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.dos-heading {
+  color: var(--dos-highlight);
+  border-bottom: 1px solid var(--dos-border);
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.dos-content-area {
+  background-color: var(--dos-bg);
+  padding: 20px;
+  border: 1px solid var(--dos-border);
+}
+
+/* Navigation and menus */
+.dos-menu a {
+  color: var(--dos-text);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.dos-menu a:hover {
+  color: var(--dos-highlight);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+}
+
+th,
+td {
+  border: 1px solid var(--dos-border);
+  padding: 5px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--dos-menu-bg);
+  color: var(--dos-highlight);
+}
+
+/* Links */
+a {
+  color: var(--dos-highlight);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Terminal cursor effect */
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: var(--dos-highlight);
+  animation: blink 1s step-end infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dos-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--dos-border);
+  }
+
+  .dos-content {
+    padding: 10px;
+  }
 }
 
 /* Layout structure */
@@ -125,7 +320,12 @@ html, body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family);
   font-weight: normal;
   color: var(--text-color);
@@ -149,7 +349,9 @@ h3 {
   font-size: 1.2rem;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-size: 1.1rem;
 }
 
@@ -172,7 +374,8 @@ table {
   border: 1px solid var(--border-color);
 }
 
-th, td {
+th,
+td {
   border: 1px solid var(--border-color);
   padding: 0.5rem;
   text-align: left;
@@ -184,7 +387,10 @@ th {
 }
 
 /* Form elements */
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
@@ -192,11 +398,13 @@ input, textarea, select, button {
   padding: 0.25rem 0.5rem;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   cursor: pointer;
 }
 
-button:hover, input[type="submit"]:hover {
+button:hover,
+input[type="submit"]:hover {
   background-color: var(--text-color);
   color: var(--background-color);
 }
@@ -247,121 +455,14 @@ button:hover, input[type="submit"]:hover {
 }
 
 /* Code blocks */
-pre, code {
+pre,
+code {
   font-family: var(--font-family);
   border: 1px solid var(--border-color);
   padding: 0.5rem;
   background-color: var(--background-color);
   display: block;
   overflow-x: auto;
-}
-
-/* Terminal cursor effect */
-.terminal-cursor::after {
-  content: "█";
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Responsive adjustments */
-/* Tablet adjustments */
-@media (max-width: 992px) {
-  #mw-sidebar {
-    width: 180px;
-  }
-  
-  #content {
-    padding: 1rem;
-  }
-  
-  .mw-body {
-    padding: 0.5rem;
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  #mw-wrapper {
-    flex-direction: column;
-  }
-  
-  #mw-sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  #content {
-    padding: 0.75rem;
-  }
-  
-  /* Collapsible sidebar on mobile */
-  #mw-sidebar .portal:not(:first-child) {
-    display: none;
-  }
-  
-  #mw-sidebar .portal.active {
-    display: block;
-  }
-  
-  #mw-sidebar .nav-toggle {
-    display: block;
-    text-align: right;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-  }
-  
-  #mw-head {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  #p-personal {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-  
-  input, textarea, select {
-    font-size: 16px; /* Prevent zoom on input focus on mobile */
-  }
-  
-  /* Adjust font size for readability on small screens */
-  body {
-    font-size: 14px;
-  }
-  
-  h1 {
-    font-size: 1.3rem;
-  }
-  
-  h2 {
-    font-size: 1.2rem;
-  }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-  #p-personal ul {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  #p-personal li {
-    margin: 0.25rem 0;
-  }
-  
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-  
-  body {
-    font-size: 13px;
-  }
 }
 
 /* Fix for MediaWiki base elements */
