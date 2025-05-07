@@ -6,7 +6,7 @@
 /* Import the DOS VGA font */
 @font-face {
   font-family: 'MorePerfectDOSVGA';
-  src: url('http://laemeur.sdf.org/fonts/MorePerfectDOSVGA.ttf') format('truetype');
+  src: url('../fonts/MorePerfectDOSVGA.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Improve font loading behavior */
@@ -266,8 +266,6 @@ pre, code {
   .mw-body {
     padding: 0.5rem;
   }
-  
-  --font-size: 15px;
 }
 
 /* Mobile adjustments */
@@ -317,8 +315,8 @@ pre, code {
   }
   
   /* Adjust font size for readability on small screens */
-  :root {
-    --font-size: 14px;
+  body {
+    font-size: 14px;
   }
   
   h1 {
@@ -346,7 +344,42 @@ pre, code {
     overflow-x: auto;
   }
   
-  :root {
-    --font-size: 13px;
+  body {
+    font-size: 13px;
   }
+}
+
+/* Fix for MediaWiki base elements */
+.mw-body-content {
+  color: var(--text-color);
+}
+
+#bodyContent {
+  color: var(--text-color);
+}
+
+/* Fix for content tables */
+.wikitable {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.wikitable > tr > th,
+.wikitable > * > tr > th {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.wikitable > tr > td,
+.wikitable > * > tr > td {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Special pages styling */
+.special li {
+  margin-bottom: 0.25rem;
 }
