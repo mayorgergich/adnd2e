@@ -37,7 +37,7 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath//favicon.ico",
+	'1x' => "$wgResourceBasePath/favicon.ico",
 	'icon' => "$wgResourceBasePath/images/logo.png",
 ];
 
