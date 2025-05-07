@@ -130,7 +130,7 @@ $wgDefaultSkin = "biosterminal";
 # Enabled skins.
 # Comment out skins that aren't installed
 #wfLoadSkin( 'Vector' );
-wfLoadSkin( 'BIOSTerminal' );
+#wfLoadSkin( 'BIOSTerminal' );
 #wfLoadSkin( 'Gamepress' );
 #wfLoadSkin( 'Pivot' );
 #wfLoadSkin( 'WPTouch' );
