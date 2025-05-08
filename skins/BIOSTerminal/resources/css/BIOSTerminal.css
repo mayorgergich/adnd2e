@@ -10,7 +10,7 @@ html.js-loading {
 
 /* This will only apply to the boot sequence */
 html.js-loading .boot-sequence-active {
-  visibility: visible;
+  visibility: visible !important;
 }
 
 /* If JavaScript is disabled, still show content */
@@ -47,7 +47,7 @@ html.no-js {
 body {
   background-color: var(--dos-bg);
   color: var(--dos-text);
-  font-family: "Courier New", monospace;
+  font-family: var(--font-family);
   margin: 0;
   padding: 0;
   line-height: 1.4;
@@ -95,8 +95,12 @@ body {
 
 /* DOS Interface */
 .dos-wrapper {
-  display: none;
-  animation: fadeIn 1s ease-in-out 4s forwards;
+  display: none; /* Initially hidden */
+}
+
+/* Force display when loaded */
+.js-loaded .dos-wrapper {
+  display: flex !important;
 }
 
 .dos-interface {

@@ -3,13 +3,27 @@
  * Adds terminal-like effects and interactions
  */
 
+// Add error logging for debugging
+window.addEventListener('error', function(e) {
+  console.error('JS Error:', e.message, 'at', e.filename, 'line', e.lineno);
+});
+
+// Check if jQuery is working
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
+    console.error('jQuery is not loaded!');
+  } else {
+    console.log('jQuery is loaded and working.');
+  }
+});
+
 // Immediately add loading class to hide content
 document.documentElement.className += " js-loading";
 
 // Remove the loading class when everything is ready
 window.addEventListener("load", function () {
-  // Remove the loading class
-  document.documentElement.classList.remove("js-loading");
+  // Boot sequence will handle removing the loading class
+  // So we don't remove it here automatically
 });
 
 // Add no-js class for users without JavaScript
@@ -20,6 +34,9 @@ document.documentElement.className = document.documentElement.className.replace(
 
 (function (mw, $) {
   "use strict";
+
+  // Track if boot sequence has completed
+  var bootSequenceComplete = false;
 
   // Document ready
   $(function () {
@@ -96,16 +113,17 @@ document.documentElement.className = document.documentElement.className.replace(
 
     // Enhanced terminal boot sequence
     function bootSequence() {
+      console.log("Starting boot sequence...");
       var overlay = document.createElement("div");
       overlay.style.position = "fixed";
       overlay.style.top = "0";
       overlay.style.left = "0";
       overlay.style.width = "100%";
       overlay.style.height = "100%";
-      overlay.style.backgroundColor = "var(--background-color)";
-      overlay.style.color = "var(--text-color)";
-      overlay.style.fontFamily = "var(--font-family)";
-      overlay.style.fontSize = "var(--font-size)";
+      overlay.style.backgroundColor = "#000080"; // Default blue
+      overlay.style.color = "#FFFFFF"; // White text
+      overlay.style.fontFamily = "monospace";
+      overlay.style.fontSize = "16px";
       overlay.style.zIndex = "9999";
       overlay.style.padding = "2rem";
       overlay.style.boxSizing = "border-box";
@@ -166,7 +184,7 @@ document.documentElement.className = document.documentElement.className.replace(
           isLoading: false,
         },
         {
-          text: "Loading " + mw.config.get("wgSiteName"),
+          text: "Loading " + (mw.config.get("wgSiteName") || "AD&D 2nd Edition Wiki"),
           isLoading: true,
         },
         {
@@ -187,12 +205,20 @@ document.documentElement.className = document.documentElement.className.replace(
         if (index >= sequences.length) {
           // Boot sequence complete, fade out overlay
           setTimeout(function () {
+            console.log("Boot sequence complete, fading out overlay...");
             overlay.style.transition = "opacity 1s";
             overlay.style.opacity = "0";
 
             setTimeout(function () {
               document.body.removeChild(overlay);
 
+              // Set bootSequenceComplete flag
+              bootSequenceComplete = true;
+              
+              // Display the main content
+              console.log("Displaying main content...");
+              showMainContent();
+              
               // Apply typing effect to page title
               var heading = document.getElementById("firstHeading");
               if (heading) {
@@ -232,12 +258,36 @@ document.documentElement.className = document.documentElement.className.replace(
       processBootSequence(bootSequences, 0);
     }
 
+    // Function to show main content
+    function showMainContent() {
+      console.log("Showing main content...");
+      
+      // Remove the loading class
+      document.documentElement.classList.remove("js-loading");
+      document.body.classList.add("js-loaded");
+      
+      // Show the wrapper
+      var dosWrapper = document.querySelector(".dos-wrapper");
+      if (dosWrapper) {
+        dosWrapper.style.display = "flex";
+        console.log("Set dos-wrapper to display: flex");
+      } else {
+        console.error("Could not find .dos-wrapper element");
+      }
+    }
+
     // Check if user has already seen boot sequence in this session
     if (!sessionStorage.getItem("biosterminal-boot-shown")) {
+      console.log("Starting boot sequence (first visit)");
       bootSequence();
       sessionStorage.setItem("biosterminal-boot-shown", "true");
     } else {
-      // Just apply typing effect to page title
+      console.log("Skipping boot sequence (returning visitor)");
+      bootSequenceComplete = true;
+      // Just show the content immediately
+      showMainContent();
+      
+      // Apply typing effect to page title
       var heading = document.getElementById("firstHeading");
       if (heading) {
         var originalText = heading.textContent || heading.innerText;
@@ -260,9 +310,9 @@ document.documentElement.className = document.documentElement.className.replace(
           helpDialog.style.top = "50%";
           helpDialog.style.left = "50%";
           helpDialog.style.transform = "translate(-50%, -50%)";
-          helpDialog.style.backgroundColor = "var(--background-color)";
-          helpDialog.style.color = "var(--text-color)";
-          helpDialog.style.border = "1px solid var(--border-color)";
+          helpDialog.style.backgroundColor = "var(--background-color, #000080)";
+          helpDialog.style.color = "var(--text-color, #FFFFFF)";
+          helpDialog.style.border = "1px solid var(--border-color, #C0C0C0)";
           helpDialog.style.padding = "1rem";
           helpDialog.style.zIndex = "1000";
           helpDialog.style.width = "80%";
@@ -331,7 +381,7 @@ document.documentElement.className = document.documentElement.className.replace(
         var currentBg = rootStyle.getPropertyValue("--background-color").trim();
 
         // Toggle between theme variants
-        if (currentBg === "#0000FF") {
+        if (currentBg === "#0000FF" || currentBg === "#000080") {
           // Blue -> White
           document.documentElement.style.setProperty(
             "--background-color",
@@ -367,7 +417,7 @@ document.documentElement.className = document.documentElement.className.replace(
           // Black -> Blue
           document.documentElement.style.setProperty(
             "--background-color",
-            "#0000FF",
+            "#000080",
           );
           document.documentElement.style.setProperty("--text-color", "#FFFFFF");
           document.documentElement.style.setProperty("--link-color", "#FFFFFF");
@@ -386,9 +436,9 @@ document.documentElement.className = document.documentElement.className.replace(
         notification.style.position = "fixed";
         notification.style.bottom = "20px";
         notification.style.right = "20px";
-        notification.style.backgroundColor = "var(--background-color)";
-        notification.style.color = "var(--text-color)";
-        notification.style.border = "1px solid var(--border-color)";
+        notification.style.backgroundColor = "var(--background-color, #000080)";
+        notification.style.color = "var(--text-color, #FFFFFF)";
+        notification.style.border = "1px solid var(--border-color, #C0C0C0)";
         notification.style.padding = "10px";
         notification.style.zIndex = "1000";
         notification.textContent = "Theme variant changed.";
@@ -416,78 +466,33 @@ document.documentElement.className = document.documentElement.className.replace(
         $(this).removeClass("terminal-cursor");
       });
   });
-
-  // Wait for the DOM to be fully loaded
-  document.addEventListener("DOMContentLoaded", function () {
-    // Add loading class to body
-    document.body.classList.add("js-loading");
-
-    // Boot sequence timing
-    setTimeout(function () {
-      document.body.classList.remove("js-loading");
+  
+  // Set a safety timeout to show content if boot sequence fails
+  setTimeout(function() {
+    if (!bootSequenceComplete) {
+      console.log("Safety timeout triggered - showing content");
+      document.documentElement.classList.remove("js-loading");
       document.body.classList.add("js-loaded");
-
-      // Show the main content
-      document.querySelector(".dos-wrapper").style.display = "flex";
-    }, 4000);
-
-    // Add terminal cursor effect to headings
-    const headings = document.querySelectorAll("h1, h2, h3");
-    headings.forEach(function (heading) {
-      const cursor = document.createElement("span");
-      cursor.className = "terminal-cursor";
-      heading.appendChild(cursor);
-    });
-
-    // Add typing effect to certain elements
-    const typingElements = document.querySelectorAll(".dos-title, .dos-path");
-    typingElements.forEach(function (element) {
-      const text = element.textContent;
-      element.textContent = "";
-      let i = 0;
-
-      function typeWriter() {
-        if (i < text.length) {
-          element.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, 50);
-        }
+      
+      var dosWrapper = document.querySelector(".dos-wrapper");
+      if (dosWrapper) {
+        dosWrapper.style.display = "flex";
       }
-
-      typeWriter();
-    });
-
-    // Add hover effects to menu items
-    const menuItems = document.querySelectorAll(".dos-menu a");
-    menuItems.forEach(function (item) {
-      item.addEventListener("mouseover", function () {
-        this.style.color = "var(--dos-highlight)";
-        this.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-      });
-
-      item.addEventListener("mouseout", function () {
-        this.style.color = "var(--dos-text)";
-        this.style.backgroundColor = "transparent";
-      });
-    });
-
-    // Add keyboard navigation
-    document.addEventListener("keydown", function (e) {
-      // Alt + M to focus on menu
-      if (e.altKey && e.key === "m") {
-        const firstMenuItem = document.querySelector(".dos-menu a");
-        if (firstMenuItem) {
-          firstMenuItem.focus();
-        }
-      }
-
-      // Alt + S to focus on search
-      if (e.altKey && e.key === "s") {
-        const searchInput = document.querySelector('input[name="search"]');
-        if (searchInput) {
-          searchInput.focus();
-        }
-      }
-    });
-  });
+    }
+  }, 6000); // 6 seconds safety timeout
 })(mediaWiki, jQuery);
+// Add touch event support for mobile
+document.addEventListener('DOMContentLoaded', function() {
+  // Convert click events to touch events for mobile
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('touchend', function(e) {
+      if (!this.clicked) {
+        e.preventDefault();
+        this.clicked = true;
+        this.click();
+        setTimeout(function() { this.clicked = false; }.bind(this), 100);
+      }
+    });
+  }
+});
