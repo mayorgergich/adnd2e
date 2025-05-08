@@ -1,0 +1,15 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect /wiki/Page to /index.php/Page
+RewriteRule ^wiki/(.*)$ index.php/$1 [L,QSA]
+
+# Redirect /wiki to /index.php
+RewriteRule ^wiki/?$ index.php [L,QSA]
+
+# Redirect / to /wiki/Main_Page
+RewriteRule ^$ wiki/Main_Page [L,R=301]
+
+# Handle direct access to index.php
+RewriteCond %{REQUEST_URI} !^/index\.php
+RewriteRule ^(.*)$ index.php/$1 [L,QSA] 
