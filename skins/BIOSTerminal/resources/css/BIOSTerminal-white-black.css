@@ -14,4 +14,17 @@
   --line-height: 1.4;
 }
 
-/* No need to redefine all other styles as they're inherited from the main CSS file */
+/* Ensure content boxes also match the theme background */
+.dos-content-area,
+.mw-body-content,
+.mw-body-content table,
+.wikitable,
+.wikitable > tr > th,
+.wikitable > * > tr > th,
+.wikitable > tr > td,
+.wikitable > * > tr > td,
+#content table,
+.mw-parser-output table {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}
