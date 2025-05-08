@@ -1,351 +1,135 @@
 /**
  * BIOSTerminal skin JavaScript
- * Adds terminal-like effects and interactions
+ * Simplified and fixed version
  */
-
-// Add error logging for debugging
-window.addEventListener('error', function(e) {
-  console.error('JS Error:', e.message, 'at', e.filename, 'line', e.lineno);
-});
-
-// Check if jQuery is working
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
-    console.error('jQuery is not loaded!');
-  } else {
-    console.log('jQuery is loaded and working.');
-  }
-});
-
-// Immediately add loading class to hide content
-document.documentElement.className += " js-loading";
-
-// Remove the loading class when everything is ready
-window.addEventListener("load", function () {
-  // Boot sequence will handle removing the loading class
-  // So we don't remove it here automatically
-});
-
-// Add no-js class for users without JavaScript
-document.documentElement.className = document.documentElement.className.replace(
-  "no-js",
-  "",
-);
 
 (function (mw, $) {
   "use strict";
 
-  // Track if boot sequence has completed
-  var bootSequenceComplete = false;
+  // Immediately remove loading class to ensure content is visible
+  document.documentElement.classList.remove("js-loading");
+  document.body.classList.add("js-loaded");
 
-  // Document ready
+  // Document ready function
   $(function () {
-    // Add mobile navigation toggle for sidebar
-    if ($(window).width() <= 768) {
-      // Create toggle button
-      var $toggleButton = $('<div class="nav-toggle">MENU ▼</div>');
-      $("#mw-sidebar").prepend($toggleButton);
-
-      // Toggle navigation sections on click
-      $toggleButton.on("click", function () {
-        $("#mw-sidebar .portal:not(:first-child)").toggleClass("active");
-        $(this).text(function (i, text) {
-          return text === "MENU ▼" ? "MENU ▲" : "MENU ▼";
-        });
-      });
-
-      // Handle orientation change
-      $(window).on("orientationchange", function () {
-        setTimeout(function () {
-          if ($(window).width() > 768) {
-            $("#mw-sidebar .portal").show();
-          }
-        }, 200);
-      });
+    console.log("BIOSTerminal skin initialized");
+    
+    // Show the wrapper immediately
+    var dosWrapper = document.querySelector(".dos-wrapper");
+    if (dosWrapper) {
+      dosWrapper.style.display = "flex";
+      console.log("DOS wrapper displayed");
     }
 
-    // Improved terminal typing effect for headings
+    // Make terminal typing effect for headings
     function typeEffect(element, text, i, callback) {
       if (i < text.length) {
-        element.innerHTML =
-          text.substring(0, i + 1) + '<span class="terminal-cursor"></span>';
-
-        // Random typing speed between 50ms and 150ms for realistic effect
-        setTimeout(
-          function () {
-            typeEffect(element, text, i + 1, callback);
-          },
-          Math.random() * 100 + 50,
-        );
+        element.innerHTML = text.substring(0, i + 1) + '<span class="terminal-cursor"></span>';
+        setTimeout(function () {
+          typeEffect(element, text, i + 1, callback);
+        }, 50);
       } else {
         if (callback) {
-          // Remove cursor before callback
           element.innerHTML = text;
           setTimeout(callback, 100);
         } else {
-          // Keep cursor at the end when typing is complete if no callback
           element.innerHTML = text + '<span class="terminal-cursor"></span>';
         }
       }
     }
 
-    // Function to display a loading percentage
-    function displayLoading(element, text, callback) {
-      var count = 0;
-      var loadingText = text + " (0%)";
-      element.innerHTML = loadingText;
-
-      var loadingInterval = setInterval(function () {
-        count += Math.floor(Math.random() * 10) + 1; // Random increment for realism
-        if (count > 100) {
-          count = 100;
-          clearInterval(loadingInterval);
-
-          element.innerHTML = text + " (100%).";
-          if (callback) {
-            setTimeout(callback, 500);
-          }
-        } else {
-          element.innerHTML = text + " (" + count + "%)";
-        }
-      }, 80); // Update speed
+    // Apply typing effect to page title
+    var heading = document.getElementById("firstHeading");
+    if (heading) {
+      var originalText = heading.textContent || heading.innerText;
+      heading.innerHTML = "";
+      typeEffect(heading, originalText, 0);
     }
 
-    // Enhanced terminal boot sequence
-    function bootSequence() {
-      console.log("Starting boot sequence...");
-      var overlay = document.createElement("div");
-      overlay.style.position = "fixed";
-      overlay.style.top = "0";
-      overlay.style.left = "0";
-      overlay.style.width = "100%";
-      overlay.style.height = "100%";
-      overlay.style.backgroundColor = "#000080"; // Default blue
-      overlay.style.color = "#FFFFFF"; // White text
-      overlay.style.fontFamily = "monospace";
-      overlay.style.fontSize = "16px";
-      overlay.style.zIndex = "9999";
-      overlay.style.padding = "2rem";
-      overlay.style.boxSizing = "border-box";
-      overlay.style.overflow = "auto";
-
-      // Add boot-sequence-active class to make it visible even when js-loading is active
-      overlay.className = "boot-sequence-active";
-
-      document.body.appendChild(overlay);
-
-      var bootContainer = document.createElement("div");
-      overlay.appendChild(bootContainer);
-
-      // Boot text elements with periods and improved wording
-      var bootSequences = [
-        {
-          text: "BIOS Terminal v1.0",
-          isLoading: false,
-        },
-        {
-          text: "Copyright (c) 2025 MediaWiki Custom Skin.",
-          isLoading: false,
-        },
-        {
-          text: "",
-          isLoading: false,
-        },
-        {
-          text: "Testing system memory",
-          isLoading: true,
-        },
-        {
-          text: "Memory test successful.",
-          isLoading: false,
-        },
-        {
-          text: "",
-          isLoading: false,
-        },
-        {
-          text: "Initializing wiki subsystems",
-          isLoading: true,
-        },
-        {
-          text: "Connecting to content database",
-          isLoading: true,
-        },
-        {
-          text: "Activating user authentication",
-          isLoading: true,
-        },
-        {
-          text: "Starting search system",
-          isLoading: true,
-        },
-        {
-          text: "",
-          isLoading: false,
-        },
-        {
-          text: "Loading " + (mw.config.get("wgSiteName") || "AD&D 2nd Edition Wiki"),
-          isLoading: true,
-        },
-        {
-          text: "",
-          isLoading: false,
-        },
-        {
-          text: "READY.",
-          isLoading: false,
-        },
-        {
-          text: "",
-          isLoading: false,
-        },
+    // Simplified boot sequence
+    function simpleBootSequence() {
+      var bootMessages = [
+        "BIOS Terminal v1.0",
+        "Loading " + (mw.config.get("wgSiteName") || "AD&D 2nd Edition Wiki"),
+        "System Ready."
       ];
-
-      function processBootSequence(sequences, index) {
-        if (index >= sequences.length) {
-          // Boot sequence complete, fade out overlay
-          setTimeout(function () {
-            console.log("Boot sequence complete, fading out overlay...");
-            overlay.style.transition = "opacity 1s";
-            overlay.style.opacity = "0";
-
-            setTimeout(function () {
-              document.body.removeChild(overlay);
-
-              // Set bootSequenceComplete flag
-              bootSequenceComplete = true;
-              
-              // Display the main content
-              console.log("Displaying main content...");
-              showMainContent();
-              
-              // Apply typing effect to page title
-              var heading = document.getElementById("firstHeading");
-              if (heading) {
-                var originalText = heading.textContent || heading.innerText;
-                heading.innerHTML = "";
-                typeEffect(heading, originalText, 0);
-              }
+      
+      var bootArea = document.createElement("div");
+      bootArea.style.position = "fixed";
+      bootArea.style.top = "10px";
+      bootArea.style.left = "10px";
+      bootArea.style.background = "rgba(0, 0, 128, 0.8)";
+      bootArea.style.color = "#FFFFFF";
+      bootArea.style.padding = "10px";
+      bootArea.style.borderRadius = "5px";
+      bootArea.style.zIndex = "1000";
+      bootArea.style.fontFamily = "monospace";
+      bootArea.style.fontSize = "14px";
+      bootArea.style.maxWidth = "400px";
+      
+      document.body.appendChild(bootArea);
+      
+      var messageIndex = 0;
+      
+      function showNextMessage() {
+        if (messageIndex < bootMessages.length) {
+          var messageElem = document.createElement("div");
+          messageElem.textContent = bootMessages[messageIndex];
+          bootArea.appendChild(messageElem);
+          messageIndex++;
+          setTimeout(showNextMessage, 500);
+        } else {
+          setTimeout(function() {
+            bootArea.style.opacity = "0";
+            bootArea.style.transition = "opacity 1s";
+            setTimeout(function() {
+              document.body.removeChild(bootArea);
             }, 1000);
           }, 1000);
-
-          return;
-        }
-
-        var sequence = sequences[index];
-        var line = document.createElement("div");
-        line.style.marginBottom = "0.5rem";
-        line.style.minHeight = "1.2em"; // Ensure consistent height
-        bootContainer.appendChild(line);
-
-        if (sequence.text === "") {
-          // Empty line, move to next
-          processBootSequence(sequences, index + 1);
-        } else if (sequence.isLoading) {
-          // Display loading percentage animation
-          displayLoading(line, sequence.text, function () {
-            processBootSequence(sequences, index + 1);
-          });
-        } else {
-          // Normal text typing effect
-          typeEffect(line, sequence.text, 0, function () {
-            processBootSequence(sequences, index + 1);
-          });
         }
       }
-
-      // Start boot sequence
-      processBootSequence(bootSequences, 0);
+      
+      showNextMessage();
     }
 
-    // Function to show main content
-    function showMainContent() {
-      console.log("Showing main content...");
-      
-      // Remove the loading class
-      document.documentElement.classList.remove("js-loading");
-      document.body.classList.add("js-loaded");
-      
-      // Show the wrapper
-      var dosWrapper = document.querySelector(".dos-wrapper");
-      if (dosWrapper) {
-        dosWrapper.style.display = "flex";
-        console.log("Set dos-wrapper to display: flex");
-      } else {
-        console.error("Could not find .dos-wrapper element");
-      }
-    }
-
-    // Check if user has already seen boot sequence in this session
+    // Show boot sequence once per session
     if (!sessionStorage.getItem("biosterminal-boot-shown")) {
-      console.log("Starting boot sequence (first visit)");
-      bootSequence();
+      simpleBootSequence();
       sessionStorage.setItem("biosterminal-boot-shown", "true");
-    } else {
-      console.log("Skipping boot sequence (returning visitor)");
-      bootSequenceComplete = true;
-      // Just show the content immediately
-      showMainContent();
-      
-      // Apply typing effect to page title
-      var heading = document.getElementById("firstHeading");
-      if (heading) {
-        var originalText = heading.textContent || heading.innerText;
-        heading.innerHTML = "";
-        typeEffect(heading, originalText, 0);
-      }
     }
 
-    // Keyboard navigation enhancements
+    // Add mobile navigation toggle for sidebar
+    if ($(window).width() <= 768) {
+      var $toggleButton = $('<div class="nav-toggle">MENU ▼</div>');
+      $toggleButton.css({
+        'padding': '10px', 
+        'background-color': '#000080',
+        'color': '#FFFFFF',
+        'cursor': 'pointer',
+        'text-align': 'center',
+        'border-bottom': '1px solid #FFFFFF'
+      });
+      
+      $("#mw-sidebar").prepend($toggleButton);
+
+      // Toggle navigation sections on click
+      $toggleButton.on("click", function () {
+        $("#mw-sidebar .portal:not(:first-child)").toggle();
+        $(this).text(function (i, text) {
+          return text === "MENU ▼" ? "MENU ▲" : "MENU ▼";
+        });
+      });
+
+      // Initially hide the menu items on mobile
+      $("#mw-sidebar .portal:not(:first-child)").hide();
+    }
+
+    // Keyboard navigation
     $(document).on("keydown", function (e) {
       // Alt+H to toggle help dialog
       if (e.altKey && e.keyCode === 72) {
         e.preventDefault();
-
-        // Create help dialog if it doesn't exist
-        if (!document.getElementById("terminal-help")) {
-          var helpDialog = document.createElement("div");
-          helpDialog.id = "terminal-help";
-          helpDialog.style.position = "fixed";
-          helpDialog.style.top = "50%";
-          helpDialog.style.left = "50%";
-          helpDialog.style.transform = "translate(-50%, -50%)";
-          helpDialog.style.backgroundColor = "var(--background-color, #000080)";
-          helpDialog.style.color = "var(--text-color, #FFFFFF)";
-          helpDialog.style.border = "1px solid var(--border-color, #C0C0C0)";
-          helpDialog.style.padding = "1rem";
-          helpDialog.style.zIndex = "1000";
-          helpDialog.style.width = "80%";
-          helpDialog.style.maxWidth = "600px";
-          helpDialog.style.maxHeight = "80vh";
-          helpDialog.style.overflow = "auto";
-
-          helpDialog.innerHTML =
-            "<h2>Terminal Help</h2>" +
-            "<p>Welcome to the BIOSTerminal skin. Here are some keyboard shortcuts:</p>" +
-            "<ul>" +
-            "<li><strong>Alt+H</strong>: Toggle this help dialog</li>" +
-            "<li><strong>Alt+S</strong>: Focus search box</li>" +
-            "<li><strong>Alt+M</strong>: Return to main page</li>" +
-            "<li><strong>Alt+E</strong>: Edit current page (if available)</li>" +
-            "<li><strong>Alt+T</strong>: Toggle between theme variants</li>" +
-            "</ul>" +
-            "<p>Press any key to close this dialog.</p>";
-
-          document.body.appendChild(helpDialog);
-
-          // Close dialog on any key press
-          var closeHandler = function (e) {
-            document.body.removeChild(helpDialog);
-            document.removeEventListener("keydown", closeHandler);
-          };
-
-          document.addEventListener("keydown", closeHandler);
-        } else {
-          // If help dialog exists, remove it
-          var helpDialog = document.getElementById("terminal-help");
-          document.body.removeChild(helpDialog);
-        }
+        showHelpDialog();
       }
 
       // Alt+S to focus search box
@@ -375,81 +159,125 @@ document.documentElement.className = document.documentElement.className.replace(
       // Alt+T to toggle theme variant
       if (e.altKey && e.keyCode === 84) {
         e.preventDefault();
-
-        // Get current root variables
-        var rootStyle = getComputedStyle(document.documentElement);
-        var currentBg = rootStyle.getPropertyValue("--background-color").trim();
-
-        // Toggle between theme variants
-        if (currentBg === "#0000FF" || currentBg === "#000080") {
-          // Blue -> White
-          document.documentElement.style.setProperty(
-            "--background-color",
-            "#FFFFFF",
-          );
-          document.documentElement.style.setProperty("--text-color", "#000000");
-          document.documentElement.style.setProperty("--link-color", "#0000AA");
-          document.documentElement.style.setProperty(
-            "--link-hover-color",
-            "#000088",
-          );
-          document.documentElement.style.setProperty(
-            "--border-color",
-            "#000000",
-          );
-        } else if (currentBg === "#FFFFFF") {
-          // White -> Black
-          document.documentElement.style.setProperty(
-            "--background-color",
-            "#000000",
-          );
-          document.documentElement.style.setProperty("--text-color", "#FFFFFF");
-          document.documentElement.style.setProperty("--link-color", "#00AAFF");
-          document.documentElement.style.setProperty(
-            "--link-hover-color",
-            "#AAAAFF",
-          );
-          document.documentElement.style.setProperty(
-            "--border-color",
-            "#FFFFFF",
-          );
-        } else {
-          // Black -> Blue
-          document.documentElement.style.setProperty(
-            "--background-color",
-            "#000080",
-          );
-          document.documentElement.style.setProperty("--text-color", "#FFFFFF");
-          document.documentElement.style.setProperty("--link-color", "#FFFFFF");
-          document.documentElement.style.setProperty(
-            "--link-hover-color",
-            "#AAAAAA",
-          );
-          document.documentElement.style.setProperty(
-            "--border-color",
-            "#FFFFFF",
-          );
-        }
-
-        // Show theme change notification
-        var notification = document.createElement("div");
-        notification.style.position = "fixed";
-        notification.style.bottom = "20px";
-        notification.style.right = "20px";
-        notification.style.backgroundColor = "var(--background-color, #000080)";
-        notification.style.color = "var(--text-color, #FFFFFF)";
-        notification.style.border = "1px solid var(--border-color, #C0C0C0)";
-        notification.style.padding = "10px";
-        notification.style.zIndex = "1000";
-        notification.textContent = "Theme variant changed.";
-
-        document.body.appendChild(notification);
-
-        setTimeout(function () {
-          document.body.removeChild(notification);
-        }, 2000);
+        toggleTheme();
       }
     });
+
+    // Help dialog function
+    function showHelpDialog() {
+      // Remove existing dialog if present
+      var existingDialog = document.getElementById("terminal-help");
+      if (existingDialog) {
+        document.body.removeChild(existingDialog);
+        return;
+      }
+
+      var helpDialog = document.createElement("div");
+      helpDialog.id = "terminal-help";
+      helpDialog.style.position = "fixed";
+      helpDialog.style.top = "50%";
+      helpDialog.style.left = "50%";
+      helpDialog.style.transform = "translate(-50%, -50%)";
+      helpDialog.style.backgroundColor = "var(--dos-bg, #000080)";
+      helpDialog.style.color = "var(--dos-text, #FFFFFF)";
+      helpDialog.style.border = "1px solid var(--dos-border, #C0C0C0)";
+      helpDialog.style.padding = "1rem";
+      helpDialog.style.zIndex = "1000";
+      helpDialog.style.width = "80%";
+      helpDialog.style.maxWidth = "600px";
+      helpDialog.style.maxHeight = "80vh";
+      helpDialog.style.overflow = "auto";
+      helpDialog.style.fontFamily = "monospace";
+
+      helpDialog.innerHTML =
+        "<h2>Terminal Help</h2>" +
+        "<p>Welcome to the BIOSTerminal skin. Here are some keyboard shortcuts:</p>" +
+        "<ul>" +
+        "<li><strong>Alt+H</strong>: Toggle this help dialog</li>" +
+        "<li><strong>Alt+S</strong>: Focus search box</li>" +
+        "<li><strong>Alt+M</strong>: Return to main page</li>" +
+        "<li><strong>Alt+E</strong>: Edit current page (if available)</li>" +
+        "<li><strong>Alt+T</strong>: Toggle between theme variants</li>" +
+        "</ul>" +
+        "<p>Press Escape or click anywhere to close this dialog.</p>";
+
+      document.body.appendChild(helpDialog);
+
+      // Close dialog on click anywhere or escape key
+      function closeHandler(e) {
+        if (e.type === "keydown" && e.keyCode !== 27) {
+          return;
+        }
+        document.body.removeChild(helpDialog);
+        document.removeEventListener("keydown", closeHandler);
+        document.removeEventListener("click", closeHandler);
+      }
+
+      document.addEventListener("keydown", closeHandler);
+      document.addEventListener("click", function clickHandler(e) {
+        if (e.target !== helpDialog) {
+          closeHandler(e);
+        }
+      });
+    }
+
+    // Theme toggle function
+    function toggleTheme() {
+      // Get current root variables
+      var rootStyle = getComputedStyle(document.documentElement);
+      var currentBg = rootStyle.getPropertyValue("--dos-bg").trim() || "#000080";
+
+      // Toggle between theme variants
+      if (currentBg === "#000080" || currentBg === "#0000FF") {
+        // Blue -> White
+        document.documentElement.style.setProperty("--dos-bg", "#FFFFFF");
+        document.documentElement.style.setProperty("--dos-text", "#000000");
+        document.documentElement.style.setProperty("--dos-highlight", "#0000AA");
+        document.documentElement.style.setProperty("--dos-border", "#000000");
+      } else if (currentBg === "#FFFFFF") {
+        // White -> Black
+        document.documentElement.style.setProperty("--dos-bg", "#000000");
+        document.documentElement.style.setProperty("--dos-text", "#FFFFFF");
+        document.documentElement.style.setProperty("--dos-highlight", "#00AAFF");
+        document.documentElement.style.setProperty("--dos-border", "#FFFFFF");
+      } else {
+        // Black -> Blue
+        document.documentElement.style.setProperty("--dos-bg", "#000080");
+        document.documentElement.style.setProperty("--dos-text", "#FFFFFF");
+        document.documentElement.style.setProperty("--dos-highlight", "#00FF00");
+        document.documentElement.style.setProperty("--dos-border", "#C0C0C0");
+      }
+
+      // Show theme change notification
+      showNotification("Theme variant changed");
+    }
+
+    // Show notification
+    function showNotification(message) {
+      var notification = document.createElement("div");
+      notification.style.position = "fixed";
+      notification.style.bottom = "20px";
+      notification.style.right = "20px";
+      notification.style.backgroundColor = "var(--dos-bg, #000080)";
+      notification.style.color = "var(--dos-text, #FFFFFF)";
+      notification.style.border = "1px solid var(--dos-border, #C0C0C0)";
+      notification.style.padding = "10px";
+      notification.style.zIndex = "9999";
+      notification.style.fontFamily = "monospace";
+      notification.textContent = message;
+
+      document.body.appendChild(notification);
+
+      setTimeout(function () {
+        notification.style.opacity = "0";
+        notification.style.transition = "opacity 0.5s";
+        setTimeout(function() {
+          if (notification.parentNode) {
+            document.body.removeChild(notification);
+          }
+        }, 500);
+      }, 2000);
+    }
 
     // Add terminal prompt to search box
     var searchInput = document.getElementById("searchInput");
@@ -457,42 +285,22 @@ document.documentElement.className = document.documentElement.className.replace(
       searchInput.placeholder = "> search...";
     }
 
-    // Add typing effects to edit areas
-    $("textarea")
-      .on("focus", function () {
-        $(this).addClass("terminal-cursor");
-      })
-      .on("blur", function () {
-        $(this).removeClass("terminal-cursor");
+    // Ensure all links are clickable
+    setTimeout(function() {
+      var allLinks = document.querySelectorAll('a');
+      allLinks.forEach(function(link) {
+        link.style.pointerEvents = "auto";
       });
+    }, 500);
   });
-  
-  // Set a safety timeout to show content if boot sequence fails
-  setTimeout(function() {
-    if (!bootSequenceComplete) {
-      console.log("Safety timeout triggered - showing content");
-      document.documentElement.classList.remove("js-loading");
-      document.body.classList.add("js-loaded");
-      
-      var dosWrapper = document.querySelector(".dos-wrapper");
-      if (dosWrapper) {
-        dosWrapper.style.display = "flex";
-      }
+
+  // Add touch event support for mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    // Make sure all interactive elements have pointer-events auto
+    var interactiveElements = document.querySelectorAll('a, button, input, select, textarea');
+    for (var i = 0; i < interactiveElements.length; i++) {
+      interactiveElements[i].style.pointerEvents = "auto";
     }
-  }, 6000); // 6 seconds safety timeout
+  });
+
 })(mediaWiki, jQuery);
-// Add touch event support for mobile
-document.addEventListener('DOMContentLoaded', function() {
-  // Convert click events to touch events for mobile
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('touchend', function(e) {
-      if (!this.clicked) {
-        e.preventDefault();
-        this.clicked = true;
-        this.click();
-        setTimeout(function() { this.clicked = false; }.bind(this), 100);
-      }
-    });
-  }
-});
