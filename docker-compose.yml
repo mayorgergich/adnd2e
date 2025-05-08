@@ -1,6 +1,6 @@
 services:
   adnd2e:
-    image: mediawiki:latest
+    image: mediawiki:stable-fpm
     container_name: adnd2e
     hostname: adnd2e
     restart: unless-stopped
@@ -13,15 +13,15 @@ services:
       - MEDIAWIKI_DB_NAME=adnd2e_db
       - MEDIAWIKI_DB_USER=pawneemayor
       - MEDIAWIKI_DB_PASSWORD=password321
-      - MEDIAWIKI_SITE_NAME=Private D&D Wiki
+      - MEDIAWIKI_SITE_NAME=AD&D 2e Wiki
     volumes:
-      - /opt/mediawiki/private/resources:/var/www/html/images
-      - /opt/mediawiki/private/cache:/var/www/html/cache
-      - /opt/mediawiki/private/extensions:/var/www/html/extensions
-      - /opt/mediawiki/private/skins:/var/www/html/skins
-      - /opt/mediawiki/private/config:/var/www/html/config
+      - /opt/mediawiki/resources:/var/www/html/images
+      - /opt/mediawiki/cache:/var/www/html/cache
+      - /opt/mediawiki/extensions:/var/www/html/extensions
+      - /opt/mediawiki/skins:/var/www/html/skins
+      - /opt/mediawiki/config:/var/www/html/config
       - /etc/localtime:/etc/localtime:ro
-      - /opt/mediawiki/private/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
+      - /opt/mediawiki/apache-config.conf:/etc/apache2/conf-enabled/servername.conf
     networks:
       - saltbox
     labels:
