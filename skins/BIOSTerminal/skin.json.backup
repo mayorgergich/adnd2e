@@ -55,7 +55,6 @@
                 }
             },
             "scripts": [
-            "resources/js/emergency-fix.js",
                 "resources/js/biosterminal.js"
             ],
             "dependencies": [

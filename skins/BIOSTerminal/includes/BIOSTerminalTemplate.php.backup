@@ -67,8 +67,6 @@ class BIOSTerminalTemplate extends BaseTemplate
 
             <link rel="shortcut icon" href="<?php echo htmlspecialchars($config->get('ResourceBasePath')); ?>/favicon.ico">
 
-<!-- Emergency Fix Script -->
-            <script src="/skins/BIOSTerminal/resources/js/emergency-fix.js"></script>
             <!-- FOUC Prevention Script -->
             <script>
                 // Mark the page as loading until JavaScript is ready
