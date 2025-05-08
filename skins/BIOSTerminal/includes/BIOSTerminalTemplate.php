@@ -18,7 +18,17 @@ class BIOSTerminalTemplate extends BaseTemplate
         $this->outputDoctype();
         $this->outputHTML_Head();
         $this->outputBodyStart();
+
+        // Start output buffering to catch PHP warnings
+        ob_start();
         $this->outputMainContent();
+        // Get the buffer content and clean it
+        $content = ob_get_clean();
+        // Remove PHP warnings from the content
+        $content = preg_replace('/<br>\s*<b>Warning<\/b>\s*:.*?<br>/s', '', $content);
+        $content = preg_replace('/<br>\s*<b>Notice<\/b>\s*:.*?<br>/s', '', $content);
+        echo $content;
+
         $this->outputFooter();
         $this->outputBodyEnd();
     }
@@ -144,36 +154,32 @@ class BIOSTerminalTemplate extends BaseTemplate
                 <div id="mw-wrapper" class="dos-interface">
                     <!-- DOS-style header -->
                     <div class="dos-header">
-                        <div class="dos-title"><?php echo $sitename; ?></div>
-                        <div class="dos-path">C:\ADND2E\<?php echo isset($this->data['title']) ? htmlspecialchars($this->data['title']) : 'MAIN'; ?></div>
+                        <div class="dos-header-left">
+                            <div class="dos-title"><?php echo $sitename; ?></div>
+                            <div class="dos-path">C:\ADND2E\<?php
+                                                            if (isset($this->data['title'])) {
+                                                                echo strip_tags(htmlspecialchars_decode($this->data['title']));
+                                                            } else {
+                                                                echo 'MAIN';
+                                                            }
+                                                            ?></div>
+                        </div>
+                        <div class="dos-header-center">
+                            <?php echo $this->data['sitenotice']; ?>
+                        </div>
+                        <div class="dos-header-right">
+                            <?php $this->renderNavigation(['SEARCH']); ?>
+                        </div>
                     </div>
 
-                    <!-- Left sidebar navigation -->
-                    <div id="mw-sidebar" class="dos-sidebar">
-                        <div class="dos-menu">
-                            <div class="dos-menu-title">MAIN MENU</div>
-                            <?php $this->renderNavigation(['SEARCH']); ?>
-                            <?php $this->renderNavigation(['SIDEBARNAV']); ?>
-                        </div>
+                    <!-- Horizontal navigation -->
+                    <div id="mw-navigation" class="dos-nav">
+                        <?php $this->renderNavigation(['SIDEBARNAV']); ?>
+                        <?php $this->renderNavigation(['PERSONAL']); ?>
                     </div>
 
                     <!-- Main content area -->
                     <div id="content" class="dos-content">
-                        <div id="mw-head" class="dos-toolbar">
-                            <div class="mw-indicators">
-                                <?php
-                                if (isset($this->data['indicators']) && is_array($this->data['indicators'])) {
-                                    foreach ($this->data['indicators'] as $id => $content) {
-                                        echo '<div id="' . htmlspecialchars($id) . '" class="mw-indicator dos-indicator">' . $content . '</div>';
-                                    }
-                                }
-                                ?>
-                            </div>
-                            <div id="p-personal" class="dos-user-menu">
-                                <?php $this->renderNavigation(['PERSONAL']); ?>
-                            </div>
-                        </div>
-
                         <div class="mw-body dos-body">
                             <h1 id="firstHeading" class="firstHeading dos-heading">
                                 <?php
@@ -200,24 +206,8 @@ class BIOSTerminalTemplate extends BaseTemplate
                                     <div class="usermessage dos-message"><?php echo $this->data['newtalk']; ?></div>
                                 <?php } ?>
 
-                                <?php
-                                if (isset($this->data['bodycontent'])) {
-                                    echo '<div class="dos-main-content">' . $this->data['bodycontent'] . '</div>';
-                                } else {
-                                    echo '<div id="mw-content-text" class="dos-error">Content not available</div>';
-                                }
-                                ?>
-
-                                <?php if (isset($this->data['printfooter']) && $this->data['printfooter']) { ?>
-                                    <div class="printfooter dos-footer"><?php echo $this->data['printfooter']; ?></div>
-                                <?php } ?>
-
-                                <?php if (isset($this->data['catlinks']) && $this->data['catlinks']) { ?>
-                                    <div class="dos-categories"><?php echo $this->data['catlinks']; ?></div>
-                                <?php } ?>
-
-                                <?php if (isset($this->data['dataAfterContent']) && $this->data['dataAfterContent']) { ?>
-                                    <div class="dos-after-content"><?php echo $this->data['dataAfterContent']; ?></div>
+                                <?php if (isset($this->data['bodytext'])) { ?>
+                                    <div class="mw-body-content"><?php echo $this->data['bodytext']; ?></div>
                                 <?php } ?>
                             </div>
                         </div>
@@ -257,7 +247,7 @@ class BIOSTerminalTemplate extends BaseTemplate
         </body>
 
         </html>
-        <?php
+    <?php
         }
 
         /**
@@ -267,94 +257,72 @@ class BIOSTerminalTemplate extends BaseTemplate
          */
         protected function renderNavigation($elements)
         {
-            if (in_array('SEARCH', $elements) && isset($this->data['wgScript'])) {
+            foreach ($elements as $element) {
+                switch ($element) {
+                    case 'SEARCH':
+                        $this->renderSearch();
+                        break;
+                    case 'PERSONAL':
+                        $this->renderPersonalTools();
+                        break;
+                    case 'SIDEBARNAV':
+                        $this->renderSidebarNav();
+                        break;
+                }
+            }
+        }
+
+        protected function renderSearch()
+        {
+    ?>
+        <div id="p-search" class="dos-search">
+            <form action="<?php echo htmlspecialchars($this->get('wgScript')); ?>" id="searchform">
+                <div>
+                    <input type="search" name="search" placeholder="Search ADND2e" aria-label="Search ADND2e"
+                        title="Search ADND2e [f]" accesskey="f" id="searchInput">
+                    <input type="hidden" name="title" value="Special:Search">
+                </div>
+            </form>
+        </div>
+        <?php
+        }
+
+        protected function renderPersonalTools()
+        {
+            $personalTools = $this->getPersonalTools();
+            // Only show login link
+            if (isset($personalTools['login'])) {
         ?>
-            <div id="p-search" role="search">
-                <h3><?php echo wfMessage('search')->escaped(); ?></h3>
-                <form action="<?php echo htmlspecialchars($this->data['wgScript']); ?>" id="searchform">
-                    <div>
-                        <?php echo $this->makeSearchInput(['id' => 'searchInput']); ?>
-                        <?php echo $this->makeSearchButton('go', ['id' => 'searchGoButton', 'class' => 'searchButton']); ?>
-                        <input type="hidden" name="title" value="<?php
-                                                                    echo htmlspecialchars($this->data['searchtitle'] ?? 'Special:Search');
-                                                                    ?>" />
-                    </div>
-                </form>
+            <div id="p-personal" class="dos-user-menu">
+                <ul>
+                    <li><?php
+                        if (isset($personalTools['login']['links'][0]['html'])) {
+                            echo $personalTools['login']['links'][0]['html'];
+                        } elseif (isset($personalTools['login']['html'])) {
+                            echo $personalTools['login']['html'];
+                        } else {
+                            echo 'Login';
+                        }
+                        ?></li>
+                </ul>
             </div>
         <?php
             }
+        }
 
-            if (in_array('PERSONAL', $elements)) {
+        protected function renderSidebarNav()
+        {
+            $sidebar = $this->getSidebar();
+            if (isset($sidebar['navigation'])) {
         ?>
-            <ul id="p-personal-list">
+            <ul class="dos-nav-list">
                 <?php
-                foreach ($this->getPersonalTools() as $key => $item) {
-                    echo $this->makeListItem($key, $item);
+                foreach ($sidebar['navigation']['content'] as $item) {
+                    // Check if link key exists before trying to access it
+                    echo '<li>' . (isset($item['link']) ? $item['link'] : '') . '</li>';
                 }
                 ?>
             </ul>
-            <?php
-            }
-
-            if (in_array('SIDEBARNAV', $elements) && isset($this->data['sidebar']) && is_array($this->data['sidebar'])) {
-                $navigation = $this->data['sidebar'];
-
-                foreach ($navigation as $name => $content) {
-                    if ($content === false) {
-                        continue;
-                    }
-
-                    // Exclude some menus that are handled elsewhere
-                    if (in_array($name, ['SEARCH', 'TOOLBOX', 'LANGUAGES'])) {
-                        continue;
-                    }
-
-                    $msgObj = wfMessage($name);
-                    $labelId = Sanitizer::escapeIdForAttribute("p-$name-label");
-            ?>
-                <div class="portal" role="navigation" id="<?php echo htmlspecialchars(Sanitizer::escapeIdForAttribute("p-$name")); ?>">
-                    <h3 id="<?php echo htmlspecialchars($labelId); ?>"><?php
-                                                                        echo htmlspecialchars($msgObj->exists() ? $msgObj->text() : $name);
-                                                                        ?></h3>
-                    <ul>
-                        <?php
-                        foreach ($content as $key => $val) {
-                            echo $this->makeListItem($key, $val);
-                        }
-                        ?>
-                    </ul>
-                </div>
-            <?php
-                }
-            }
-
-            if (in_array('ACTIONS', $elements) && isset($this->data['content_actions']) && is_array($this->data['content_actions'])) {
-            ?>
-            <div id="p-actions" role="navigation">
-                <h3><?php echo wfMessage('actions')->escaped(); ?></h3>
-                <ul>
-                    <?php
-                    foreach ($this->data['content_actions'] as $key => $action) {
-                        echo $this->makeListItem($key, $action);
-                    }
-                    ?>
-                </ul>
-            </div>
-        <?php
-            }
-
-            if (in_array('VIEWS', $elements) && isset($this->data['view_urls']) && is_array($this->data['view_urls'])) {
-        ?>
-            <div id="p-views" role="navigation">
-                <h3><?php echo wfMessage('views')->escaped(); ?></h3>
-                <ul>
-                    <?php
-                    foreach ($this->data['view_urls'] as $key => $view) {
-                        echo $this->makeListItem($key, $view);
-                    }
-                    ?>
-                </ul>
-            </div>
 <?php
             }
         }
