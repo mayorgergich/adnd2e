@@ -26,6 +26,7 @@ $wgMetaNamespace = "AD&D2e";
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
+// Base path settings
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
@@ -37,8 +38,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/images/favicon.ico",
-	'icon' => "$wgResourceBasePath/images/logo.png",
+	'1x' => "$wgResourceBasePath/images/logo.png",
+	'icon' => "$wgResourceBasePath/images/favicon.ico",
 ];
 
 ## UPO means: this is also a user preference option
@@ -101,7 +102,7 @@ $wgLocaltimezone = "UTC";
 $wgCacheDirectory = "$IP/cache";
 $wgUseFileCache = false;
 
-$wgDirectoryMode = 0777;
+$wgDirectoryMode = 0775;
 
 $wgSecretKey = "2bb341eaf6836414e801e978a37eb6db4ec92b531fec7d7758ee27fe15424f6e";
 
@@ -138,3 +139,17 @@ wfLoadSkin( 'BIOSTerminal' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+# Performance settings
+$wgParserCacheType = CACHE_ACCEL;
+$wgMessageCacheType = CACHE_ACCEL;
+$wgResourceLoaderMaxage['versioned'] = 60 * 60 * 24 * 30;
+$wgResourceLoaderMaxage['unversioned'] = 60 * 60 * 24;
+
+# URL handling settings
+$wgArticlePath = "/wiki/$1";
+$wgUsePathInfo = false;
+$wgScript = "$wgScriptPath/index.php";
+$wgRedirectScript = "$wgScriptPath/index.php";
+
+$wgMainPageTitle = "Test_Page";

@@ -1,0 +1,13 @@
+This is a test homepage for the AD&D 2nd Edition Wiki.
+
+== Welcome to Our Test Page ==
+
+This page demonstrates that the wiki is working correctly.
+
+* Item 1
+* Item 2
+* Item 3
+
+=== About This Wiki ===
+
+This wiki is dedicated to Advanced Dungeons & Dragons 2nd Edition content.
