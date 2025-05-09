@@ -18,8 +18,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "ADND2e-Private";
-$wgMetaNamespace = "AD&D2e-Private";
+$wgSitename = "ADND2e";
+$wgMetaNamespace = "AD&D2e";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -29,7 +29,7 @@ $wgMetaNamespace = "AD&D2e-Private";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://adnd2e-private.mayorgergich.xyz";
+$wgServer = "https://adnd2e.mayorgergich.xyz";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -37,10 +37,9 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/images/dnd-logo.png",
-	'icon' => "$wgResourceBasePath/images/dnd-logo.png",
+	'1x' => "$wgResourceBasePath/favicon.ico",
+	'icon' => "$wgResourceBasePath/images/logo.png",
 ];
-$wgFavicon = "$wgResourceBasePath/images/dnd-logo.png";
 
 ## UPO means: this is also a user preference option
 
@@ -57,7 +56,7 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "mariadb";
-$wgDBname = "mediawiki_private";
+$wgDBname = "adnd2e_db";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
@@ -100,14 +99,18 @@ $wgLocaltimezone = "UTC";
 ## to make your wiki go slightly faster. The directory should not
 ## be publicly accessible from the web.
 $wgCacheDirectory = "$IP/cache";
+$wgUseFileCache = false;
 
-$wgSecretKey = "7e6cb22121b0b449feef4cd37f702b7e37abafc8dd6c9d42da5688b0d67d63b2";
+$wgDirectoryMode = 0777;
+
+$wgSecretKey = "2bb341eaf6836414e801e978a37eb6db4ec92b531fec7d7758ee27fe15424f6e";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
+$wgUpgradeKey = "65ad112463df7681";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -120,6 +123,10 @@ $wgRightsIcon = "";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
+## Default skin: you can change the default skin. Use the internal symbolic
+## names
+$wgDefaultSkin = "biosterminal";
+
 # Enabled skins.
 # Comment out skins that aren't installed
 #wfLoadSkin( 'Vector' );
@@ -127,44 +134,7 @@ wfLoadSkin( 'BIOSTerminal' );
 #wfLoadSkin( 'Gamepress' );
 #wfLoadSkin( 'Pivot' );
 #wfLoadSkin( 'WPTouch' );
-#wfLoadSkin( 'Vector' );
 
-# Set Citizen as the default skin
-$wgDefaultSkin = "citizen";
-
-# Citizen skin configuration
-$wgCitizenThemeDefault = 'dark'; // or 'light' if you prefer
-$wgCitizenEnableCollapsibleSections = true;
-$wgCitizenShowPageTools = true;
-$wgCitizenEnableDrawerSiteStats = true;
-$wgCitizenEnableSearch = true;
-$wgCitizenSearchModule = 'core';
-
-# Performance settings
-$wgParserCacheType = CACHE_ACCEL;
-$wgMessageCacheType = CACHE_ACCEL;
-$wgResourceLoaderMaxage['versioned'] = 60 * 60 * 24 * 30;
-$wgResourceLoaderMaxage['unversioned'] = 60 * 60 * 24;
-$wgUseGzip = true;
-ini_set('memory_limit', '256M');
-ini_set('max_execution_time', 120);
-
-# Debug settings - only enable when needed
-$wgShowExceptionDetails = false;
-$wgShowDBErrorBacktrace = false;
-$wgShowSQLErrors = false;
-$wgDebugDumpSql = false;
 
 # End of automatically generated settings.
 # Add more configuration options below.
-
-# Additional file upload settings
-$wgFileExtensions = array(
-    'png', 'gif', 'jpg', 'jpeg', 'webp',
-    'pdf', 'svg', 'xcf', 'tiff', 'tif', 'bmp'
-);
-$wgMaxUploadSize = 1024 * 1024 * 50; # 50MB upload limit
-$wgVerifyMimeType = true;
-$wgMimeTypeBlacklist = array();
-$wgUploadPath = "$wgScriptPath/images";
-$wgUploadDirectory = "$IP/images";
