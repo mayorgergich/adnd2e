@@ -2,6 +2,7 @@
 
 /**
  * BIOSTerminalTemplate class for BIOSTerminal skin
+ * Modified to ensure proper UTF-8 encoding handling
  *
  * @file
  * @ingroup Skins
@@ -37,22 +38,24 @@ class BIOSTerminalTemplate extends BaseTemplate
     protected function outputHTML_Head()
     {
         $config = $this->getSkin()->getConfig();
-        $sitename = htmlspecialchars($config->get('Sitename'));
-        $pagetitle = isset($this->data['pagetitle']) ? htmlspecialchars($this->data['pagetitle']) : $sitename;
+        $sitename = htmlspecialchars($config->get('Sitename'), ENT_QUOTES, 'UTF-8');
+        $pagetitle = isset($this->data['pagetitle']) ? htmlspecialchars($this->data['pagetitle'], ENT_QUOTES, 'UTF-8') : $sitename;
 
 ?>
-        <html class="no-js" lang="<?php echo htmlspecialchars($this->get('lang', 'en')); ?>">
+        <html class="no-js" lang="<?php echo htmlspecialchars($this->get('lang', 'en'), ENT_QUOTES, 'UTF-8'); ?>">
 
         <head>
-            <meta charset="<?php echo htmlspecialchars($this->get('charset', 'UTF-8')); ?>">
+            <!-- Explicit UTF-8 character encoding declarations -->
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
             <title><?php echo $pagetitle; ?></title>
 
             <!-- Base styles -->
             <?php
             // Output stylesheets manually
-            $skinname = htmlspecialchars($this->getSkin()->getSkinName());
-            echo '<link rel="stylesheet" href="' . htmlspecialchars($config->get('ResourceBasePath')) . '/load.php?only=styles&skin=' . $skinname . '&debug=false">';
+            $skinname = htmlspecialchars($this->getSkin()->getSkinName(), ENT_QUOTES, 'UTF-8');
+            echo '<link rel="stylesheet" href="' . htmlspecialchars($config->get('ResourceBasePath'), ENT_QUOTES, 'UTF-8') . '/load.php?only=styles&skin=' . $skinname . '&debug=false">';
 
             // Include any other head items
             if (isset($this->data['csslinks'])) {
@@ -65,7 +68,13 @@ class BIOSTerminalTemplate extends BaseTemplate
             }
             ?>
 
-            <link rel="shortcut icon" href="<?php echo htmlspecialchars($config->get('ResourceBasePath')); ?>/favicon.ico">
+            <link rel="shortcut icon" href="<?php echo htmlspecialchars($config->get('ResourceBasePath'), ENT_QUOTES, 'UTF-8'); ?>/favicon.ico">
+
+            <!-- UTF-8 Fix Script -->
+            <script>
+                // Ensure proper UTF-8 handling in JavaScript
+                document.characterSet = document.charset = "UTF-8";
+            </script>
 
             <!-- Emergency Fix Script -->
             <script src="/skins/BIOSTerminal/resources/js/emergency-fix.js"></script>
@@ -120,7 +129,7 @@ class BIOSTerminalTemplate extends BaseTemplate
         $classString = implode(' ', $classes);
     ?>
 
-        <body class="<?php echo htmlspecialchars($classString); ?>">
+        <body class="<?php echo htmlspecialchars($classString, ENT_QUOTES, 'UTF-8'); ?>">
             <!-- DOS-style boot sequence -->
             <div class="boot-sequence">
                 <div class="boot-text">AD&D 2nd Edition Wiki v1.0</div>
@@ -140,7 +149,7 @@ class BIOSTerminalTemplate extends BaseTemplate
         protected function outputMainContent()
         {
             $config = $this->getSkin()->getConfig();
-            $sitename = htmlspecialchars($config->get('Sitename'));
+            $sitename = htmlspecialchars($config->get('Sitename'), ENT_QUOTES, 'UTF-8');
 
             ?>
                 <div id="mw-wrapper" class="dos-interface">
@@ -148,7 +157,7 @@ class BIOSTerminalTemplate extends BaseTemplate
                     <div class="dos-header">
                         <div class="dos-title-bar">
                             <div class="dos-brand">AD&D2e</div>
-                            <div class="dos-page-title"><?php echo isset($this->data['title']) ? htmlspecialchars($this->data['title']) : 'MAIN'; ?></div>
+                            <div class="dos-page-title"><?php echo isset($this->data['title']) ? htmlspecialchars($this->data['title'], ENT_QUOTES, 'UTF-8') : 'MAIN'; ?></div>
                             <div id="p-personal" class="dos-user-menu">
                                 <?php $this->renderNavigation(['PERSONAL']); ?>
                             </div>
@@ -165,7 +174,7 @@ class BIOSTerminalTemplate extends BaseTemplate
                                 <?php
                                 if (isset($this->data['indicators']) && is_array($this->data['indicators'])) {
                                     foreach ($this->data['indicators'] as $id => $content) {
-                                        echo '<div id="' . htmlspecialchars($id) . '" class="mw-indicator dos-indicator">' . $content . '</div>';
+                                        echo '<div id="' . htmlspecialchars($id, ENT_QUOTES, 'UTF-8') . '" class="mw-indicator dos-indicator">' . $content . '</div>';
                                     }
                                 }
                                 ?>
@@ -179,7 +188,7 @@ class BIOSTerminalTemplate extends BaseTemplate
                             <h1 id="firstHeading" class="firstHeading dos-heading">
                                 <?php
                                 if (isset($this->data['title'])) {
-                                    echo $this->data['title'];
+                                    echo htmlspecialchars($this->data['title'], ENT_QUOTES, 'UTF-8');
                                 } else {
                                     echo 'Page Title';
                                 }
@@ -203,7 +212,13 @@ class BIOSTerminalTemplate extends BaseTemplate
 
                                 <?php
                                 if (isset($this->data['bodycontent'])) {
-                                    echo '<div class="dos-main-content">' . $this->data['bodycontent'] . '</div>';
+                                    // Apply UTF-8 filtering to ensure proper encoding
+                                    $bodycontent = $this->data['bodycontent'];
+                                    // Make sure content is UTF-8
+                                    if (function_exists('mb_convert_encoding')) {
+                                        $bodycontent = mb_convert_encoding($bodycontent, 'UTF-8', 'UTF-8');
+                                    }
+                                    echo '<div class="dos-main-content">' . $bodycontent . '</div>';
                                 } else {
                                     echo '<div id="mw-content-text" class="dos-error">Content not available</div>';
                                 }
@@ -249,15 +264,15 @@ class BIOSTerminalTemplate extends BaseTemplate
                     }
 
                     $msgObj = wfMessage($name);
-                    $navLabel = htmlspecialchars($msgObj->exists() ? $msgObj->text() : $name);
+                    $navLabel = htmlspecialchars($msgObj->exists() ? $msgObj->text() : $name, ENT_QUOTES, 'UTF-8');
                     
                     // Print out main navigation buttons
                     echo '<div class="dos-nav-item">';
-                    echo '<button class="dos-nav-button" data-nav-name="' . htmlspecialchars($name) . '">' . $navLabel . '</button>';
+                    echo '<button class="dos-nav-button" data-nav-name="' . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . '">' . $navLabel . '</button>';
                     
                     // Print out submenu
                     if (count($content) > 0) {
-                        echo '<div class="dos-nav-submenu" id="submenu-' . htmlspecialchars($name) . '">';
+                        echo '<div class="dos-nav-submenu" id="submenu-' . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . '">';
                         echo '<ul>';
                         foreach ($content as $key => $val) {
                             echo $this->makeListItem($key, $val);
@@ -317,12 +332,12 @@ class BIOSTerminalTemplate extends BaseTemplate
             if (in_array('SEARCH', $elements) && isset($this->data['wgScript'])) {
         ?>
             <div id="p-search" role="search">
-                <form action="<?php echo htmlspecialchars($this->data['wgScript']); ?>" id="searchform">
+                <form action="<?php echo htmlspecialchars($this->data['wgScript'], ENT_QUOTES, 'UTF-8'); ?>" id="searchform">
                     <div>
                         <?php echo $this->makeSearchInput(['id' => 'searchInput', 'placeholder' => '> search...']); ?>
                         <?php echo $this->makeSearchButton('go', ['id' => 'searchGoButton', 'class' => 'searchButton']); ?>
                         <input type="hidden" name="title" value="<?php
-                                                                    echo htmlspecialchars($this->data['searchtitle'] ?? 'Special:Search');
+                                                                    echo htmlspecialchars($this->data['searchtitle'] ?? 'Special:Search', ENT_QUOTES, 'UTF-8');
                                                                     ?>" />
                     </div>
                 </form>
@@ -358,9 +373,9 @@ class BIOSTerminalTemplate extends BaseTemplate
                     $msgObj = wfMessage($name);
                     $labelId = Sanitizer::escapeIdForAttribute("p-$name-label");
             ?>
-                <div class="portal" role="navigation" id="<?php echo htmlspecialchars(Sanitizer::escapeIdForAttribute("p-$name")); ?>">
-                    <h3 id="<?php echo htmlspecialchars($labelId); ?>"><?php
-                                                                        echo htmlspecialchars($msgObj->exists() ? $msgObj->text() : $name);
+                <div class="portal" role="navigation" id="<?php echo htmlspecialchars(Sanitizer::escapeIdForAttribute("p-$name"), ENT_QUOTES, 'UTF-8'); ?>">
+                    <h3 id="<?php echo htmlspecialchars($labelId, ENT_QUOTES, 'UTF-8'); ?>"><?php
+                                                                        echo htmlspecialchars($msgObj->exists() ? $msgObj->text() : $name, ENT_QUOTES, 'UTF-8');
                                                                         ?></h3>
                     <ul>
                         <?php

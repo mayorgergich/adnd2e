@@ -1,0 +1,30 @@
+/* BIOSTerminal Black/White variant
+ * Black background with white text
+ */
+
+/* Black/White Theme */
+:root {
+  --background-color: #000000;
+  --text-color: #FFFFFF;
+  --link-color: #00AAFF;
+  --link-hover-color: #AAAAFF;
+  --border-color: #FFFFFF;
+  --font-family: 'MorePerfectDOSVGA', monospace;
+  --font-size: 16px;
+  --line-height: 1.4;
+}
+
+/* Ensure content boxes also match the theme background */
+.dos-content-area,
+.mw-body-content,
+.mw-body-content table,
+.wikitable,
+.wikitable > tr > th,
+.wikitable > * > tr > th,
+.wikitable > tr > td,
+.wikitable > * > tr > td,
+#content table,
+.mw-parser-output table {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}

@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Your Name"
+		]
+	},
+	"skinname-biosterminal": "BIOSTerminal",
+	"biosterminal-skin-name": "BIOSTerminal",
+	"biosterminal-skin-desc": "A MediaWiki skin that mimics classic BIOS/DOS terminals of early computing",
+	"biosterminal-prefs-theme": "BIOSTerminal color theme:",
+	"biosterminal-prefs-theme-default": "Default (Blue/White)",
+	"biosterminal-prefs-theme-white-black": "White/Black",
+	"biosterminal-prefs-theme-black-white": "Black/White",
+	"biosterminal-boot-sequence": "Starting boot sequence...",
+	"biosterminal-ready": "READY.",
+	"biosterminal-help-title": "Terminal Help",
+	"biosterminal-help-desc": "Welcome to the BIOSTerminal skin. Here are some keyboard shortcuts:",
+	"biosterminal-help-close": "Press any key to close this dialog."
+}
