@@ -8,9 +8,8 @@ sudo cp -v /opt/mediawiki/skins/BIOSTerminal/skin.json /opt/mediawiki/backups/$(
 
 # Copy fixed skin.json from container to host directory
 echo "Copying fixed skin.json from container to host..."
-sudo mkdir -p /opt/mediawiki/skins/BIOSTerminal/
 docker cp adnd2e:/var/www/html/skins/BIOSTerminal/skin.json /opt/mediawiki/skins/BIOSTerminal/skin.json
-
+docker cp adnd2e:/var/www/html/skins/BIOSTerminal/ /opt/mediawiki/skins/BIOSTerminal/
 # Copy LocalSettings.php if needed
 echo "Copying LocalSettings.php from container to host..."
 docker cp adnd2e:/var/www/html/LocalSettings.php /opt/mediawiki/LocalSettings.php.container
