@@ -74,8 +74,7 @@ $wgDBssl = false;
 $wgDBmysql5 = false; # Optimal for MariaDB 10+
 
 # MySQL table options to use during installation or update
-$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
-
+$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=utf8mb4, ROW_FORMAT=DYNAMIC";
 # Shared database table
 # This has no effect unless $wgSharedDB is also set.
 $wgSharedTables[] = "actor";
