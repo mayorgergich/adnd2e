@@ -28,6 +28,7 @@ $wgMetaNamespace = "AD&D2e";
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
 // Base path settings
 $wgScriptPath = "";
+$wgArticlePath = "/wiki/$1"; // Enable pretty URLs
 
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = "https://adnd2e.mayorgergich.xyz";
@@ -54,6 +55,7 @@ $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
 $wgEmailAuthentication = true;
 
+## === DATABASE SETTINGS AND IMPROVEMENTS ===
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "mariadb";
@@ -61,20 +63,48 @@ $wgDBname = "adnd2e_db";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
+# Database connection parameters - Adjusted for robustness
+$wgDBconnectionAttempts = 3;
+$wgDBretryAttempts = 3;
+$wgDBmwschemaRetryAttempts = 3;
+
 # MySQL specific settings
 $wgDBprefix = ""; # Added prefix for separation
 $wgDBssl = false;
+$wgDBmysql5 = false; # Optimal for MariaDB 10+
 
 # MySQL table options to use during installation or update
-$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
-
+$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=utf8mb4, ROW_FORMAT=DYNAMIC";
 # Shared database table
 # This has no effect unless $wgSharedDB is also set.
 $wgSharedTables[] = "actor";
 
-## Shared memory settings
+## === CACHING AND PERFORMANCE OPTIMIZATIONS ===
+# Object caching - improves overall performance
 $wgMainCacheType = CACHE_ACCEL;
+$wgParserCacheType = CACHE_ACCEL;
+$wgMessageCacheType = CACHE_ACCEL;
 $wgMemCachedServers = [];
+
+# File caching - great for reference material
+$wgUseFileCache = true;
+$wgFileCacheDirectory = "$IP/cache";
+$wgCachePages = true;
+$wgShowIPinHeader = false;
+
+# Parser optimizations - reduces CPU usage
+$wgEnableSidebarCache = true;
+$wgAdaptiveMessageCache = true;
+
+# Resource loader optimizations - faster page loads
+$wgResourceLoaderMaxage['versioned'] = 60 * 60 * 24 * 30; // 30 days
+$wgResourceLoaderMaxage['unversioned'] = 60 * 60 * 24; // 1 day
+
+# Use compression for better performance
+$wgUseGzip = true;
+
+# Reduce background tasks for better reading performance
+$wgJobRunRate = 0.01; // Minimal background jobs
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
@@ -100,8 +130,8 @@ $wgLocaltimezone = "UTC";
 ## to make your wiki go slightly faster. The directory should not
 ## be publicly accessible from the web.
 $wgCacheDirectory = "$IP/cache";
-$wgUseFileCache = false;
 
+# Ensure directory permissions are correct
 $wgDirectoryMode = 0775;
 
 $wgSecretKey = "2bb341eaf6836414e801e978a37eb6db4ec92b531fec7d7758ee27fe15424f6e";
@@ -124,19 +154,23 @@ $wgRightsIcon = "";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
+## === SKIN CONFIGURATION ===
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names
 $wgDefaultSkin = "biosterminal";
 
 # Enabled skins.
-# Comment out skins that aren't installed
-#wfLoadSkin( 'Vector' );
 wfLoadSkin( 'BIOSTerminal' );
-#wfLoadSkin( 'Gamepress' );
-#wfLoadSkin( 'Pivot' );
-#wfLoadSkin( 'WPTouch' );
+# Add Vector as fallback in case of issues
+wfLoadSkin( 'Vector' );
 
+## === DEBUG SETTINGS - FOR TROUBLESHOOTING ===
+# Add detailed error reporting for database issues
+$wgShowDBErrorBacktrace = true;
+$wgShowExceptionDetails = true;
+$wgShowSQLErrors = true;
+$wgDebugDumpSql = true;
+$wgDebugLogFile = "/tmp/mediawiki-debug.log";
 
 # End of automatically generated settings.
 # Add more configuration options below.
-
