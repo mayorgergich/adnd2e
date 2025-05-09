@@ -140,16 +140,3 @@ wfLoadSkin( 'BIOSTerminal' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
-# Performance settings
-$wgParserCacheType = CACHE_ACCEL;
-$wgMessageCacheType = CACHE_ACCEL;
-$wgResourceLoaderMaxage['versioned'] = 60 * 60 * 24 * 30;
-$wgResourceLoaderMaxage['unversioned'] = 60 * 60 * 24;
-
-# URL handling settings
-$wgArticlePath = "/wiki/$1";
-$wgUsePathInfo = false;
-$wgScript = "$wgScriptPath/index.php";
-$wgRedirectScript = "$wgScriptPath/index.php";
-
-$wgMainPageTitle = "Test_Page";

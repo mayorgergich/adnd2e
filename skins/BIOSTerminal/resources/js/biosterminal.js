@@ -1,106 +1,130 @@
 /**
- * BIOSTerminal skin JavaScript
- * Simplified and fixed version
+ * BIOSTerminal skin JavaScript - Optimized version
+ * Fixes rendering issues while maintaining DOS aesthetic
  */
 
 (function (mw, $) {
   "use strict";
 
-  // Immediately remove loading class to ensure content is visible
+  // IMMEDIATE FIXES - Execute before DOMContentLoaded
+  // Remove loading class immediately to prevent blank screen
   document.documentElement.classList.remove("js-loading");
-  document.body.classList.add("js-loaded");
+  
+  // Make sure content is visible right away
+  const style = document.createElement('style');
+  style.textContent = `
+    html, body {
+      visibility: visible !important;
+    }
+    .dos-wrapper {
+      display: flex !important;
+    }
+    .boot-sequence {
+      z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000080;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeOut 1.5s ease-in-out 3s forwards;
+    }
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; visibility: hidden; }
+    }
+    /* Fix content styling */
+    .mw-body-content, .wikitable, #content table, 
+    .mw-parser-output table, th, td {
+      background-color: #000080 !important;
+      color: #FFFFFF !important;
+    }
+    /* Ensure all interactive elements work */
+    a, button, input, .mw-editsection {
+      cursor: pointer !important;
+      pointer-events: auto !important;
+    }
+  `;
+  document.head.appendChild(style);
 
-  // Document ready function
+  // Document ready function with simplified boot sequence
   $(function () {
     console.log("BIOSTerminal skin initialized");
     
-    // Show the wrapper immediately
-    var dosWrapper = document.querySelector(".dos-wrapper");
-    if (dosWrapper) {
-      dosWrapper.style.display = "flex";
-      console.log("DOS wrapper displayed");
-    }
-
-    // Make terminal typing effect for headings
-    function typeEffect(element, text, i, callback) {
-      if (i < text.length) {
-        element.innerHTML = text.substring(0, i + 1) + '<span class="terminal-cursor"></span>';
-        setTimeout(function () {
-          typeEffect(element, text, i + 1, callback);
-        }, 50);
-      } else {
-        if (callback) {
-          element.innerHTML = text;
-          setTimeout(callback, 100);
-        } else {
-          element.innerHTML = text + '<span class="terminal-cursor"></span>';
-        }
-      }
-    }
-
-    // Apply typing effect to page title
-    var heading = document.getElementById("firstHeading");
-    if (heading) {
-      var originalText = heading.textContent || heading.innerText;
-      heading.innerHTML = "";
-      typeEffect(heading, originalText, 0);
-    }
-
-    // Simplified boot sequence
+    // Mark document as loaded
+    document.body.classList.add("js-loaded");
+    
+    // Simplified boot sequence that auto-completes and removes itself
     function simpleBootSequence() {
-      var bootMessages = [
-        "BIOS Terminal v1.0",
-        "Loading " + (mw.config.get("wgSiteName") || "AD&D 2nd Edition Wiki"),
-        "System Ready."
+      // Only show boot sequence once per session
+      if (sessionStorage.getItem("biosterminal-boot-shown")) {
+        // Make sure boot sequence is removed if already shown
+        const existingBoot = document.querySelector(".boot-sequence");
+        if (existingBoot && existingBoot.parentNode) {
+          existingBoot.parentNode.removeChild(existingBoot);
+        }
+        return;
+      }
+      
+      // Create simpler boot sequence
+      const bootSequence = document.createElement("div");
+      bootSequence.className = "boot-sequence";
+      
+      const messages = [
+        "AD&D 2nd Edition Wiki v1.0",
+        "Loading system resources...",
+        "Initializing database connection...",
+        "System ready."
       ];
       
-      var bootArea = document.createElement("div");
-      bootArea.style.position = "fixed";
-      bootArea.style.top = "10px";
-      bootArea.style.left = "10px";
-      bootArea.style.background = "rgba(0, 0, 128, 0.8)";
-      bootArea.style.color = "#FFFFFF";
-      bootArea.style.padding = "10px";
-      bootArea.style.borderRadius = "5px";
-      bootArea.style.zIndex = "1000";
-      bootArea.style.fontFamily = "monospace";
-      bootArea.style.fontSize = "14px";
-      bootArea.style.maxWidth = "400px";
+      messages.forEach((text, index) => {
+        const line = document.createElement("div");
+        line.style.color = "#FFFFFF";
+        line.style.margin = "5px 0";
+        line.style.opacity = "0";
+        line.style.animation = `fadeIn 0.5s ease-in-out ${index * 0.5}s forwards`;
+        line.textContent = text;
+        bootSequence.appendChild(line);
+      });
       
-      document.body.appendChild(bootArea);
+      document.body.appendChild(bootSequence);
       
-      var messageIndex = 0;
-      
-      function showNextMessage() {
-        if (messageIndex < bootMessages.length) {
-          var messageElem = document.createElement("div");
-          messageElem.textContent = bootMessages[messageIndex];
-          bootArea.appendChild(messageElem);
-          messageIndex++;
-          setTimeout(showNextMessage, 500);
-        } else {
-          setTimeout(function() {
-            bootArea.style.opacity = "0";
-            bootArea.style.transition = "opacity 1s";
-            setTimeout(function() {
-              document.body.removeChild(bootArea);
-            }, 1000);
-          }, 1000);
+      // Automatically clean up boot sequence after animation
+      setTimeout(() => {
+        if (bootSequence.parentNode) {
+          bootSequence.parentNode.removeChild(bootSequence);
         }
-      }
+      }, 5000);
       
-      showNextMessage();
-    }
-
-    // Show boot sequence once per session
-    if (!sessionStorage.getItem("biosterminal-boot-shown")) {
-      simpleBootSequence();
+      // Mark as shown for this session
       sessionStorage.setItem("biosterminal-boot-shown", "true");
     }
-
-    // Add mobile navigation toggle for sidebar
+    
+    // Run boot sequence
+    simpleBootSequence();
+    
+    // Simplified cursor effect for headings
+    const heading = document.getElementById("firstHeading");
+    if (heading) {
+      const cursor = document.createElement("span");
+      cursor.className = "terminal-cursor";
+      cursor.style.display = "inline-block";
+      cursor.style.width = "0.5em";
+      cursor.style.height = "1em";
+      cursor.style.backgroundColor = "#00FF00";
+      cursor.style.verticalAlign = "middle";
+      cursor.style.animation = "blink 1s step-end infinite";
+      heading.appendChild(cursor);
+    }
+    
+    // Mobile navigation improvements
     if ($(window).width() <= 768) {
-      var $toggleButton = $('<div class="nav-toggle">MENU ▼</div>');
+      const $toggleButton = $('<div class="nav-toggle">MENU ▼</div>');
       $toggleButton.css({
         'padding': '10px', 
         'background-color': '#000080',
@@ -111,196 +135,89 @@
       });
       
       $("#mw-sidebar").prepend($toggleButton);
-
-      // Toggle navigation sections on click
+      
       $toggleButton.on("click", function () {
         $("#mw-sidebar .portal:not(:first-child)").toggle();
         $(this).text(function (i, text) {
           return text === "MENU ▼" ? "MENU ▲" : "MENU ▼";
         });
       });
-
-      // Initially hide the menu items on mobile
+      
+      // Initially hide the menu items on mobile for space
       $("#mw-sidebar .portal:not(:first-child)").hide();
     }
-
-    // Keyboard navigation
+    
+    // Keyboard shortcuts - simplified
     $(document).on("keydown", function (e) {
-      // Alt+H to toggle help dialog
-      if (e.altKey && e.keyCode === 72) {
-        e.preventDefault();
-        showHelpDialog();
-      }
-
       // Alt+S to focus search box
-      if (e.altKey && e.keyCode === 83) {
+      if (e.altKey && e.key === "s") {
         e.preventDefault();
-        var searchInput = document.getElementById("searchInput");
+        const searchInput = document.getElementById("searchInput");
         if (searchInput) {
           searchInput.focus();
         }
       }
-
+      
       // Alt+M to go to main page
-      if (e.altKey && e.keyCode === 77) {
+      if (e.altKey && e.key === "m") {
         e.preventDefault();
-        window.location.href = mw.util.getUrl(mw.config.get("wgMainPageTitle"));
+        window.location.href = mw.util.getUrl(mw.config.get("wgMainPageTitle") || "Main_Page");
       }
-
+      
       // Alt+E to edit current page
-      if (e.altKey && e.keyCode === 69) {
+      if (e.altKey && e.key === "e") {
         e.preventDefault();
-        var editLink = document.getElementById("ca-edit");
-        if (editLink && editLink.querySelector("a")) {
-          window.location.href = editLink.querySelector("a").href;
+        const editTab = document.querySelector("#ca-edit a");
+        if (editTab) {
+          window.location.href = editTab.href;
         }
-      }
-
-      // Alt+T to toggle theme variant
-      if (e.altKey && e.keyCode === 84) {
-        e.preventDefault();
-        toggleTheme();
       }
     });
-
-    // Help dialog function
-    function showHelpDialog() {
-      // Remove existing dialog if present
-      var existingDialog = document.getElementById("terminal-help");
-      if (existingDialog) {
-        document.body.removeChild(existingDialog);
-        return;
-      }
-
-      var helpDialog = document.createElement("div");
-      helpDialog.id = "terminal-help";
-      helpDialog.style.position = "fixed";
-      helpDialog.style.top = "50%";
-      helpDialog.style.left = "50%";
-      helpDialog.style.transform = "translate(-50%, -50%)";
-      helpDialog.style.backgroundColor = "var(--dos-bg, #000080)";
-      helpDialog.style.color = "var(--dos-text, #FFFFFF)";
-      helpDialog.style.border = "1px solid var(--dos-border, #C0C0C0)";
-      helpDialog.style.padding = "1rem";
-      helpDialog.style.zIndex = "1000";
-      helpDialog.style.width = "80%";
-      helpDialog.style.maxWidth = "600px";
-      helpDialog.style.maxHeight = "80vh";
-      helpDialog.style.overflow = "auto";
-      helpDialog.style.fontFamily = "monospace";
-
-      helpDialog.innerHTML =
-        "<h2>Terminal Help</h2>" +
-        "<p>Welcome to the BIOSTerminal skin. Here are some keyboard shortcuts:</p>" +
-        "<ul>" +
-        "<li><strong>Alt+H</strong>: Toggle this help dialog</li>" +
-        "<li><strong>Alt+S</strong>: Focus search box</li>" +
-        "<li><strong>Alt+M</strong>: Return to main page</li>" +
-        "<li><strong>Alt+E</strong>: Edit current page (if available)</li>" +
-        "<li><strong>Alt+T</strong>: Toggle between theme variants</li>" +
-        "</ul>" +
-        "<p>Press Escape or click anywhere to close this dialog.</p>";
-
-      document.body.appendChild(helpDialog);
-
-      // Close dialog on click anywhere or escape key
-      function closeHandler(e) {
-        if (e.type === "keydown" && e.keyCode !== 27) {
-          return;
-        }
-        document.body.removeChild(helpDialog);
-        document.removeEventListener("keydown", closeHandler);
-        document.removeEventListener("click", closeHandler);
-      }
-
-      document.addEventListener("keydown", closeHandler);
-      document.addEventListener("click", function clickHandler(e) {
-        if (e.target !== helpDialog) {
-          closeHandler(e);
-        }
-      });
-    }
-
-    // Theme toggle function
-    function toggleTheme() {
-      // Get current root variables
-      var rootStyle = getComputedStyle(document.documentElement);
-      var currentBg = rootStyle.getPropertyValue("--dos-bg").trim() || "#000080";
-
-      // Toggle between theme variants
-      if (currentBg === "#000080" || currentBg === "#0000FF") {
-        // Blue -> White
-        document.documentElement.style.setProperty("--dos-bg", "#FFFFFF");
-        document.documentElement.style.setProperty("--dos-text", "#000000");
-        document.documentElement.style.setProperty("--dos-highlight", "#0000AA");
-        document.documentElement.style.setProperty("--dos-border", "#000000");
-      } else if (currentBg === "#FFFFFF") {
-        // White -> Black
-        document.documentElement.style.setProperty("--dos-bg", "#000000");
-        document.documentElement.style.setProperty("--dos-text", "#FFFFFF");
-        document.documentElement.style.setProperty("--dos-highlight", "#00AAFF");
-        document.documentElement.style.setProperty("--dos-border", "#FFFFFF");
-      } else {
-        // Black -> Blue
-        document.documentElement.style.setProperty("--dos-bg", "#000080");
-        document.documentElement.style.setProperty("--dos-text", "#FFFFFF");
-        document.documentElement.style.setProperty("--dos-highlight", "#00FF00");
-        document.documentElement.style.setProperty("--dos-border", "#C0C0C0");
-      }
-
-      // Show theme change notification
-      showNotification("Theme variant changed");
-    }
-
-    // Show notification
-    function showNotification(message) {
-      var notification = document.createElement("div");
-      notification.style.position = "fixed";
-      notification.style.bottom = "20px";
-      notification.style.right = "20px";
-      notification.style.backgroundColor = "var(--dos-bg, #000080)";
-      notification.style.color = "var(--dos-text, #FFFFFF)";
-      notification.style.border = "1px solid var(--dos-border, #C0C0C0)";
-      notification.style.padding = "10px";
-      notification.style.zIndex = "9999";
-      notification.style.fontFamily = "monospace";
-      notification.textContent = message;
-
-      document.body.appendChild(notification);
-
-      setTimeout(function () {
-        notification.style.opacity = "0";
-        notification.style.transition = "opacity 0.5s";
-        setTimeout(function() {
-          if (notification.parentNode) {
-            document.body.removeChild(notification);
-          }
-        }, 500);
-      }, 2000);
-    }
-
+    
     // Add terminal prompt to search box
-    var searchInput = document.getElementById("searchInput");
+    const searchInput = document.getElementById("searchInput");
     if (searchInput) {
       searchInput.placeholder = "> search...";
     }
-
+    
     // Ensure all links are clickable
-    setTimeout(function() {
-      var allLinks = document.querySelectorAll('a');
-      allLinks.forEach(function(link) {
-        link.style.pointerEvents = "auto";
+    document.querySelectorAll('a').forEach(link => {
+      link.style.pointerEvents = "auto";
+      link.style.cursor = "pointer";
+    });
+    
+    // Fix any potential content styling issues that may cause rendering problems
+    [
+      '.dos-content-area', '.mw-body-content', '.wikitable', 
+      '#content table', '.mw-parser-output table'
+    ].forEach(selector => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        el.style.backgroundColor = "#000080";
+        el.style.color = "#FFFFFF";
       });
-    }, 500);
-  });
-
-  // Add touch event support for mobile
-  document.addEventListener('DOMContentLoaded', function() {
-    // Make sure all interactive elements have pointer-events auto
-    var interactiveElements = document.querySelectorAll('a, button, input, select, textarea');
-    for (var i = 0; i < interactiveElements.length; i++) {
-      interactiveElements[i].style.pointerEvents = "auto";
-    }
+    });
+    
+    // Add accessibility improvements
+    const accessibilityStyle = document.createElement('style');
+    accessibilityStyle.textContent = `
+      /* Improve contrast for better readability */
+      a { color: #00FF00 !important; }
+      a:hover { color: #AAFFAA !important; text-decoration: underline !important; }
+      
+      /* Ensure form elements are visible */
+      input, select, textarea {
+        background-color: #000060 !important;
+        color: #FFFFFF !important;
+        border: 1px solid #FFFFFF !important;
+      }
+      
+      /* Make sure tables are readable */
+      table, th, td {
+        border: 1px solid #AAAAAA !important;
+      }
+    `;
+    document.head.appendChild(accessibilityStyle);
   });
 
 })(mediaWiki, jQuery);

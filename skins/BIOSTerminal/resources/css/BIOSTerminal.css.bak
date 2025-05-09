@@ -1,0 +1,545 @@
+/* BIOSTerminal - A MediaWiki skin that mimics classic BIOS/DOS terminals
+ * Author: Created by Claude for GitHub project
+ * Date: May 6, 2025
+ */
+/* Prevent Flash of Unstyled Content */
+html.js-loading {
+  /* Hide content during loading */
+  visibility: hidden;
+}
+
+/* This will only apply to the boot sequence */
+html.js-loading .boot-sequence-active {
+  visibility: visible !important;
+}
+
+/* If JavaScript is disabled, still show content */
+html.no-js {
+  visibility: visible;
+}
+
+/* Import the DOS VGA font */
+@font-face {
+  font-family: "MorePerfectDOSVGA";
+  src: url("../fonts/MorePerfectDOSVGA.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Improve font loading behavior */
+}
+
+/* Fallback font stack in case the primary font fails to load */
+:root {
+  --font-family: "MorePerfectDOSVGA", "Courier New", monospace;
+}
+
+/* DOS-inspired terminal theme */
+:root {
+  --dos-bg: #000080;
+  --dos-text: #ffffff;
+  --dos-highlight: #00ff00;
+  --dos-border: #c0c0c0;
+  --dos-menu-bg: #000080;
+  --dos-menu-text: #ffffff;
+  --dos-menu-highlight: #00ff00;
+}
+
+/* Base styles */
+body {
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+/* Boot sequence */
+.boot-sequence {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 2s ease-in-out 4s forwards;
+}
+
+.boot-text {
+  color: var(--dos-highlight);
+  margin: 5px 0;
+  font-size: 1.2em;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.boot-text:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.boot-text:nth-child(2) {
+  animation-delay: 1s;
+}
+.boot-text:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.boot-text:nth-child(4) {
+  animation-delay: 2s;
+}
+.boot-text:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+/* DOS Interface */
+.dos-wrapper {
+  display: none; /* Initially hidden */
+}
+
+/* Force display when loaded */
+.js-loaded .dos-wrapper {
+  display: flex !important;
+}
+
+.dos-interface {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.dos-header {
+  background-color: var(--dos-menu-bg);
+  border-bottom: 2px solid var(--dos-border);
+  padding: 5px 10px;
+}
+
+.dos-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--dos-highlight);
+}
+
+.dos-path {
+  font-size: 0.9em;
+  color: var(--dos-text);
+}
+
+/* Sidebar */
+.dos-sidebar {
+  background-color: var(--dos-menu-bg);
+  border-right: 2px solid var(--dos-border);
+  padding: 10px;
+  width: 250px;
+}
+
+.dos-menu-title {
+  color: var(--dos-highlight);
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--dos-border);
+  padding-bottom: 5px;
+}
+
+/* Content area */
+.dos-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.dos-heading {
+  color: var(--dos-highlight);
+  border-bottom: 1px solid var(--dos-border);
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.dos-content-area {
+  background-color: var(--dos-bg);
+  padding: 20px;
+  border: 1px solid var(--dos-border);
+}
+
+/* Navigation and menus */
+.dos-menu a {
+  color: var(--dos-text);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.dos-menu a:hover {
+  color: var(--dos-highlight);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+}
+
+th,
+td {
+  border: 1px solid var(--dos-border);
+  padding: 5px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--dos-menu-bg);
+  color: var(--dos-highlight);
+}
+
+/* Links */
+a {
+  color: var(--dos-highlight);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Terminal cursor effect */
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: var(--dos-highlight);
+  animation: blink 1s step-end infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dos-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--dos-border);
+  }
+
+  .dos-content {
+    padding: 10px;
+  }
+}
+
+/* Layout structure */
+#mw-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Left sidebar navigation */
+#mw-sidebar {
+  width: 200px;
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#mw-sidebar .portal {
+  margin-bottom: 1.5rem;
+}
+
+#mw-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+#mw-sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#mw-sidebar li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+/* Main content area */
+#content {
+  flex: 1;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Header styling */
+#mw-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+#p-personal {
+  text-align: right;
+}
+
+#p-personal ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#p-personal li {
+  margin-left: 1rem;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family);
+  font-weight: normal;
+  color: var(--text-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.1rem;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Form elements */
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.5rem;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Special widgets */
+.mw-editsection {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+/* Search box */
+#p-search {
+  margin: 1rem 0;
+}
+
+#searchInput {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Categories */
+#catlinks {
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+/* Login and user tools */
+#pt-login {
+  font-weight: bold;
+}
+
+/* Notification area */
+#mw-notification-area {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  max-width: 300px;
+}
+
+/* Footer */
+#footer {
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Code blocks */
+pre,
+code {
+  font-family: var(--font-family);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  display: block;
+  overflow-x: auto;
+}
+
+/* Fix for MediaWiki base elements */
+.mw-body-content {
+  color: var(--text-color);
+}
+
+#bodyContent {
+  color: var(--text-color);
+}
+
+/* Fix for content tables */
+.wikitable {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.wikitable > tr > th,
+.wikitable > * > tr > th {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.wikitable > tr > td,
+.wikitable > * > tr > td {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Special pages styling */
+.special li {
+  margin-bottom: 0.25rem;
+}
+
+/* Add this to the end of your BIOSTerminal.css file */
+
+/* Content Box Fixes - Added to match main background */
+.dos-content-area,
+.mw-body-content,
+.mw-body-content table,
+.wikitable,
+.wikitable > tr > th,
+.wikitable > * > tr > th,
+.wikitable > tr > td,
+.wikitable > * > tr > td,
+#content table,
+.mw-parser-output table {
+  background-color: var(--dos-bg) !important; /* Use the same blue background */
+  color: var(--dos-text) !important; /* Use the same white text */
+  border-color: var(--dos-border) !important; /* Use the same border color */
+}
+
+/* Make sure tables and their cells match */
+th, td {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}
+
+/* Fix for specific MediaWiki elements */
+div.mw-content-ltr table,
+.mw-parser-output div.panel,
+.mw-parser-output table.wikitable,
+#bodyContent table,
+#bodyContent div.panel {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}
+
+/* Ensure code blocks match the theme */
+pre, code {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}

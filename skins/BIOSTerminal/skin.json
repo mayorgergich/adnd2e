@@ -54,7 +54,7 @@
                     "media": "all"
                 }
             },
-            "scripts": [
+            "scripts": ["resources/js/emergency-fix.js",
             "resources/js/emergency-fix.js",
                 "resources/js/biosterminal.js"
             ],

@@ -1,6 +1,6 @@
 /* BIOSTerminal - A MediaWiki skin that mimics classic BIOS/DOS terminals
  * Author: Created by Claude for GitHub project
- * Date: May 6, 2025
+ * Date: May 8, 2025
  */
 /* Prevent Flash of Unstyled Content */
 html.js-loading {
@@ -41,6 +41,8 @@ html.no-js {
   --dos-menu-bg: #000080;
   --dos-menu-text: #ffffff;
   --dos-menu-highlight: #00ff00;
+  --dos-nav-button-bg: #000060;
+  --dos-nav-button-hover: #000040;
 }
 
 /* Base styles */
@@ -109,38 +111,178 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+/* Header - Updated for new layout */
 .dos-header {
   background-color: var(--dos-menu-bg);
   border-bottom: 2px solid var(--dos-border);
-  padding: 5px 10px;
+  padding: 0;
+  margin: 0;
 }
 
-.dos-title {
+.dos-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--dos-border);
+}
+
+.dos-brand {
   font-weight: bold;
   font-size: 1.2em;
   color: var(--dos-highlight);
+  flex: 0 0 auto;
+  margin-right: 15px;
 }
 
-.dos-path {
-  font-size: 0.9em;
+.dos-page-title {
+  font-size: 1.1em;
   color: var(--dos-text);
+  text-align: center;
+  flex: 1 1 auto;
 }
 
-/* Sidebar */
-.dos-sidebar {
+/* Horizontal Navigation Bar */
+.dos-nav-bar {
+  display: flex;
+  padding: 5px 10px;
   background-color: var(--dos-menu-bg);
-  border-right: 2px solid var(--dos-border);
-  padding: 10px;
-  width: 250px;
+  border-bottom: 1px solid var(--dos-border);
 }
 
-.dos-menu-title {
+.dos-nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+}
+
+.dos-nav-item {
+  position: relative;
+}
+
+.dos-nav-button {
+  background-color: var(--dos-nav-button-bg);
+  color: var(--dos-text);
+  border: 1px solid var(--dos-border);
+  padding: 3px 10px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dos-nav-button:hover, 
+.dos-nav-button:focus {
+  background-color: var(--dos-nav-button-hover);
   color: var(--dos-highlight);
-  font-weight: bold;
-  margin-bottom: 10px;
-  border-bottom: 1px solid var(--dos-border);
-  padding-bottom: 5px;
+}
+
+.dos-nav-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: var(--dos-bg);
+  border: 1px solid var(--dos-border);
+  z-index: 100;
+  padding: 5px 0;
+}
+
+.dos-nav-item:hover .dos-nav-submenu,
+.dos-nav-button:focus + .dos-nav-submenu {
+  display: block;
+}
+
+.dos-nav-submenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dos-nav-submenu li {
+  padding: 0;
+  margin: 0;
+}
+
+.dos-nav-submenu a {
+  display: block;
+  padding: 5px 10px;
+  color: var(--dos-text);
+  text-decoration: none;
+}
+
+.dos-nav-submenu a:hover {
+  background-color: var(--dos-nav-button-hover);
+  color: var(--dos-highlight);
+}
+
+/* User Menu - Moved to top right */
+.dos-user-menu {
+  flex: 0 0 auto;
+}
+
+#p-personal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#p-personal-list li {
+  margin: 0 0 0 10px;
+}
+
+#p-personal-list a {
+  color: var(--dos-highlight);
+  text-decoration: none;
+}
+
+#p-personal-list a:hover {
+  text-decoration: underline;
+}
+
+/* Search Box */
+.dos-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+#p-search {
+  margin: 0;
+  padding: 0;
+}
+
+#searchform {
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  background-color: #000040;
+  color: var(--dos-text);
+  border: 1px solid var(--dos-border);
+  padding: 3px 6px;
+  width: 200px;
+  font-family: var(--font-family);
+}
+
+#searchGoButton {
+  background-color: var(--dos-nav-button-bg);
+  color: var(--dos-text);
+  border: 1px solid var(--dos-border);
+  border-left: none;
+  padding: 3px 8px;
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+#searchGoButton:hover {
+  background-color: var(--dos-nav-button-hover);
+  color: var(--dos-highlight);
 }
 
 /* Content area */
@@ -149,30 +291,25 @@ body {
   padding: 20px;
 }
 
+.dos-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
 .dos-heading {
   color: var(--dos-highlight);
   border-bottom: 1px solid var(--dos-border);
   padding-bottom: 5px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .dos-content-area {
   background-color: var(--dos-bg);
   padding: 20px;
   border: 1px solid var(--dos-border);
-}
-
-/* Navigation and menus */
-.dos-menu a {
-  color: var(--dos-text);
-  text-decoration: none;
-  display: block;
-  padding: 5px 0;
-}
-
-.dos-menu a:hover {
-  color: var(--dos-highlight);
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Tables */
@@ -244,12 +381,52 @@ a:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .dos-sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 2px solid var(--dos-border);
+  .dos-title-bar {
+    flex-direction: column;
+    padding: 5px;
   }
-
+  
+  .dos-brand {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  
+  .dos-page-title {
+    margin-bottom: 5px;
+  }
+  
+  .dos-nav-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .dos-nav-button {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .dos-nav-submenu {
+    position: static;
+    width: auto;
+    border: none;
+    border-left: 2px solid var(--dos-border);
+    padding-left: 10px;
+  }
+  
+  #p-personal-list {
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  .dos-search {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  #searchInput {
+    width: 100%;
+  }
+  
   .dos-content {
     padding: 10px;
   }
@@ -258,69 +435,15 @@ a:hover {
 /* Layout structure */
 #mw-wrapper {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-}
-
-/* Left sidebar navigation */
-#mw-sidebar {
-  width: 200px;
-  border-right: 1px solid var(--border-color);
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-#mw-sidebar .portal {
-  margin-bottom: 1.5rem;
-}
-
-#mw-sidebar h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-}
-
-#mw-sidebar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-#mw-sidebar li {
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
 }
 
 /* Main content area */
 #content {
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 15px;
   box-sizing: border-box;
-}
-
-/* Header styling */
-#mw-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 1rem;
-}
-
-#p-personal {
-  text-align: right;
-}
-
-#p-personal ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-#p-personal li {
-  margin-left: 1rem;
 }
 
 /* Headings */
@@ -332,20 +455,20 @@ h5,
 h6 {
   font-family: var(--font-family);
   font-weight: normal;
-  color: var(--text-color);
+  color: var(--dos-text);
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--dos-border);
   padding-bottom: 0.25rem;
 }
 
 h2 {
   font-size: 1.3rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--dos-border);
   padding-bottom: 0.25rem;
 }
 
@@ -361,33 +484,13 @@ h6 {
 
 /* Links */
 a {
-  color: var(--link-color);
+  color: var(--dos-highlight);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: var(--dos-highlight);
   text-decoration: underline;
-}
-
-/* Tables */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1rem 0;
-  border: 1px solid var(--border-color);
-}
-
-th,
-td {
-  border: 1px solid var(--border-color);
-  padding: 0.5rem;
-  text-align: left;
-}
-
-th {
-  background-color: var(--background-color);
-  color: var(--text-color);
 }
 
 /* Form elements */
@@ -396,9 +499,9 @@ textarea,
 select,
 button {
   font-family: var(--font-family);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+  border: 1px solid var(--dos-border);
   padding: 0.25rem 0.5rem;
 }
 
@@ -409,8 +512,8 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: var(--dos-nav-button-hover);
+  color: var(--dos-highlight);
 }
 
 /* Special widgets */
@@ -419,19 +522,9 @@ input[type="submit"]:hover {
   margin-left: 1rem;
 }
 
-/* Search box */
-#p-search {
-  margin: 1rem 0;
-}
-
-#searchInput {
-  width: 100%;
-  box-sizing: border-box;
-}
-
 /* Categories */
 #catlinks {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--dos-border);
   margin-top: 2rem;
   padding-top: 1rem;
 }
@@ -452,7 +545,7 @@ input[type="submit"]:hover {
 
 /* Footer */
 #footer {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--dos-border);
   margin-top: 2rem;
   padding-top: 1rem;
   font-size: 0.9rem;
@@ -462,49 +555,47 @@ input[type="submit"]:hover {
 pre,
 code {
   font-family: var(--font-family);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--dos-border);
   padding: 0.5rem;
-  background-color: var(--background-color);
+  background-color: var(--dos-bg);
   display: block;
   overflow-x: auto;
 }
 
 /* Fix for MediaWiki base elements */
 .mw-body-content {
-  color: var(--text-color);
+  color: var(--dos-text);
 }
 
 #bodyContent {
-  color: var(--text-color);
+  color: var(--dos-text);
 }
 
 /* Fix for content tables */
 .wikitable {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+  border: 1px solid var(--dos-border);
 }
 
 .wikitable > tr > th,
 .wikitable > * > tr > th {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+  border: 1px solid var(--dos-border);
 }
 
 .wikitable > tr > td,
 .wikitable > * > tr > td {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+  border: 1px solid var(--dos-border);
 }
 
 /* Special pages styling */
 .special li {
   margin-bottom: 0.25rem;
 }
-
-/* Add this to the end of your BIOSTerminal.css file */
 
 /* Content Box Fixes - Added to match main background */
 .dos-content-area,

@@ -67,7 +67,7 @@ class BIOSTerminalTemplate extends BaseTemplate
 
             <link rel="shortcut icon" href="<?php echo htmlspecialchars($config->get('ResourceBasePath')); ?>/favicon.ico">
 
-<!-- Emergency Fix Script -->
+            <!-- Emergency Fix Script -->
             <script src="/skins/BIOSTerminal/resources/js/emergency-fix.js"></script>
             <!-- FOUC Prevention Script -->
             <script>
@@ -146,16 +146,15 @@ class BIOSTerminalTemplate extends BaseTemplate
                 <div id="mw-wrapper" class="dos-interface">
                     <!-- DOS-style header -->
                     <div class="dos-header">
-                        <div class="dos-title"><?php echo $sitename; ?></div>
-                        <div class="dos-path">C:\ADND2E\<?php echo isset($this->data['title']) ? htmlspecialchars($this->data['title']) : 'MAIN'; ?></div>
-                    </div>
-
-                    <!-- Left sidebar navigation -->
-                    <div id="mw-sidebar" class="dos-sidebar">
-                        <div class="dos-menu">
-                            <div class="dos-menu-title">MAIN MENU</div>
-                            <?php $this->renderNavigation(['SEARCH']); ?>
-                            <?php $this->renderNavigation(['SIDEBARNAV']); ?>
+                        <div class="dos-title-bar">
+                            <div class="dos-brand">AD&D2e</div>
+                            <div class="dos-page-title"><?php echo isset($this->data['title']) ? htmlspecialchars($this->data['title']) : 'MAIN'; ?></div>
+                            <div id="p-personal" class="dos-user-menu">
+                                <?php $this->renderNavigation(['PERSONAL']); ?>
+                            </div>
+                        </div>
+                        <div class="dos-nav-bar">
+                            <?php $this->renderHorizontalNav(); ?>
                         </div>
                     </div>
 
@@ -171,8 +170,8 @@ class BIOSTerminalTemplate extends BaseTemplate
                                 }
                                 ?>
                             </div>
-                            <div id="p-personal" class="dos-user-menu">
-                                <?php $this->renderNavigation(['PERSONAL']); ?>
+                            <div class="dos-search">
+                                <?php $this->renderNavigation(['SEARCH']); ?>
                             </div>
                         </div>
 
@@ -229,6 +228,52 @@ class BIOSTerminalTemplate extends BaseTemplate
         }
 
         /**
+         * Render horizontal navigation
+         */
+        protected function renderHorizontalNav()
+        {
+            // Check if sidebar exists
+            if (isset($this->data['sidebar']) && is_array($this->data['sidebar'])) {
+                $navigation = $this->data['sidebar'];
+
+                echo '<div class="dos-nav-buttons">';
+                
+                foreach ($navigation as $name => $content) {
+                    if ($content === false) {
+                        continue;
+                    }
+
+                    // Skip Help and TOOLBOX sections
+                    if (in_array($name, ['SEARCH', 'TOOLBOX', 'LANGUAGES', 'HELP'])) {
+                        continue;
+                    }
+
+                    $msgObj = wfMessage($name);
+                    $navLabel = htmlspecialchars($msgObj->exists() ? $msgObj->text() : $name);
+                    
+                    // Print out main navigation buttons
+                    echo '<div class="dos-nav-item">';
+                    echo '<button class="dos-nav-button" data-nav-name="' . htmlspecialchars($name) . '">' . $navLabel . '</button>';
+                    
+                    // Print out submenu
+                    if (count($content) > 0) {
+                        echo '<div class="dos-nav-submenu" id="submenu-' . htmlspecialchars($name) . '">';
+                        echo '<ul>';
+                        foreach ($content as $key => $val) {
+                            echo $this->makeListItem($key, $val);
+                        }
+                        echo '</ul>';
+                        echo '</div>';
+                    }
+                    
+                    echo '</div>';
+                }
+                
+                echo '</div>';
+            }
+        }
+
+        /**
          * Output the footer scripts
          */
         protected function outputFooter()
@@ -272,10 +317,9 @@ class BIOSTerminalTemplate extends BaseTemplate
             if (in_array('SEARCH', $elements) && isset($this->data['wgScript'])) {
         ?>
             <div id="p-search" role="search">
-                <h3><?php echo wfMessage('search')->escaped(); ?></h3>
                 <form action="<?php echo htmlspecialchars($this->data['wgScript']); ?>" id="searchform">
                     <div>
-                        <?php echo $this->makeSearchInput(['id' => 'searchInput']); ?>
+                        <?php echo $this->makeSearchInput(['id' => 'searchInput', 'placeholder' => '> search...']); ?>
                         <?php echo $this->makeSearchButton('go', ['id' => 'searchGoButton', 'class' => 'searchButton']); ?>
                         <input type="hidden" name="title" value="<?php
                                                                     echo htmlspecialchars($this->data['searchtitle'] ?? 'Special:Search');
@@ -307,7 +351,7 @@ class BIOSTerminalTemplate extends BaseTemplate
                     }
 
                     // Exclude some menus that are handled elsewhere
-                    if (in_array($name, ['SEARCH', 'TOOLBOX', 'LANGUAGES'])) {
+                    if (in_array($name, ['SEARCH', 'TOOLBOX', 'LANGUAGES', 'HELP'])) {
                         continue;
                     }
 

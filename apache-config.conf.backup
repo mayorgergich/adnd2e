@@ -1,30 +1,42 @@
-# Optimized Apache configuration for MediaWiki
 ServerName adnd2e
+
+# Default Apache settings
 TimeOut 300
 KeepAlive On
 MaxKeepAliveRequests 100
 KeepAliveTimeout 5
 
-# Important for working with Traefik
-RemoteIPHeader X-Forwarded-For
-RequestHeader set X-Forwarded-Proto "https" env=HTTPS
+# Work with Traefik
+ServerTokens Prod
+ServerSignature Off
 
-# Enable compression for text content
-AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
-BrowserMatch ^Mozilla/4 gzip-only-text/html
-BrowserMatch ^Mozilla/4\.0[678] no-gzip
-BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+# Accept forwarded protocol from Traefik
+SetEnvIf X-Forwarded-Proto "^https$" HTTPS=on
 
-# Cache control for static assets
-<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
-Header set Cache-Control "max-age=604800, public"
-</FilesMatch>
+# Enable non-root user to write to logs if needed
+<Directory /var/log/apache2>
+    Options FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
 
-# Security settings
-Header always set X-Content-Type-Options "nosniff"
-Header always set X-XSS-Protection "1; mode=block"
-Header always set X-Frame-Options "SAMEORIGIN"
+<Directory /var/www/html>
+    Options FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
 
-# Optimize proxy settings
-ProxyIOBufferSize 65536
-ProxyTimeout 120
+# Fix MIME type issues
+<IfModule mod_mime.c>
+    AddType text/html .html .htm .php
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType application/json .json
+</IfModule>
+
+# Ensure ResourceLoader handles requests properly
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(api|load)\.php - [L]
+</IfModule>
+
