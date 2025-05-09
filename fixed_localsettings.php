@@ -55,18 +55,35 @@ $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
 $wgEmailAuthentication = true;
 
-## === DATABASE SETTINGS AND IMPROVEMENTS ===
+## === DATABASE SETTINGS - ROBUST CONFIGURATION ===
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "mariadb";
+$wgDBserver = "mariadb"; // Use hostname for container networking
 $wgDBname = "adnd2e_db";
 $wgDBuser = "pawneemayor";
 $wgDBpassword = "password321";
 
 # Database connection parameters - Adjusted for robustness
-$wgDBconnectionAttempts = 3;
-$wgDBretryAttempts = 3;
+$wgDBconnectionAttempts = 3;  // Try more times
+$wgDBretryAttempts = 3;       // Retry more times
 $wgDBmwschemaRetryAttempts = 3;
+
+# Use explicit database servers configuration for more control
+$wgDBservers = [
+    [
+        'host' => 'mariadb',
+        'dbname' => 'adnd2e_db',
+        'user' => 'pawneemayor',
+        'password' => 'password321',
+        'type' => 'mysql',
+        'flags' => DBO_DEFAULT,
+        'load' => 1,
+        'driver' => 'mysqli',
+        'initCommands' => [],
+        'conn_flags' => null, // Let the driver handle it
+        'dns_cache_timeout' => 0, // Disable DNS caching
+    ],
+];
 
 # MySQL specific settings
 $wgDBprefix = ""; # Added prefix for separation
