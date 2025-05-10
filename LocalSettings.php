@@ -175,7 +175,6 @@ $wgDefaultSkin = "biosterminal";
 # Enabled skins.
 wfLoadSkin( 'BIOSTerminal' );
 # Add Vector as fallback in case of issues
-wfLoadSkin( 'Vector' );
 
 ## === DEBUG SETTINGS - FOR TROUBLESHOOTING ===
 # Add detailed error reporting for database issues
@@ -187,3 +186,14 @@ $wgDebugLogFile = "/tmp/mediawiki-debug.log";
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+// Debug output settings - disable compression and ensure UTF-8
+$wgDisableOutputCompression = true;  // Explicitly disable output compression
+@ini_set('zlib.output_compression', 0);
+@ini_set('output_buffering', 0);
+@ini_set('default_charset', 'UTF-8');
+@ini_set('output_encoding', 'UTF-8');
+@ini_set('mbstring.internal_encoding', 'UTF-8');
+
+// Explicitly set content encoding
+header('Content-Type: text/html; charset=UTF-8');

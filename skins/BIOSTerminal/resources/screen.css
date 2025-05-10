@@ -1,0 +1,296 @@
+/* Base styles */
+:root {
+    --dos-bg: #000080;
+    --dos-text: #ffffff;
+    --dos-border: #c0c0c0;
+    --dos-highlight: #0000ff;
+    --dos-header-bg: #0000aa;
+    --dos-nav-bg: #0000aa;
+    --dos-content-bg: #000080;
+}
+
+body {
+    background-color: var(--dos-bg);
+    color: var(--dos-text);
+    font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+/* Header styles */
+.dos-header {
+    background-color: var(--dos-header-bg);
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--dos-border);
+}
+
+.dos-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dos-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--dos-text);
+}
+
+.dos-path {
+    font-family: 'Courier New', monospace;
+    color: var(--dos-text);
+    font-size: 0.9em;
+}
+
+.dos-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Search styles */
+.dos-search {
+    margin: 0;
+}
+
+.dos-search input[type="search"] {
+    background: var(--dos-bg);
+    border: 2px solid var(--dos-border);
+    color: var(--dos-text);
+    padding: 4px 8px;
+    font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
+    width: 200px;
+}
+
+.dos-search input[type="search"]:focus {
+    outline: 2px solid var(--dos-highlight);
+}
+
+/* Navigation styles */
+.dos-nav {
+    background-color: var(--dos-nav-bg);
+    padding: 4px 16px;
+    border-bottom: 2px solid var(--dos-border);
+}
+
+.dos-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dos-nav-list li {
+    margin: 0;
+    padding: 4px 8px;
+}
+
+.dos-nav-list li a {
+    color: var(--dos-text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dos-nav-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Content styles */
+.dos-content {
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dos-body {
+    background-color: var(--dos-content-bg);
+    padding: 16px;
+    border: 2px solid var(--dos-border);
+}
+
+.dos-heading {
+    margin: 0 0 16px 0;
+    padding: 0;
+    font-size: 1.5em;
+    color: var(--dos-text);
+}
+
+.dos-subtitle {
+    font-size: 0.9em;
+    color: var(--dos-text);
+    margin-bottom: 16px;
+}
+
+.dos-content-area {
+    line-height: 1.6;
+}
+
+/* User menu styles */
+.dos-user-menu {
+    margin: 0;
+}
+
+.dos-user-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.dos-user-menu li {
+    margin: 0;
+}
+
+.dos-user-menu a {
+    color: var(--dos-text);
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid var(--dos-border);
+}
+
+.dos-user-menu a:hover {
+    background-color: var(--dos-highlight);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .dos-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dos-header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dos-search input[type="search"] {
+        width: 150px;
+    }
+
+    .dos-nav-list {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dos-content {
+        padding: 8px;
+    }
+
+    .dos-body {
+        padding: 8px;
+    }
+}
+
+/* Links */
+a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+}
+
+th, td {
+    border: 1px solid var(--dos-border);
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--dos-nav-bg);
+    font-weight: bold;
+}
+
+/* Code blocks */
+pre, code {
+    font-family: 'Courier New', monospace;
+    background-color: #000000;
+    padding: 8px;
+    border: 1px solid var(--dos-border);
+    overflow-x: auto;
+}
+
+/* Lists */
+ul, ol {
+    margin: 8px 0;
+    padding-left: 24px;
+}
+
+li {
+    margin: 4px 0;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--dos-border);
+}
+
+/* Forms */
+input, textarea, select {
+    background-color: var(--dos-bg);
+    border: 2px solid var(--dos-border);
+    color: var(--dos-text);
+    padding: 4px 8px;
+    font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid var(--dos-highlight);
+}
+
+/* Buttons */
+button {
+    background-color: var(--dos-nav-bg);
+    border: 2px solid var(--dos-border);
+    color: var(--dos-text);
+    padding: 4px 8px;
+    cursor: pointer;
+    font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
+}
+
+button:hover {
+    background-color: var(--dos-highlight);
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .dos-header, .dos-nav {
+        display: none;
+    }
+
+    .dos-content {
+        padding: 0;
+    }
+
+    .dos-body {
+        border: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+} 

@@ -71,9 +71,41 @@ body {
     height: 1.5rem;
 }
 
+<<<<<<< HEAD
 .term-search::placeholder {
     color: var(--terminal-text);
     opacity: 0.7;
+=======
+/* Header */
+.dos-header {
+  background-color: var(--dos-menu-bg);
+  border-bottom: 2px solid var(--dos-border);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dos-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 0 0 25%;
+}
+
+.dos-header-center {
+  flex: 1 1 auto;
+  text-align: center;
+  color: var(--dos-text);
+  padding: 0 16px;
+}
+
+.dos-header-right {
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+>>>>>>> 9cc58054dd50bf8f813c936033229781763b84ac
 }
 
 .term-search-btn {
@@ -86,12 +118,196 @@ body {
     font-family: "MorePerfectDOSVGA", "Courier New", monospace;
 }
 
+<<<<<<< HEAD
 .term-search-btn:hover {
     background: var(--terminal-text);
     color: var(--terminal-bg);
 }
 
 /* Enhance links */
+=======
+.dos-path {
+  font-size: 0.9em;
+  color: var(--dos-text);
+  font-family: "Courier New", monospace;
+}
+
+/* Search */
+#p-search {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#searchInput {
+  background: var(--dos-bg);
+  border: 2px solid var(--dos-border);
+  color: var(--dos-text);
+  padding: 4px 8px;
+  font-family: "Courier New", monospace;
+  width: 200px;
+}
+
+#searchInput:focus {
+  outline: 2px solid var(--dos-highlight);
+}
+
+/* Navigation */
+#mw-navigation {
+  background-color: var(--dos-menu-bg);
+  padding: 4px 16px;
+  border-bottom: 2px solid var(--dos-border);
+}
+
+#mw-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#mw-navigation li {
+  margin: 0;
+  padding: 4px 8px;
+}
+
+#mw-navigation a {
+  color: var(--dos-text);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#mw-navigation a:hover {
+  color: var(--dos-highlight);
+  text-decoration: underline;
+}
+
+/* User menu */
+#p-personal {
+  margin: 0;
+}
+
+#p-personal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+
+#p-personal li {
+  margin: 0;
+}
+
+#p-personal a {
+  color: var(--dos-text);
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid var(--dos-border);
+}
+
+#p-personal a:hover {
+  background-color: var(--dos-highlight);
+  color: var(--dos-bg);
+}
+
+/* Content area */
+#content {
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mw-body {
+  background-color: var(--dos-bg);
+  padding: 16px;
+  border: 2px solid var(--dos-border);
+}
+
+.firstHeading {
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-size: 1.5em;
+  color: var(--dos-highlight);
+}
+
+/* Sidebar */
+.dos-sidebar {
+  background-color: var(--dos-menu-bg);
+  border-right: 2px solid var(--dos-border);
+  padding: 10px;
+  width: 250px;
+}
+
+.dos-menu-title {
+  color: var(--dos-highlight);
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--dos-border);
+  padding-bottom: 5px;
+}
+
+/* Content area */
+.dos-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.dos-heading {
+  color: var(--dos-highlight);
+  border-bottom: 1px solid var(--dos-border);
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  background-color: var(--dos-bg);
+}
+
+.dos-content-area {
+  background-color: var(--dos-bg);
+  padding: 20px;
+  border: 1px solid var(--dos-border);
+}
+
+/* Navigation and menus */
+.dos-menu a {
+  color: var(--dos-text);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.dos-menu a:hover {
+  color: var(--dos-highlight);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+}
+
+th,
+td {
+  border: 1px solid var(--dos-border);
+  padding: 5px;
+  text-align: left;
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+}
+
+th {
+  background-color: var(--dos-menu-bg);
+  color: var(--dos-highlight);
+}
+
+/* Links */
+>>>>>>> 9cc58054dd50bf8f813c936033229781763b84ac
 a {
     color: var(--terminal-link);
     text-decoration: none;
@@ -180,6 +396,7 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     height: 100%;
     background-color: var(--terminal-bg);
     color: var(--terminal-text);
@@ -189,6 +406,49 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+=======
+    border-right: none;
+    border-bottom: 2px solid var(--dos-border);
+  }
+
+  .dos-content {
+    padding: 10px;
+  }
+
+  .dos-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dos-header-left,
+  .dos-header-center,
+  .dos-header-right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .dos-header-right {
+    justify-content: center;
+  }
+
+  #searchInput {
+    width: 150px;
+  }
+
+  #mw-navigation ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #content {
+    padding: 8px;
+  }
+
+  .mw-body {
+    padding: 8px;
+  }
+>>>>>>> 9cc58054dd50bf8f813c936033229781763b84ac
 }
 
 .term-loading-line {
@@ -258,7 +518,40 @@ th {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+<<<<<<< HEAD
 /* Category links */
+=======
+/* Form elements */
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.5rem;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Special widgets */
+.mw-editsection {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+/* Categories */
+>>>>>>> 9cc58054dd50bf8f813c936033229781763b84ac
 #catlinks {
     margin-top: 1.5rem;
     border-top: 1px dotted var(--terminal-text);
@@ -320,4 +613,131 @@ input, select, button, textarea {
     .term-links ul {
         columns: 1;
     }
+}
+
+/* Fix text fields to always have blue background */
+input, 
+textarea, 
+select,
+.mw-body,
+.mw-body-content,
+#bodyContent,
+fieldset,
+table.wikitable,
+table.wikitable > tr > th,
+table.wikitable > * > tr > th,
+table.wikitable > tr > td,
+table.wikitable > * > tr > td,
+.mw-body-content div,
+.mw-body-content span,
+.mw-body-content p,
+.mw-body-content li,
+.mw-body-content pre,
+.mw-body-content dd {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}
+
+/* Override any table cell backgrounds */
+td, th {
+  background-color: var(--dos-bg) !important;
+}
+
+/* Special pages fix */
+.special li, 
+#mw-subcategories li, 
+#mw-pages li,
+.mw-content-ltr ul,
+.mw-content-ltr ol {
+  background-color: var(--dos-bg);
+  color: var(--dos-text);
+}
+
+/* Fix form elements */
+#content form,
+form table,
+form td, 
+form div,
+form,
+.mw-editform,
+fieldset {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}
+
+/* Fix tables specifically */
+.wikitable,
+.mw-datatable,
+.sortable,
+.jquery-tablesorter,
+.wikitable tr,
+.wikitable td,
+.wikitable th {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+  border-color: var(--dos-border) !important;
+}
+
+/* Fix PHP warnings */
+.warning, 
+br + b + b, 
+pre.warning {
+  background-color: var(--dos-bg) !important;
+  color: #ff6666 !important;
+  border: 1px solid #ff6666;
+  padding: 4px;
+  margin: 4px 0;
+  display: block;
+  font-family: monospace;
+}
+
+/* Hide PHP error output wherever it appears */
+br + b, 
+b + br,
+.dos-nav-list br,
+.dos-nav-list b,
+.dos-user-menu br,
+.dos-user-menu b {
+  display: none;
+}
+
+/* Hide specific PHP warnings in the navigation */
+b:contains("Warning"),
+b:contains("Undefined array key"),
+b:contains("Array to string conversion") {
+  display: none;
+}
+
+/* Hide warning tags in the navigation */
+.dos-user-menu br,
+.dos-user-menu b {
+  display: none;
+}
+
+/* Fix all site notices */
+#siteNotice, 
+.sitenotice, 
+#localNotice,
+#siteNotice div,
+.mw-warning-with-logexcerpt,
+.warningbox,
+.errorbox {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+  padding: 4px;
+  border: 1px solid var(--dos-border);
+}
+
+/* Hide specific PHP warnings in the navigation */
+/* Hide PHP warnings text */
+.dos-nav-list, .dos-user-menu {
+  position: relative;
+}
+
+.dos-nav-list b, 
+.dos-user-menu b {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
 }
