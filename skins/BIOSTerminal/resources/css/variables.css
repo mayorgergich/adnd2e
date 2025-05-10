@@ -1,0 +1,46 @@
+/* Base theme variables - Default blue theme */
+:root {
+  /* Primary DOS terminal variables */
+  --dos-bg: #000080;
+  --dos-text: #ffffff;
+  --dos-highlight: #00ff00;
+  --dos-border: #c0c0c0;
+  --dos-menu-bg: #000080;
+  --dos-menu-text: #ffffff;
+  --dos-menu-highlight: #00ff00;
+  
+  /* Alias variables to ensure consistency */
+  --background-color: var(--dos-bg);
+  --text-color: var(--dos-text);
+  --link-color: var(--dos-highlight);
+  --link-hover-color: #aaaaaa;
+  --border-color: var(--dos-border);
+  --font-family: 'MorePerfectDOSVGA', monospace;
+  --font-size: 16px;
+  --line-height: 1.4;
+}
+
+/* Hide PHP warnings */
+.php-error, 
+.php-warning, 
+.warning {
+  display: none !important;
+}
+
+/* Hide PHP warning text */
+body > b, 
+body > br + b,
+div > b:first-child,
+div > br:first-child {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Hide specific PHP warnings in the navigation */
+b:contains("Warning"),
+b:contains("Undefined array key"),
+b:contains("Array to string conversion") {
+  display: none !important;
+}

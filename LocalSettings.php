@@ -82,6 +82,12 @@ $wgDBadditionalParams = [
     'charset' => 'utf8mb4',
     'collation' => 'utf8mb4_unicode_ci',
 ];
+
+# Character encoding settings for content and output
+$wgDefaultCharset = "UTF-8"; # Default character set for content
+$wgOutputEncoding = "UTF-8"; # Ensures proper output encoding
+$wgHtml5 = true; # Use HTML5 which has better UTF-8 support
+
 # Shared database table
 # This has no effect unless $wgSharedDB is also set.
 $wgSharedTables[] = "actor";

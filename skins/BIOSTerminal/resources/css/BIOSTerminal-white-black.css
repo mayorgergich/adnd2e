@@ -4,6 +4,16 @@
 
 /* White/Black Theme */
 :root {
+  /* Primary variables */
+  --dos-bg: #FFFFFF;
+  --dos-text: #000000;
+  --dos-highlight: #0000AA;
+  --dos-border: #000000;
+  --dos-menu-bg: #FFFFFF;
+  --dos-menu-text: #000000;
+  --dos-menu-highlight: #0000AA;
+  
+  /* Alias variables */
   --background-color: #FFFFFF;
   --text-color: #000000;
   --link-color: #0000AA;
@@ -14,17 +24,42 @@
   --line-height: 1.4;
 }
 
-/* Ensure content boxes also match the theme background */
-.dos-content-area,
+/* Fix for specific elements to ensure theme consistency */
+body, 
+.mw-body,
 .mw-body-content,
-.mw-body-content table,
-.wikitable,
-.wikitable > tr > th,
-.wikitable > * > tr > th,
-.wikitable > tr > td,
-.wikitable > * > tr > td,
-#content table,
-.mw-parser-output table {
+#bodyContent,
+#content,
+.dos-content,
+.dos-body {
   background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+}
+
+.dos-menu, 
+.dos-menu-title,
+.dos-sidebar,
+.dos-header,
+#mw-head {
+  background-color: var(--dos-menu-bg) !important;
+  color: var(--dos-menu-text) !important;
+}
+
+a {
+  color: var(--link-color) !important;
+}
+
+a:hover {
+  color: var(--link-hover-color) !important;
+}
+
+/* Override any table cell backgrounds */
+td, th {
+  background-color: var(--dos-bg) !important;
+  color: var(--dos-text) !important;
+  border-color: var(--dos-border) !important;
+}
+
+.firstHeading, h1, h2, h3, h4, h5, h6 {
   color: var(--dos-text) !important;
 }

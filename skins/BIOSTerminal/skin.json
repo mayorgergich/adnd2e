@@ -36,6 +36,16 @@
                 }
             }
         },
+        "skins.biosterminal.variables": {
+            "styles": {
+                "resources/css/variables.css": {
+                    "media": "all"
+                }
+            },
+            "dependencies": [
+                "skins.biosterminal.fonts"
+            ]
+        },
         "skins.biosterminal": {
             "class": "MediaWiki\\ResourceLoader\\SkinModule",
             "features": [
@@ -55,12 +65,11 @@
                 }
             },
             "scripts": [
-                "resources/js/emergency-fix.js",
                 "resources/js/biosterminal.js"
             ],
             "dependencies": [
                 "mediawiki.util",
-                "skins.biosterminal.fonts"
+                "skins.biosterminal.variables"
             ]
         },
         "skins.biosterminal.white-black": {
