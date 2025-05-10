@@ -1,0 +1,103 @@
+<?php
+/**
+ * Debugging version of BIOSTerminal template
+ */
+
+use Sanitizer;
+
+/**
+ * @ingroup Skins
+ */
+class BIOSTerminalTemplate extends BaseTemplate {
+    /**
+     * Execute the template
+     */
+    public function execute() {
+        try {
+            // Output the HTML head element
+            $this->html('headelement');
+            
+            // Start with a minimal structure and debug info
+            echo "<div style='background-color:#000080; color:#FFFFFF; font-family:monospace; padding:20px;'>";
+            echo "<h1>BIOSTerminal Debug Template</h1>";
+            
+            // Add debug info to help troubleshoot
+            echo "<div style='background-color:#000000; color:#00FF00; padding:10px; margin:10px 0; border:1px solid #FFFFFF;'>";
+            echo "<h2>Debug Information</h2>";
+            echo "Template Class: " . get_class($this) . "<br>";
+            echo "Base Class: " . get_parent_class($this) . "<br>";
+            echo "Skin Name: " . $this->getSkin()->getSkinName() . "<br>";
+            echo "PHP Version: " . phpversion() . "<br>";
+            echo "</div>";
+            
+            // Safely display page content
+            echo "<div style='margin:20px 0; padding:10px; border:1px solid #FFFFFF;'>";
+            echo "<h2>" . htmlspecialchars($this->get('title')) . "</h2>";
+            
+            // Try rendering page content
+            try {
+                echo "<div style='background-color:#000080; padding:10px;'>";
+                $this->html('bodytext');
+                echo "</div>";
+            } catch (Exception $e) {
+                echo "<div style='color:#FF0000; padding:10px; border:1px solid #FF0000;'>";
+                echo "Error rendering bodytext: " . htmlspecialchars($e->getMessage());
+                echo "</div>";
+            }
+            
+            echo "</div>";
+            
+            // Try rendering sidebars/navigation
+            echo "<div style='margin:20px 0; padding:10px; border:1px solid #FFFFFF;'>";
+            echo "<h3>Navigation Links</h3>";
+            
+            try {
+                echo "<ul>";
+                if (isset($this->data['sidebar']) && is_array($this->data['sidebar'])) {
+                    foreach ($this->data['sidebar'] as $name => $content) {
+                        if ($content === false || !is_array($content)) {
+                            continue;
+                        }
+                        
+                        echo "<li>" . htmlspecialchars($name) . "<ul>";
+                        foreach ($content as $key => $val) {
+                            echo "<li>";
+                            if (isset($val['href'])) {
+                                echo "<a href='" . htmlspecialchars($val['href']) . "'>" . 
+                                    htmlspecialchars($val['text']) . "</a>";
+                            } else {
+                                echo htmlspecialchars($key);
+                            }
+                            echo "</li>";
+                        }
+                        echo "</ul></li>";
+                    }
+                } else {
+                    echo "<li>No sidebar data available</li>";
+                }
+                echo "</ul>";
+            } catch (Exception $e) {
+                echo "<div style='color:#FF0000; padding:10px; border:1px solid #FF0000;'>";
+                echo "Error rendering navigation: " . htmlspecialchars($e->getMessage());
+                echo "</div>";
+            }
+            
+            echo "</div>";
+            
+            echo "</div>";
+            
+            // Output the HTML foot element
+            $this->html('bottomscripts');
+            $this->html('reporttime');
+            
+        } catch (Exception $e) {
+            // If anything goes wrong, show a basic error
+            echo "<div style='background-color:#000080; color:#FFFFFF; padding:20px; font-family:monospace;'>";
+            echo "<h1>BIOSTerminal Error</h1>";
+            echo "<div style='color:#FF0000; padding:10px; border:1px solid #FF0000;'>";
+            echo "Fatal Error: " . htmlspecialchars($e->getMessage());
+            echo "<pre>" . htmlspecialchars($e->getTraceAsString()) . "</pre>";
+            echo "</div></div>";
+        }
+    }
+}

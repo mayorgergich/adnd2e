@@ -15,7 +15,12 @@
     "ValidSkinNames": {
         "biosterminal": {
             "class": "SkinBIOSTerminal",
-            "args": []
+            "args": [
+                {
+                    "name": "biosterminal",
+                    "template": "BIOSTerminalTemplate"
+                }
+            ]
         }
     },
     "MessagesDirs": {
@@ -31,23 +36,14 @@
                 }
             }
         },
-        "skins.biosterminal.styles": {
+        "skins.biosterminal.variables": {
             "styles": {
-                "resources/css/BIOSTerminal.css": {
+                "resources/css/variables.css": {
                     "media": "all"
                 }
             },
             "dependencies": [
                 "skins.biosterminal.fonts"
-            ]
-        },
-        "skins.biosterminal.scripts": {
-            "scripts": [
-                "resources/js/biosterminal.js"
-            ],
-            "dependencies": [
-                "mediawiki.util",
-                "jquery"
             ]
         },
         "skins.biosterminal": {
@@ -63,9 +59,37 @@
                 "desktop",
                 "mobile"
             ],
+            "styles": {
+                "resources/css/BIOSTerminal.css": {
+                    "media": "all"
+                }
+            },
+            "scripts": [
+                "resources/js/biosterminal.js"
+            ],
             "dependencies": [
-                "skins.biosterminal.styles",
-                "skins.biosterminal.scripts"
+                "mediawiki.util",
+                "skins.biosterminal.variables"
+            ]
+        },
+        "skins.biosterminal.white-black": {
+            "styles": {
+                "resources/css/BIOSTerminal-white-black.css": {
+                    "media": "all"
+                }
+            },
+            "dependencies": [
+                "skins.biosterminal"
+            ]
+        },
+        "skins.biosterminal.black-white": {
+            "styles": {
+                "resources/css/BIOSTerminal-black-white.css": {
+                    "media": "all"
+                }
+            },
+            "dependencies": [
+                "skins.biosterminal"
             ]
         }
     },
@@ -77,5 +101,8 @@
         "SkinBIOSTerminal": "includes/SkinBIOSTerminal.php",
         "BIOSTerminalTemplate": "includes/BIOSTerminalTemplate.php"
     },
-    "manifest_version": 2
+    "manifest_version": 2,
+    "Hooks": {
+        "GetPreferences": "SkinBIOSTerminal::onGetPreferences"
+    }
 }
